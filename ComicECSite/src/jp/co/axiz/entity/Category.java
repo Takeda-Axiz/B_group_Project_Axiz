@@ -13,6 +13,12 @@ public class Category {
 
 	}
 
+	public Category(Integer categoryId, String categoryName) {
+		super();
+		this.categoryId = categoryId;
+		this.categoryName = categoryName;
+	}
+
 	/*---  Constructor End  ---*/
 
 	/*---  Method  ---*/

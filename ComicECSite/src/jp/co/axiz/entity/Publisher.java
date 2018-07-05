@@ -12,6 +12,12 @@ public class Publisher {
 	public Publisher() {
 	}
 
+	public Publisher(Integer publisherId, String publisherName) {
+		super();
+		this.publisherId = publisherId;
+		this.publisherName = publisherName;
+	}
+
 	/*---  Constructor End  ---*/
 
 	/*---  Method  ---*/

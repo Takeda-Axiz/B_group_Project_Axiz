@@ -15,6 +15,16 @@ public class UserComicInfo {
 	public UserComicInfo() {
 	}
 
+	public UserComicInfo(Integer userComicId, String userId, Integer comicId, Integer individualEvaluation,
+			String purchaseTimestamp) {
+		super();
+		this.userComicId = userComicId;
+		this.userId = userId;
+		this.comicId = comicId;
+		this.individualEvaluation = individualEvaluation;
+		this.purchaseTimestamp = purchaseTimestamp;
+	}
+
 	/*---  Constructor End  ---*/
 
 	/*---  Method  ---*/

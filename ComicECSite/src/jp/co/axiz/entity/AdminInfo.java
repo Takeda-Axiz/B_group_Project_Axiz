@@ -13,6 +13,13 @@ public class AdminInfo {
 	public AdminInfo() {
 	}
 
+	public AdminInfo(String adminId, String adminName, String adminPassword) {
+		super();
+		this.adminId = adminId;
+		this.adminName = adminName;
+		this.adminPassword = adminPassword;
+	}
+
 	/*---  Constructor End  ---*/
 
 	/*---  Method  ---*/

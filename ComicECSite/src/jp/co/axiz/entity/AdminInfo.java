@@ -1,6 +1,6 @@
 package jp.co.axiz.entity;
 
-public class Admin_info {
+public class AdminInfo {
 	/*---  Field  ---*/
 	private String adminId;
 	private String adminName;
@@ -10,7 +10,7 @@ public class Admin_info {
 
 	/*---  Constructor  ---*/
 	//  処理概要
-	public Admin_info() {
+	public AdminInfo() {
 	}
 
 	/*---  Constructor End  ---*/

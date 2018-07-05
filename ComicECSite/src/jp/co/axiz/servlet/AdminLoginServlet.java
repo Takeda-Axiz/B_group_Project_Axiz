@@ -29,18 +29,18 @@ public class AdminLoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email;
+		String id;
 		String pass;
 		String setName;
 		Boolean dao = false;
 		AdminInfo adminInfo = new AdminInfo();
 		HttpSession session = request.getSession();
 
-		email = request.getParameter("id");
+		id = request.getParameter("id");
 		pass = request.getParameter("pass");
 
 		if(dao/*()*/ == true) {
-			setName = adminInfo.getUserName();
+			setName = adminInfo.getAdminName();
 			session.setAttribute("user", setName);
 		}
 

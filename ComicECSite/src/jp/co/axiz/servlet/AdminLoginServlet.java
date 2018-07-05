@@ -1,6 +1,14 @@
 package jp.co.axiz.servlet;
+import java.io.IOException;
+
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import jp.co.axiz.entity.AdminInfo;
 
 /**
  * Servlet implementation class LoginServlet
@@ -20,21 +28,23 @@ public class AdminLoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		String id = request.getParameter("id");
-//		String pass = request.getParameter("pass");
-//
-//		AdminInfoDao adminInfiDao = new AdminInfoDao();
-//		Admin admin = adminInfoDao.findByIdAndPassword(id, pass);
-//
-//		//Daoの完成によってメソッド名、変更あり！！
-//		if (admin != null) {
-//			HttpSession session = request.getSession();
-//			session.setAttribute("user", admin);
-//			response.sendRedirect(request.getContextPath() + "/AdminTop.jsp");
-//		} else {
-//			request.setAttribute("errmsg", "IDまたはPASSが間違っています");
-//			request.getRequestDispatcher("AdminLogin.jsp").forward(request, response);
-//		}
-//	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id;
+		String pass;
+		String setName;
+		Boolean dao = false;
+		AdminInfo adminInfo = new AdminInfo();
+		HttpSession session = request.getSession();
+
+		id = request.getParameter("id");
+		pass = request.getParameter("pass");
+
+		if(dao/*()*/ == true) {
+			setName = adminInfo.getAdminName();
+			session.setAttribute("user", setName);
+		}
+
+		request.getRequestDispatcher("/AdminTop.jsp").forward(request, response);
+	}
 }
+

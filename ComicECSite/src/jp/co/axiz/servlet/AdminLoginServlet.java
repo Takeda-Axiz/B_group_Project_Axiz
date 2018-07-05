@@ -32,6 +32,7 @@ public class AdminLoginServlet extends HttpServlet {
 
 		AdminInfoDao adminInfiDao = new AdminInfoDao();
 		Admin admin = adminInfoDao.findByIdAndPassword(id, pass);
+//Daoの完成によってメソッド名、変更あり！！
 
 		if (admin != null) {
 			HttpSession session = request.getSession();

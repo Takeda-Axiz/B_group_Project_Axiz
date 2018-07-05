@@ -4,26 +4,24 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class UserLogoutServlet
+ * Servlet implementation class UserRegisterServlet
  */
-@WebServlet("/Logout")
-public class UserLogoutServlet extends HttpServlet {
+@WebServlet("/UserRegister")
+public class UserRegisterConfirmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public UserLogoutServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UserRegisterConfirmServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,23 +36,14 @@ public class UserLogoutServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// doPost
-		HttpSession session = request.getSession();
-		Cookie[] cookies = request.getCookies();
+		String userName = (String) request.getAttribute("user_name");
+		String birthday = (String) request.getAttribute("user_birthday");
+		String userId = (String) request.getAttribute("user_id");
+		String password = (String) request.getAttribute("password");
 
-		// セッションの削除
-		session.invalidate();
+		// DAOで会員登録(DBに登録)
+//		dao(userId, userName, password, birthday);
 
-		// クッキーにデータが存在するかどうか確認
-		if (cookies != null) {
-			// クッキーの削除
-			for (Cookie cookie : cookies) {
-				cookie.setValue("");
-				cookie.setPath("/");
-				cookie.setMaxAge(0);
-				response.addCookie(cookie);
-			}
-		}
-
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/UserRegisterResult.jsp").forward(request, response);
 	}
 }

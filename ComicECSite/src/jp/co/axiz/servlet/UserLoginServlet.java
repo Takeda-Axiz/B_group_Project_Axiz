@@ -49,7 +49,7 @@ public class UserLoginServlet extends HttpServlet {
 		email = request.getParameter("id");
 		pass = request.getParameter("pass");
 
-		if(dao == true) {
+		if(dao/*()*/ == true) {
 			setName = userInfo.getUserName();
 			session.setAttribute("user", setName);
 		}

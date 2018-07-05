@@ -48,7 +48,7 @@
 				<section class="subscribe-wrap">
 					<div class="col-xs-offset-3 col-xs-6">
 						<div class="row">
-							<form role="form" method="post">
+							<form action="AdminComicSearch" role="form" method="post">
 								<div class="col-xs-12">
 									<select class="form-control" name="Category">
 										<option value="title">作品名</option>
@@ -212,4 +212,3 @@
 
 </body>
 </html>
-

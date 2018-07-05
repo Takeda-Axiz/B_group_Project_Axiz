@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>管理者TOP画面</title>
 
 <!-- meta -->
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,10 +31,10 @@
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="AdminTop.html">管理者専用ページ</a>
+					<a class="logo" href="AdminTop.jsp">管理者専用ページ</a>
 				</section>
-				<section class="col-xs-1 col-xs-offset-5" style="margin-top:1em">
-					<a class="btn btn-primary btn-lg" href="AdminLogin.html" roll="btn">ログアウト</a>
+				<section class="col-xs-1 col-xs-offset-5" style="margin-top: 1em">
+					<a class="btn btn-primary btn-lg" href="AdminLogin.jsp" roll="btn">ログアウト</a>
 				</section>
 			</section>
 		</section>
@@ -42,14 +44,14 @@
 		<section class="container">
 			<section class="row">
 				<div class="col-md-6">
-					<div class="headings" style="padding:0 0 50% 0;">
-						<br><br>
+					<div class="headings" style="padding: 0 0 50% 0;">
+						<br> <br>
 						<div class="card card-body bg-light border-primary mx-auto">
-							<a class="btn btn-primary btn-lg" href="ComicInsert.html">登録</a><br>
-							<br>
-							<a class="btn btn-primary btn-lg" href="AdminReference.html" roll="btn">参照</a><br>
-							<br>
-							<a class="btn btn-primary btn-lg" href="Unsubscribe.html" roll="btn">強制退会</a>
+							<a class="btn btn-primary btn-lg" href="ComicInsert.jsp">登録</a><br>
+							<br> <a class="btn btn-primary btn-lg"
+								href="AdminReference.jsp" roll="btn">参照</a><br> <br>
+							<a class="btn btn-primary btn-lg" href="Unsubscribe.jsp"
+								roll="btn">強制退会</a>
 						</div>
 					</div>
 				</div>

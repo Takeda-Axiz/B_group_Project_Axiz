@@ -1,11 +1,12 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>管理者ログイン画面</title>
 
 <!-- meta -->
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -39,8 +40,8 @@
 
 	<section id="banner">
 		<section class="container">
-			<div class="headings" style="padding:0 0 50% 0;">
-				<form action="AdminTop.html" method="post">
+			<div class="headings" style="padding: 0 0 50% 0;">
+				<form action="AdminTop.jsp" method="post">
 					<section class="row">
 						<div class="row col-xs-12 col-md-6">
 							<h3>管理者IDとパスワードを入力してください</h3>
@@ -52,15 +53,15 @@
 					<br>
 					<section class="row">
 						<div class="row col-xs-6 col-md-3">
-							<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">
-								ログイン
-							</button>
+							<button class="btn btn-lg btn-primary btn-block" name="Submit"
+								value="Login" type="Submit">ログイン</button>
 						</div>
 					</section>
 				</form>
 				<section class="row">
 					<div>
-						<img src="assets/img/clearline.png" class="img-responsive" alt="" style="margin: 0 auto;">
+						<img src="assets/img/clearline.png" class="img-responsive" alt=""
+							style="margin: 0 auto;">
 					</div>
 				</section>
 			</div>

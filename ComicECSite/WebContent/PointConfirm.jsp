@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>アカウント編集画面</title>
+<meta charset="UTF-8">
+<title>ポイント使用確認画面</title>
 
 <!-- meta -->
 <meta charset="utf-8">
@@ -30,55 +31,40 @@
 </head>
 <body id="home">
 
-	<!-- ****************************** Preloader ************************** -->
-
 	<div id="preloader"></div>
-
-	<!-- ****************************** Sidebar ************************** -->
-
-	<!-- ****************************** Header ************************** -->
 
 	<header class="sticky" id="header">
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="Index.jsp">電子漫画購入サイト</a>
+					<a class="logo" href="">電子漫画購入サイト</a>
 				</section>
 			</section>
 		</section>
 	</header>
-
-	<!-- ****************************** Banner ************************** -->
 
 	<section id="banner">
 		<section class="container">
 			<section class="row">
 				<div class="col-md-6">
 					<div class="headings">
-						<h1 class="wow animated fadeInDown">アカウントが更新されました</h1>
-						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-5">
-								<div>
-									<a href="Index.jsp"
-										class="polo-btn store wow animated bounceInUp"
-										style="color: #000;"><i></i>トップページ</a>
-								</div>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-5">
-								<div>
-									<a href="MyPage.jsp"
-										class="polo-btn store wow animated bounceInUp"
-										style="color: #000;"><i></i>マイページ</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</section>
-	</section>
 
-	<!-- ****************************** Gallery Section ************************** -->
+
+	<h3>ポイントを使用して購入しますか？</h3>
+	<p>現在所持しているポイント：32ポイント</p>
+	<p>(使用ポイント：20ポイント)</p>
+<form action="PointResult.html" method="post">
+		<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">はい</button>
+		<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit" onclick="location.href='Book0001.html'; return false;">いいえ</button>
+</form>
+
+</div>
+</div>
+</section>
+</section>
+</section>
+
+	<footer></footer>
 
 	<!-- All the scripts -->
 

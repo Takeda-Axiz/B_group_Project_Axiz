@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,9 +45,8 @@
 			<section class="row">
 				<div class="col-md-6">
 					<form action="" method="post">
-						<p>
-						<h3>※更新・削除する項目を選択してください</h3>
-						</p>
+						<p><h3>※更新・削除する項目を選択してください</h3></p>
+
 						<p>
 							<label for="inputEmail3" class=" col-xs-3 control-label">
 								ID:</label><input type="text" name="id">
@@ -80,6 +79,12 @@
 
 						<p>
 							<label for="inputEmail3" class=" col-xs-3 control-label">
+								表紙画像:</label><input type="text" name="id">
+						</p>
+
+
+						<p>
+							<label for="inputEmail3" class=" col-xs-3 control-label">
 								出版社:</label><input type="text" name="id">
 						</p>
 
@@ -88,11 +93,18 @@
 								本体価格:</label><input type="text" name="id">
 						</p>
 
-						<input class="btn btn-primary btn-lg" type="submit" value="更新する"
-							onclick="location.href='ComicUpdate.html'; return false;">
-						<input class="btn btn-primary btn-lg" type="submit" value="削除する"
-							onclick="location.href='ComicDelete.html'; return false;">
+						<input class="btn btn-primary btn-lg" type="submit" value="更新"
+							onclick="location.href='ComicUpdateResult.jsp'; return false;">
+						<input class="btn btn-primary btn-lg" type="submit" value="削除"
+							onclick="location.href='ComicDeleteResult.jsp'; return false;">
 					</form>
+				</div>
+			</section>
+			<br> <br>
+			<section class="row">
+				<div class="col-xs-12">
+					<a class="btn btn-primary btn-xs" href="AdminReference.jsp"
+						style="margin-left: 0px;">登録漫画一覧へ戻る</a>
 				</div>
 			</section>
 			<section class="row">

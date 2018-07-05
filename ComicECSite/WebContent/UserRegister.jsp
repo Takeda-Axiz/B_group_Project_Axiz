@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>アカウント編集画面</title>
+<title>新規会員登録</title>
 
 <!-- meta -->
 <meta charset="utf-8">
@@ -27,16 +27,17 @@
 	href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700|Oxygen:400,300,700'
 	rel='stylesheet'>
 
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!--[if lt IE 9]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
 </head>
-<body id="home">
-
-	<!-- ****************************** Preloader ************************** -->
-
-	<div id="preloader"></div>
-
-	<!-- ****************************** Sidebar ************************** -->
-
-	<!-- ****************************** Header ************************** -->
+<body>
 
 	<header class="sticky" id="header">
 		<section class="container">
@@ -48,38 +49,52 @@
 		</section>
 	</header>
 
-	<!-- ****************************** Banner ************************** -->
-
 	<section id="banner">
 		<section class="container">
 			<section class="row">
 				<div class="col-md-6">
 					<div class="headings">
-						<h1 class="wow animated fadeInDown">アカウントが更新されました</h1>
-						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-5">
-								<div>
-									<a href="Index.jsp"
-										class="polo-btn store wow animated bounceInUp"
-										style="color: #000;"><i></i>トップページ</a>
-								</div>
+
+						<form method="post" action="UserRegisterComfirm.jsp">
+							<h2>新規会員登録フォーム</h2>
+							<p>
+								※は必須項目です<br>生年月日は登録後変更できません
+							</p>
+
+							<div class="form-group">
+								<label class="required">※名前</label><input type="text"
+									class="form-control" name="use_rname">
 							</div>
-							<div class="col-xs-6 col-sm-6 col-md-5">
-								<div>
-									<a href="MyPage.jsp"
-										class="polo-btn store wow animated bounceInUp"
-										style="color: #000;"><i></i>マイページ</a>
-								</div>
+							<div class="form-group">
+								<label class="required">※生年月日</label><input type="date"
+									class="form-control" name="user_birthday">
 							</div>
-						</div>
+							<div class="form-group">
+								<p></p>
+								<label class="required">※会員ID</label><input type="email"
+									class="form-control" name="user_id" placeholder="メールアドレス">
+							</div>
+							<div class="form-group">
+								<label class="required">※パスワード</label> <input type="password"
+									class="form-control" name="password">
+							</div>
+							<div align="center">
+								<button type="submit" class="btn btn-primary " name="signup"
+									onclick="location.href='UserRegisterComfirm.jsp'; return false;">会員登録する</button>
+							</div>
+
+						</form>
 					</div>
 				</div>
 			</section>
 		</section>
 	</section>
 
-	<!-- ****************************** Gallery Section ************************** -->
-
+	<section id="footer">
+		<div class="col-xs-6 col-md-3">
+			<a class="btn btn-primary btn-xs" href="index02.jsp" roll="btn">トップページ</a>
+		</div>
+	</section>
 	<!-- All the scripts -->
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -87,6 +102,7 @@
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/owl.carousel.js"></script>
 	<script src="assets/js/script.js"></script>
+
 
 </body>
 </html>

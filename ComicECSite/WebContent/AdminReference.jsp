@@ -3,12 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>漫画一覧</title>
 
 <!-- meta -->
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -38,6 +38,9 @@
 				<section class="col-xs-6">
 					<a class="logo" href="AdminTop.jsp">管理者専用ページ</a>
 				</section>
+				<section class="col-xs-1 col-xs-offset-5" style="margin-top: 1em">
+					<a class="btn btn-primary btn-lg" href="ComicInsert.jsp">漫画登録ページへ</a>
+				</section>
 			</section>
 		</section>
 	</header>
@@ -48,13 +51,13 @@
 				<section class="subscribe-wrap">
 					<div class="col-xs-offset-3 col-xs-6">
 						<div class="row">
-							<form action="AdminComicSearch" role="form" method="post">
+							<form role="form" method="post">
 								<div class="col-xs-12">
 									<select class="form-control" name="Category">
 										<option value="title">作品名</option>
 										<option value="author">原作者名</option>
 										<option value="category">カテゴリー</option>
-										<option value="sale day">発売日</option>
+										<option value="saleDay">発売日</option>
 										<option value="publisher">出版社</option>
 									</select>
 								</div>
@@ -74,22 +77,25 @@
 						</div>
 					</div>
 				</section>
+
 				<div class="adminReference">
-					<table width="1500" border="1"
-						class="table table-striped table-hover">
+					<table border="1" class="table table-striped table-hover">
 						<thead class="active">
-							<th>ID</th>
-							<th>作品名</th>
-							<th>巻数</th>
-							<th>原作者名</th>
-							<th>カテゴリー</th>
-							<th>発売日</th>
-							<th>出版社</th>
-							<th>本体価格</th>
-							<th>更新責任者</th>
-							<th>更新日付</th>
-							<th>更新・削除</th>
+							<tr>
+								<th>ID</th>
+								<th>作品名</th>
+								<th>巻数</th>
+								<th>原作者名</th>
+								<th>カテゴリー</th>
+								<th>発売日</th>
+								<th>出版社</th>
+								<th>本体価格</th>
+								<th>更新責任者</th>
+								<th>更新日付</th>
+								<th>更新・削除</th>
+							</tr>
 						</thead>
+
 
 						<tbody>
 							<tr class="active">
@@ -148,7 +154,7 @@
 								<td>400円</td>
 								<td>鈴木稔也</td>
 								<td>2018年7月3日</td>
-								<td><a href="AdminSelect.html"><input type="submit"
+								<td><a href="AdminSelect.jsp"><input type="submit"
 										value="更新・削除"></a></td>
 							</tr>
 
@@ -163,7 +169,7 @@
 								<td>400円</td>
 								<td>鈴木稔也</td>
 								<td>2018年7月3日</td>
-								<td><a href="AdminSelect.html"><input type="submit"
+								<td><a href="AdminSelect.jsp"><input type="submit"
 										value="更新・削除"></a></td>
 							</tr>
 						</tbody>
@@ -212,3 +218,4 @@
 
 </body>
 </html>
+

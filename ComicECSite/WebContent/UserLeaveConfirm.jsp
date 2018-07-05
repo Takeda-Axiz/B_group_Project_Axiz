@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>アカウント編集画面</title>
+<title>会員自主退会確認画面</title>
 
 <!-- meta -->
 <meta charset="utf-8">
@@ -27,58 +27,48 @@
 	href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700|Oxygen:400,300,700'
 	rel='stylesheet'>
 
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!--[if lt IE 9]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
 </head>
-<body id="home">
-
-	<!-- ****************************** Preloader ************************** -->
-
-	<div id="preloader"></div>
-
-	<!-- ****************************** Sidebar ************************** -->
-
-	<!-- ****************************** Header ************************** -->
+<body>
 
 	<header class="sticky" id="header">
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="Index.jsp">電子漫画購入サイト</a>
+					<a class="logo" href="">電子漫画購入サイト</a>
 				</section>
 			</section>
 		</section>
 	</header>
 
-	<!-- ****************************** Banner ************************** -->
 
 	<section id="banner">
 		<section class="container">
 			<section class="row">
 				<div class="col-md-6">
 					<div class="headings">
-						<h1 class="wow animated fadeInDown">アカウントが更新されました</h1>
-						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-5">
-								<div>
-									<a href="Index.jsp"
-										class="polo-btn store wow animated bounceInUp"
-										style="color: #000;"><i></i>トップページ</a>
-								</div>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-5">
-								<div>
-									<a href="MyPage.jsp"
-										class="polo-btn store wow animated bounceInUp"
-										style="color: #000;"><i></i>マイページ</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+
+
+
+<p>ポイント・チャージ残高・購入した漫画情報が<br>無くなりますがよろしいですか？</p>
+
+<div>
+<a href="UserLeaveResult.html"><input type="submit" value="はい"></a>
+<a href="Mypage.html"><input type="submit" value="いいえ"></a>
+</div>
 			</section>
 		</section>
 	</section>
 
-	<!-- ****************************** Gallery Section ************************** -->
+
 
 	<!-- All the scripts -->
 
@@ -87,6 +77,7 @@
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/owl.carousel.js"></script>
 	<script src="assets/js/script.js"></script>
+
 
 </body>
 </html>

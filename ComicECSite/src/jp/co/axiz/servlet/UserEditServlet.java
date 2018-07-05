@@ -7,9 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import jp.co.axiz.entity.UserInfo;
 
 /**
  * Servlet implementation class InsertServlet
@@ -34,8 +31,8 @@ public class UserEditServlet extends HttpServlet {
 		String userName = request.getParameter("name");
 		String pass = request.getParameter("pass");
 
-		UserInfo userInfo = new UserInfo();
-		//Daoの完成によってメソッド名の変更あり！！
+	/*	UserInfo userInfo = new UserInfo();
+
 		userInfo.setuserId(userId);
 		userInfo.setuserName(userName);
 		userInfo.setpassword(pass);
@@ -43,7 +40,7 @@ public class UserEditServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("registerUser", userInfo);
 
-	/*	if (name == null || name.isEmpty()) {
+		if (name == null || name.isEmpty()) {
 			request.setAttribute("errmsg", "名前は必須です");
 			request.getRequestDispatcher("insert.jsp").forward(request, response);
 			return;

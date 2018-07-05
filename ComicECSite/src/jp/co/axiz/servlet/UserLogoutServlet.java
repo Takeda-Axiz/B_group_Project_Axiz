@@ -57,5 +57,4 @@ public class UserLogoutServlet extends HttpServlet {
 
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
-
 }

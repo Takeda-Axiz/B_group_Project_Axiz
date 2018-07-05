@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class UserInfo {
 	/*---  Field  ---*/
-	private String userId;	//変数名概要
+	private String userId;			//ユーザID(メールアドレス)
 	private String deliveryUserId;	//変数名概要
 	private String userName;	//変数名概要
 	private String password;	//変数名概要

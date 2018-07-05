@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,58 +45,63 @@
 			<section class="row">
 				<div class="col-md-6">
 					<form action="" method="post">
-						<p><h3>※更新・削除する項目を選択してください</h3></p>
+						<p>
+						<h3>※更新・削除する項目を選択してください</h3>
+						</p>
 						<p>
 							<label for="inputEmail3" class=" col-xs-3 control-label">
-							ID:</label><input type="text" name="id">
+								ID:</label><input type="text" name="id">
 						</p>
 
 						<p>
 							<label for="inputEmail3" class=" col-xs-3 control-label">
-							作品名:</label><input type="text" name="id">
+								作品名:</label><input type="text" name="id">
 						</p>
 
 						<p>
 							<label for="inputEmail3" class=" col-xs-3 control-label">
-							巻数:</label><input type="text" name="id">
+								巻数:</label><input type="text" name="id">
 						</p>
 
 						<p>
 							<label for="inputEmail3" class=" col-xs-3 control-label">
-							原作者名:</label><input type="text" name="id">
+								原作者名:</label><input type="text" name="id">
 						</p>
 
 						<p>
 							<label for="inputEmail3" class=" col-xs-3 control-label">
-							カテゴリー:</label><input type="text" name="id">
+								カテゴリー:</label><input type="text" name="id">
 						</p>
 
 						<p>
 							<label for="inputEmail3" class=" col-xs-3 control-label">
-							発売日:</label><input type="text" name="id">
+								発売日:</label><input type="text" name="id">
 						</p>
 
 						<p>
 							<label for="inputEmail3" class=" col-xs-3 control-label">
-							出版社:</label><input type="text" name="id">
+								出版社:</label><input type="text" name="id">
 						</p>
 
 						<p>
 							<label for="inputEmail3" class=" col-xs-3 control-label">
-							本体価格:</label><input type="text" name="id">
+								本体価格:</label><input type="text" name="id">
 						</p>
 
-						<input class="btn btn-primary btn-lg" type="submit" value="更新する" onclick="location.href='ComicUpdate.html'; return false;">
-						<input class="btn btn-primary btn-lg" type="submit" value="削除する" onclick="location.href='ComicDelete.html'; return false;">
+						<input class="btn btn-primary btn-lg" type="submit" value="更新する"
+							onclick="location.href='ComicUpdate.html'; return false;">
+						<input class="btn btn-primary btn-lg" type="submit" value="削除する"
+							onclick="location.href='ComicDelete.html'; return false;">
 					</form>
 				</div>
 			</section>
 			<section class="row">
-				<img src="assets/img/clearline.png" class="img-responsive" alt="" style="margin: 0 auto;">
+				<img src="assets/img/clearline.png" class="img-responsive" alt=""
+					style="margin: 0 auto;">
 			</section>
 		</section>
 	</section>
-	
+
 	<!-- All the scripts -->
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>

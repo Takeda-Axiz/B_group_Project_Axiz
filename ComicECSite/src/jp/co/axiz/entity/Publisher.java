@@ -2,8 +2,8 @@ package jp.co.axiz.entity;
 
 public class Publisher {
 	/*---  Field  ---*/
-	private Integer publisherId;
-	private String publisherName;	//変数名概要
+	private Integer publisherId;	// 変数名概要
+	private String publisherName;	// 変数名概要
 
 	/*---  Field End  ---*/
 

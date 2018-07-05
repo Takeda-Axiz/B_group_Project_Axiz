@@ -27,15 +27,6 @@
 	href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700|Oxygen:400,300,700'
 	rel='stylesheet'>
 
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-<!--[if lt IE 9]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
 </head>
 <body>
 
@@ -55,26 +46,25 @@
 			<section class="row">
 				<div class="col-md-6">
 					<div class="headings">
+						<p>
+						<h3>
+							ポイント・チャージ残高・購入した漫画情報が<br>無くなりますがよろしいですか？
+						</h3>
+						</p>
 
-
-
-						<p><h3>ポイント・チャージ残高・購入した漫画情報が<br>無くなりますがよろしいですか？</h3></p>
-
-<form action="UserLeaveResult.jsp" method="post">
-<div>
-<input type="submit" class="btn btn-lg btn-primary btn-block" value="はい">
-<input type="submit" class="btn btn-lg btn-primary btn-block"
-									name="button" value="いいえ"
-									onclick="location.href='MyPage.jsp'; return false;">
-</div>
-</form>
-</div>
-</div>
+						<form action="UserLeaveResult.jsp" method="post">
+							<div>
+								<input type="submit" class="btn btn-lg btn-primary btn-block"
+									value="はい"> <input type="submit"
+									class="btn btn-lg btn-primary btn-block" name="button"
+									value="いいえ" onclick="location.href='MyPage.jsp'; return false;">
+							</div>
+						</form>
+					</div>
+				</div>
 			</section>
 		</section>
 	</section>
-
-
 
 	<!-- All the scripts -->
 
@@ -83,7 +73,6 @@
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/owl.carousel.js"></script>
 	<script src="assets/js/script.js"></script>
-
 
 </body>
 </html>

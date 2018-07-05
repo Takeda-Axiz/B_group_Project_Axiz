@@ -2,11 +2,11 @@ package jp.co.axiz.entity;
 
 public class UserComicInfo {
 	/*---  Field  ---*/
-	private Integer userComicId;	//変数名概要
-	private String userId;	//変数名概要
-	private Integer comicId;	//変数名概要
-	private Integer individualEvaluation;	//変数名概要
-	private String purchaseTimestamp;	//変数名概要
+	private Integer userComicId;			// 変数名概要
+	private String userId;					// 変数名概要
+	private Integer comicId;				// 変数名概要
+	private Integer individualEvaluation;	// 変数名概要
+	private String purchaseTimestamp;		// 変数名概要
 
 	/*---  Field End  ---*/
 

@@ -63,7 +63,7 @@
 
 							<div class="form-group">
 								<label class="required">※名前</label><input type="text"
-									class="form-control" name="use_rname">
+									class="form-control" name="user_name">
 							</div>
 							<div class="form-group">
 								<label class="required">※生年月日</label><input type="date"

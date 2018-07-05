@@ -4,16 +4,16 @@ import java.sql.Date;
 
 public class UserInfo {
 	/*---  Field  ---*/
-	private String userId;			//ユーザID(メールアドレス)
-	private String deliveryUserId;	//変数名概要
-	private String userName;	//変数名概要
-	private String password;	//変数名概要
-	private Date birthday;	//変数名概要
-	private Integer balance;	//変数名概要
-	private Integer point;	//変数名概要
-	private String insertTimestamp;	//変数名概要
-	private String updateTimestamp;	//変数名概要
-	private Integer deleteFlg;	//変数名概要
+	private String userId;				// ユーザID(メールアドレス)
+	private String deliveryUserId;		// 変数名概要
+	private String userName;			// 変数名概要
+	private String password;			// 変数名概要
+	private Date birthday;				// 変数名概要
+	private Integer balance;			// 変数名概要
+	private Integer point;				// 変数名概要
+	private String insertTimestamp;		// 変数名概要
+	private String updateTimestamp;		// 変数名概要
+	private Integer deleteFlg;			// 変数名概要
 
 	/*---  Field End  ---*/
 

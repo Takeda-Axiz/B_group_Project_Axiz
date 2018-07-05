@@ -39,7 +39,7 @@ public class UserRegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// doPost
 		String userName = (String) request.getAttribute("user_name");
-		String birthday = (String) request.getAttribute("user_birthday");
+		String birthday = (String) request.getAttribute("birthday");
 		String userId = (String) request.getAttribute("user_id");
 		String password = (String) request.getAttribute("password");
 		Boolean isErr = false;
@@ -84,13 +84,13 @@ public class UserRegisterServlet extends HttpServlet {
 
 		if(isNotRegist == true) {
 			request.setAttribute("user_name", userInfo.getUserId());
-			request.setAttribute("user_birthday", userInfo.getBirthday());
+			request.setAttribute("birthday", userInfo.getBirthday());
 			request.setAttribute("user_id", userInfo.getUserId());
 
 			request.getRequestDispatcher("/UserRegisterComfirm.jsp").forward(request, response);
 		}else {
 			request.setAttribute("user_name", userInfo.getUserId());
-			request.setAttribute("user_birthday", userInfo.getBirthday());
+			request.setAttribute("birthday", userInfo.getBirthday());
 			request.setAttribute("user_id", userInfo.getUserId());
 			request.setAttribute("errmsg", ERRMSG_AR);
 

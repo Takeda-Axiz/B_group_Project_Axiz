@@ -2,42 +2,47 @@ package jp.co.axiz.entity;
 
 import java.sql.Date;
 
-public class ComicInfo {
+public class JoinComicInfo {
 	/*---  Field  ---*/
-	private Integer comicId;					// 変数名概要
-	private String comicTitle;					// 変数名概要
-	private Integer numberOfTurns;				// 変数名概要
-	private String Introduction;				// 変数名概要
-	private Integer categoryId;					// 変数名概要
-	private Integer basePrice;					// 変数名概要
-	private Integer taxId;						// 変数名概要
-	private Integer publisherId;				// 変数名概要
-	private Double comprehensiveEvaluation;		// 変数名概要
-	private Date releaseDate;					// 変数名概要
-	private String authorName;					// 変数名概要
-	private String imageData;					// 変数名概要
-	private String viewPage;					// 変数名概要
-	private String insertTimestamp;				// 変数名概要
-	private String updateTimestamp;				// 変数名概要
-	private Integer deleteFlag;					// 変数名概要
+	private Integer comicId;					// 漫画ID
+	private String comicTitle;					// 漫画タイトル
+	private Integer numberOfTurns;				// 巻数
+	private String Introduction;				// 紹介文
+	private Integer categoryId;					// カテゴリID
+	private Integer basePrice;					// 原価
+	private Integer taxId;						// 消費税ID
+	private Integer publisherId;				// 出版社ID
+	private Double comprehensiveEvaluation;		// 総合評価
+	private Date releaseDate;					// 発売日
+	private String authorName;					// 原作者名
+	private String imageData;					// 表紙画像データ
+	private String viewPage;					// 閲覧用URL
+	private String insertTimestamp;				// 登録日時
+	private String updateTimestamp;				// 更新日時
+	private Integer deleteFlag;					// 削除フラグ
+
+	private String categoryName;				// カテゴリ名
+	private String publisherName;				// 出版社名
+	private Double tax;							// 消費税
+	private Date introductionDate;				// 導入日
 
 	/*---  Field End  ---*/
 
 	/*---  Constructor  ---*/
 	//  処理概要
-	public ComicInfo() {
-
+	public JoinComicInfo() {
 	}
 
-	public ComicInfo(Integer comicId, String comicTitle, Integer numberOfTurns, String introduction, Integer categoryId,
-			Integer basePrice, Integer taxId, Integer publisherId, Double comprehensiveEvaluation, Date releaseDate,
-			String authorName, String imageData, String viewPage, String insertTimestamp, String updateTimestamp,
-			Integer deleteFlag) {
+	public JoinComicInfo(Integer comicId, String comicTitle, Integer numberOfTurns, String introduction,
+			Integer categoryId, Integer basePrice, Integer taxId, Integer publisherId, Double comprehensiveEvaluation,
+			Date releaseDate, String authorName, String imageData, String viewPage, String insertTimestamp,
+			String updateTimestamp, Integer deleteFlag, String categoryName, String publisherName, Double tax,
+			Date introductionDate) {
 		super();
 		this.comicId = comicId;
 		this.comicTitle = comicTitle;
 		this.numberOfTurns = numberOfTurns;
-		this.Introduction = introduction;
+		Introduction = introduction;
 		this.categoryId = categoryId;
 		this.basePrice = basePrice;
 		this.taxId = taxId;
@@ -50,6 +55,10 @@ public class ComicInfo {
 		this.insertTimestamp = insertTimestamp;
 		this.updateTimestamp = updateTimestamp;
 		this.deleteFlag = deleteFlag;
+		this.categoryName = categoryName;
+		this.publisherName = publisherName;
+		this.tax = tax;
+		this.introductionDate = introductionDate;
 	}
 
 	/*---  Constructor End  ---*/
@@ -184,5 +193,38 @@ public class ComicInfo {
 		this.deleteFlag = deleteFlag;
 	}
 
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+	public String getPublisherName() {
+		return publisherName;
+	}
+
+	public void setPublisherName(String publisherName) {
+		this.publisherName = publisherName;
+	}
+
+	public Double getTax() {
+		return tax;
+	}
+
+	public void setTax(Double tax) {
+		this.tax = tax;
+	}
+
+	public Date getIntroductionDate() {
+		return introductionDate;
+	}
+
+	public void setIntroductionDate(Date introductionDate) {
+		this.introductionDate = introductionDate;
+	}
+
 	/*---  Method End  ---*/
+
 }

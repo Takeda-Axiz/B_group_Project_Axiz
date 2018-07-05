@@ -2,8 +2,8 @@ package jp.co.axiz.entity;
 
 public class AdminInfo {
 	/*---  Field  ---*/
-	private String adminId;
-	private String adminName;
+	private String adminId;			//変数名概要
+	private String adminName;		//変数名概要
 	private String adminPassword;	//変数名概要
 
 	/*---  Field End  ---*/

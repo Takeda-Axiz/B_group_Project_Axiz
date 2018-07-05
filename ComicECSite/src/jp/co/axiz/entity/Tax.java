@@ -4,9 +4,9 @@ import java.sql.Date;
 
 public class Tax {
 	/*---  Field  ---*/
-	private Integer taxId;	//変数名概要
-	private Double tax;	//変数名概要
-	private Date introductionDate;	//変数名概要
+	private Integer taxId;				// 変数名概要
+	private Double tax;					// 変数名概要
+	private Date introductionDate;		// 変数名概要
 
 	/*---  Field End  ---*/
 

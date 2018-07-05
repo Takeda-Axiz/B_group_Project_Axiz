@@ -37,7 +37,7 @@ public class UserRegisterConfirmServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// doPost
 		String userName = (String) request.getAttribute("user_name");
-		String birthday = (String) request.getAttribute("user_birthday");
+		String birthday = (String) request.getAttribute("birthday");
 		String userId = (String) request.getAttribute("user_id");
 		String password = (String) request.getAttribute("password");
 

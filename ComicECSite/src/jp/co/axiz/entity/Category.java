@@ -3,7 +3,7 @@ package jp.co.axiz.entity;
 public class Category {
 	/*---  Field  ---*/
 	private Integer categoryId;		//変数名概要
-	private String categoryName;		//変数名概要
+	private String categoryName;	//変数名概要
 
 	/*---  Field End  ---*/
 

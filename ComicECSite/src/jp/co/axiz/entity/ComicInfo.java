@@ -7,7 +7,7 @@ public class ComicInfo {
 	private Integer comicId;					// 変数名概要
 	private String comicTitle;					// 変数名概要
 	private Integer numberOfTurns;				// 変数名概要
-	private String Introduction;				// 変数名概要
+	private String introduction;				// 変数名概要
 	private Integer categoryId;					// 変数名概要
 	private Integer basePrice;					// 変数名概要
 	private Integer taxId;						// 変数名概要
@@ -37,7 +37,7 @@ public class ComicInfo {
 		this.comicId = comicId;
 		this.comicTitle = comicTitle;
 		this.numberOfTurns = numberOfTurns;
-		this.Introduction = introduction;
+		this.introduction = introduction;
 		this.categoryId = categoryId;
 		this.basePrice = basePrice;
 		this.taxId = taxId;
@@ -81,11 +81,11 @@ public class ComicInfo {
 	}
 
 	public String getIntroduction() {
-		return Introduction;
+		return introduction;
 	}
 
 	public void setIntroduction(String introduction) {
-		Introduction = introduction;
+		this.introduction = introduction;
 	}
 
 	public Integer getCategoryId() {

@@ -15,6 +15,13 @@ public class Tax {
 	public Tax() {
 	}
 
+	public Tax(Integer taxId, Double tax, Date introductionDate) {
+		super();
+		this.taxId = taxId;
+		this.tax = tax;
+		this.introductionDate = introductionDate;
+	}
+
 	/*---  Constructor End  ---*/
 
 	/*---  Method  ---*/

@@ -29,6 +29,29 @@ public class ComicInfo {
 
 	}
 
+	public ComicInfo(Integer comicId, String comicTitle, Integer numberOfTurns, String introduction, Integer categoryId,
+			Integer basePrice, Integer taxId, Integer publisherId, Double comprehensiveEvaluation, Date releaseDate,
+			String authorName, String imageData, String viewPage, String insertTimestamp, String updateTimestamp,
+			Integer deleteFlag) {
+		super();
+		this.comicId = comicId;
+		this.comicTitle = comicTitle;
+		this.numberOfTurns = numberOfTurns;
+		this.Introduction = introduction;
+		this.categoryId = categoryId;
+		this.basePrice = basePrice;
+		this.taxId = taxId;
+		this.publisherId = publisherId;
+		this.comprehensiveEvaluation = comprehensiveEvaluation;
+		this.releaseDate = releaseDate;
+		this.authorName = authorName;
+		this.imageData = imageData;
+		this.viewPage = viewPage;
+		this.insertTimestamp = insertTimestamp;
+		this.updateTimestamp = updateTimestamp;
+		this.deleteFlag = deleteFlag;
+	}
+
 	/*---  Constructor End  ---*/
 
 	/*---  Method  ---*/

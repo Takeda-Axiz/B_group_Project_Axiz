@@ -22,6 +22,21 @@ public class UserInfo {
 	public UserInfo() {
 	}
 
+	public UserInfo(String userId, String deliveryUserId, String userName, String password, Date birthday,
+			Integer balance, Integer point, String insertTimestamp, String updateTimestamp, Integer deleteFlg) {
+		super();
+		this.userId = userId;
+		this.deliveryUserId = deliveryUserId;
+		this.userName = userName;
+		this.password = password;
+		this.birthday = birthday;
+		this.balance = balance;
+		this.point = point;
+		this.insertTimestamp = insertTimestamp;
+		this.updateTimestamp = updateTimestamp;
+		this.deleteFlg = deleteFlg;
+	}
+
 	/*---  Constructor End  ---*/
 
 	/*---  Method  ---*/

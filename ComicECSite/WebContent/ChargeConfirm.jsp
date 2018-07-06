@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
@@ -61,13 +61,18 @@
 
 							<form action="ChargeResult.html" method="post">
 								<div class="form">
-									<label>シリアルコード</label> <input type="text" class="form-control"
-										name="serialCode" value="0123401234" readonly>
+									<label>シリアルコード</label>
+									<input type="hidden" class="form-control" name="serialCode" value="${fn:escapeXml(SerialCode)}">
+									<div class="formbox">
+										<% ${fn:escapeXml(SerialCode)} %>
+									</div>
 								</div>
 
 								<div class="form">
-									<label>チャージ金額</label> <input type="text" class="form-control"
-										name="chargeMoney" value="100000" readonly><label>円</label>
+									<label>チャージ金額</label> <input type="hidden" class="form-control" name="chargeMoney" value="${fn:escapeXml(Money)}">
+									<div class="formbox">
+										<% ${fn:escapeXml(Money)} %>
+									</div>
 								</div>
 
 								<div class="submit">
@@ -87,8 +92,20 @@
 		</section>
 	</section>
 
-	<footer></footer>
+	<!-- ****************************** Footer ************************** -->
 
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
+	</section>
 
 	<!-- All the scripts -->
 

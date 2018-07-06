@@ -1,6 +1,7 @@
 package jp.co.axiz.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -67,30 +68,32 @@ public class JoinComicInfoDao {
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				JoinComicInfo comic = new JoinComicInfo(
-						rs.getInt("comic_id"),
-						rs.getString("comic_title"),
-						rs.getInt("number_of_turns"),
-						rs.getString("introduction"),
-						rs.getInt("category_id"),
-						rs.getInt("base_price"),
-						rs.getInt("tax_id"),
-						rs.getInt("publisher_id"),
-						rs.getDouble("comprehensive_evaluation"),
-						rs.getDate("release_date"),
-						rs.getString("author_name"),
-						rs.getString("image_data"),
-						rs.getString("view_page"),
-						rs.getString("insert_timestamp"),
-						rs.getString("update_timestamp"),
-						rs.getInt("delete_flag"),
-						rs.getString("category_name"),
-						rs.getString("publisher_name"),
-						rs.getDouble("tax"),
-						rs.getDate("introduction_date")
-					);
-
-				list.add(comic);
+				// 削除済みかどうか確認
+				if(rs.getInt("delete_flag") == 0) {
+					JoinComicInfo comic = new JoinComicInfo(
+							rs.getInt("comic_id"),
+							rs.getString("comic_title"),
+							rs.getInt("number_of_turns"),
+							rs.getString("introduction"),
+							rs.getInt("category_id"),
+							rs.getInt("base_price"),
+							rs.getInt("tax_id"),
+							rs.getInt("publisher_id"),
+							rs.getDouble("comprehensive_evaluation"),
+							rs.getDate("release_date"),
+							rs.getString("author_name"),
+							rs.getString("image_data"),
+							rs.getString("view_page"),
+							rs.getString("insert_timestamp"),
+							rs.getString("update_timestamp"),
+							rs.getInt("delete_flag"),
+							rs.getString("category_name"),
+							rs.getString("publisher_name"),
+							rs.getDouble("tax"),
+							rs.getDate("introduction_date")
+						);
+					list.add(comic);
+				}
 			}
 			return list;
 		} catch (SQLException e) {
@@ -99,7 +102,7 @@ public class JoinComicInfoDao {
 	}
 
 	//  処理概要
-	public List<JoinComicInfo> findByComicTitle() {
+	public List<JoinComicInfo> findByComicTitle(String comicTitle) {
 		// 変数宣言
 		List<JoinComicInfo>list = new ArrayList<JoinComicInfo>();
 
@@ -107,33 +110,36 @@ public class JoinComicInfoDao {
 
 		try (PreparedStatement stmt = connection.prepareStatement
 				(SQL_SELECT_WHERE_COMIC_TITLE)) {
+			stmt.setString(1, comicTitle);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				JoinComicInfo comic = new JoinComicInfo(
-						rs.getInt("comic_id"),
-						rs.getString("comic_title"),
-						rs.getInt("number_of_turns"),
-						rs.getString("introduction"),
-						rs.getInt("category_id"),
-						rs.getInt("base_price"),
-						rs.getInt("tax_id"),
-						rs.getInt("publisher_id"),
-						rs.getDouble("comprehensive_evaluation"),
-						rs.getDate("release_date"),
-						rs.getString("author_name"),
-						rs.getString("image_data"),
-						rs.getString("view_page"),
-						rs.getString("insert_timestamp"),
-						rs.getString("update_timestamp"),
-						rs.getInt("delete_flag"),
-						rs.getString("category_name"),
-						rs.getString("publisher_name"),
-						rs.getDouble("tax"),
-						rs.getDate("introduction_date")
-					);
-
-				list.add(comic);
+				// 削除済みかどうか確認
+				if(rs.getInt("delete_flag") == 0) {
+					JoinComicInfo comic = new JoinComicInfo(
+							rs.getInt("comic_id"),
+							rs.getString("comic_title"),
+							rs.getInt("number_of_turns"),
+							rs.getString("introduction"),
+							rs.getInt("category_id"),
+							rs.getInt("base_price"),
+							rs.getInt("tax_id"),
+							rs.getInt("publisher_id"),
+							rs.getDouble("comprehensive_evaluation"),
+							rs.getDate("release_date"),
+							rs.getString("author_name"),
+							rs.getString("image_data"),
+							rs.getString("view_page"),
+							rs.getString("insert_timestamp"),
+							rs.getString("update_timestamp"),
+							rs.getInt("delete_flag"),
+							rs.getString("category_name"),
+							rs.getString("publisher_name"),
+							rs.getDouble("tax"),
+							rs.getDate("introduction_date")
+						);
+					list.add(comic);
+				}
 			}
 			return list;
 		} catch (SQLException e) {
@@ -142,7 +148,7 @@ public class JoinComicInfoDao {
 	}
 
 	//  処理概要
-	public List<JoinComicInfo> findByAuthor() {
+	public List<JoinComicInfo> findByAuthor(String author) {
 		// 変数宣言
 		List<JoinComicInfo>list = new ArrayList<JoinComicInfo>();
 
@@ -150,33 +156,36 @@ public class JoinComicInfoDao {
 
 		try (PreparedStatement stmt = connection.prepareStatement
 				(SQL_SELECT_WHERE_AUTHOR)) {
+			stmt.setString(1, author);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				JoinComicInfo comic = new JoinComicInfo(
-						rs.getInt("comic_id"),
-						rs.getString("comic_title"),
-						rs.getInt("number_of_turns"),
-						rs.getString("introduction"),
-						rs.getInt("category_id"),
-						rs.getInt("base_price"),
-						rs.getInt("tax_id"),
-						rs.getInt("publisher_id"),
-						rs.getDouble("comprehensive_evaluation"),
-						rs.getDate("release_date"),
-						rs.getString("author_name"),
-						rs.getString("image_data"),
-						rs.getString("view_page"),
-						rs.getString("insert_timestamp"),
-						rs.getString("update_timestamp"),
-						rs.getInt("delete_flag"),
-						rs.getString("category_name"),
-						rs.getString("publisher_name"),
-						rs.getDouble("tax"),
-						rs.getDate("introduction_date")
-					);
-
-				list.add(comic);
+				// 削除済みかどうか確認
+				if(rs.getInt("delete_flag") == 0) {
+					JoinComicInfo comic = new JoinComicInfo(
+							rs.getInt("comic_id"),
+							rs.getString("comic_title"),
+							rs.getInt("number_of_turns"),
+							rs.getString("introduction"),
+							rs.getInt("category_id"),
+							rs.getInt("base_price"),
+							rs.getInt("tax_id"),
+							rs.getInt("publisher_id"),
+							rs.getDouble("comprehensive_evaluation"),
+							rs.getDate("release_date"),
+							rs.getString("author_name"),
+							rs.getString("image_data"),
+							rs.getString("view_page"),
+							rs.getString("insert_timestamp"),
+							rs.getString("update_timestamp"),
+							rs.getInt("delete_flag"),
+							rs.getString("category_name"),
+							rs.getString("publisher_name"),
+							rs.getDouble("tax"),
+							rs.getDate("introduction_date")
+						);
+					list.add(comic);
+				}
 			}
 			return list;
 		} catch (SQLException e) {
@@ -185,7 +194,7 @@ public class JoinComicInfoDao {
 	}
 
 	//  処理概要
-	public List<JoinComicInfo> findByCategory() {
+	public List<JoinComicInfo> findByCategory(String category) {
 		// 変数宣言
 		List<JoinComicInfo>list = new ArrayList<JoinComicInfo>();
 
@@ -193,33 +202,36 @@ public class JoinComicInfoDao {
 
 		try (PreparedStatement stmt = connection.prepareStatement
 				(SQL_SELECT_WHERE_CATEGORY)) {
+			stmt.setString(1, category);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				JoinComicInfo comic = new JoinComicInfo(
-						rs.getInt("comic_id"),
-						rs.getString("comic_title"),
-						rs.getInt("number_of_turns"),
-						rs.getString("introduction"),
-						rs.getInt("category_id"),
-						rs.getInt("base_price"),
-						rs.getInt("tax_id"),
-						rs.getInt("publisher_id"),
-						rs.getDouble("comprehensive_evaluation"),
-						rs.getDate("release_date"),
-						rs.getString("author_name"),
-						rs.getString("image_data"),
-						rs.getString("view_page"),
-						rs.getString("insert_timestamp"),
-						rs.getString("update_timestamp"),
-						rs.getInt("delete_flag"),
-						rs.getString("category_name"),
-						rs.getString("publisher_name"),
-						rs.getDouble("tax"),
-						rs.getDate("introduction_date")
-					);
-
-				list.add(comic);
+				// 削除済みかどうか確認
+				if(rs.getInt("delete_flag") == 0) {
+					JoinComicInfo comic = new JoinComicInfo(
+							rs.getInt("comic_id"),
+							rs.getString("comic_title"),
+							rs.getInt("number_of_turns"),
+							rs.getString("introduction"),
+							rs.getInt("category_id"),
+							rs.getInt("base_price"),
+							rs.getInt("tax_id"),
+							rs.getInt("publisher_id"),
+							rs.getDouble("comprehensive_evaluation"),
+							rs.getDate("release_date"),
+							rs.getString("author_name"),
+							rs.getString("image_data"),
+							rs.getString("view_page"),
+							rs.getString("insert_timestamp"),
+							rs.getString("update_timestamp"),
+							rs.getInt("delete_flag"),
+							rs.getString("category_name"),
+							rs.getString("publisher_name"),
+							rs.getDouble("tax"),
+							rs.getDate("introduction_date")
+						);
+					list.add(comic);
+				}
 			}
 			return list;
 		} catch (SQLException e) {
@@ -228,7 +240,7 @@ public class JoinComicInfoDao {
 	}
 
 	//  処理概要
-	public List<JoinComicInfo> findBySaleDay() {
+	public List<JoinComicInfo> findBySaleDay(Date releaseDate) {
 		// 変数宣言
 		List<JoinComicInfo>list = new ArrayList<JoinComicInfo>();
 
@@ -236,33 +248,36 @@ public class JoinComicInfoDao {
 
 		try (PreparedStatement stmt = connection.prepareStatement
 				(SQL_SELECT_WHERE_SALEDAY)) {
+			stmt.setDate(1, releaseDate);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				JoinComicInfo comic = new JoinComicInfo(
-						rs.getInt("comic_id"),
-						rs.getString("comic_title"),
-						rs.getInt("number_of_turns"),
-						rs.getString("introduction"),
-						rs.getInt("category_id"),
-						rs.getInt("base_price"),
-						rs.getInt("tax_id"),
-						rs.getInt("publisher_id"),
-						rs.getDouble("comprehensive_evaluation"),
-						rs.getDate("release_date"),
-						rs.getString("author_name"),
-						rs.getString("image_data"),
-						rs.getString("view_page"),
-						rs.getString("insert_timestamp"),
-						rs.getString("update_timestamp"),
-						rs.getInt("delete_flag"),
-						rs.getString("category_name"),
-						rs.getString("publisher_name"),
-						rs.getDouble("tax"),
-						rs.getDate("introduction_date")
-					);
-
-				list.add(comic);
+				// 削除済みかどうか確認
+				if(rs.getInt("delete_flag") == 0) {
+					JoinComicInfo comic = new JoinComicInfo(
+							rs.getInt("comic_id"),
+							rs.getString("comic_title"),
+							rs.getInt("number_of_turns"),
+							rs.getString("introduction"),
+							rs.getInt("category_id"),
+							rs.getInt("base_price"),
+							rs.getInt("tax_id"),
+							rs.getInt("publisher_id"),
+							rs.getDouble("comprehensive_evaluation"),
+							rs.getDate("release_date"),
+							rs.getString("author_name"),
+							rs.getString("image_data"),
+							rs.getString("view_page"),
+							rs.getString("insert_timestamp"),
+							rs.getString("update_timestamp"),
+							rs.getInt("delete_flag"),
+							rs.getString("category_name"),
+							rs.getString("publisher_name"),
+							rs.getDouble("tax"),
+							rs.getDate("introduction_date")
+						);
+					list.add(comic);
+				}
 			}
 			return list;
 		} catch (SQLException e) {
@@ -271,7 +286,7 @@ public class JoinComicInfoDao {
 	}
 
 	//  処理概要
-	public List<JoinComicInfo> findByPublisher() {
+	public List<JoinComicInfo> findByPublisher(String publisher) {
 		// 変数宣言
 		List<JoinComicInfo>list = new ArrayList<JoinComicInfo>();
 
@@ -279,33 +294,36 @@ public class JoinComicInfoDao {
 
 		try (PreparedStatement stmt = connection.prepareStatement
 				(SQL_SELECT_WHERE_PUBLISHER)) {
+			stmt.setString(1, publisher);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				JoinComicInfo comic = new JoinComicInfo(
-						rs.getInt("comic_id"),
-						rs.getString("comic_title"),
-						rs.getInt("number_of_turns"),
-						rs.getString("introduction"),
-						rs.getInt("category_id"),
-						rs.getInt("base_price"),
-						rs.getInt("tax_id"),
-						rs.getInt("publisher_id"),
-						rs.getDouble("comprehensive_evaluation"),
-						rs.getDate("release_date"),
-						rs.getString("author_name"),
-						rs.getString("image_data"),
-						rs.getString("view_page"),
-						rs.getString("insert_timestamp"),
-						rs.getString("update_timestamp"),
-						rs.getInt("delete_flag"),
-						rs.getString("category_name"),
-						rs.getString("publisher_name"),
-						rs.getDouble("tax"),
-						rs.getDate("introduction_date")
-					);
-
-				list.add(comic);
+				// 削除済みかどうか確認
+				if(rs.getInt("delete_flag") == 0) {
+					JoinComicInfo comic = new JoinComicInfo(
+							rs.getInt("comic_id"),
+							rs.getString("comic_title"),
+							rs.getInt("number_of_turns"),
+							rs.getString("introduction"),
+							rs.getInt("category_id"),
+							rs.getInt("base_price"),
+							rs.getInt("tax_id"),
+							rs.getInt("publisher_id"),
+							rs.getDouble("comprehensive_evaluation"),
+							rs.getDate("release_date"),
+							rs.getString("author_name"),
+							rs.getString("image_data"),
+							rs.getString("view_page"),
+							rs.getString("insert_timestamp"),
+							rs.getString("update_timestamp"),
+							rs.getInt("delete_flag"),
+							rs.getString("category_name"),
+							rs.getString("publisher_name"),
+							rs.getDouble("tax"),
+							rs.getDate("introduction_date")
+						);
+					list.add(comic);
+				}
 			}
 			return list;
 		} catch (SQLException e) {

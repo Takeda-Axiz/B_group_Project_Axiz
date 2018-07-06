@@ -294,7 +294,7 @@ a:hover {
 .logo {
     font-family: 'caviar_dreams';
     color: #000;
-    font-size: 2.5em;
+    font-size: 2.3em;
     line-height: 1.6;
 }
 #logo_menu {
@@ -412,6 +412,16 @@ a:hover {
 }
 
 #screenshots .item{
+  padding: 0px 0px;
+  margin: 10px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+#screenshots2 .item{
   padding: 0px 0px;
   margin: 10px;
   color: #FFF;
@@ -871,4 +881,73 @@ input:-moz-placeholder, textarea:-moz-placeholder {
     .btn-custom {
         padding: 5px 0px;
     }
+}
+
+a.title{
+  color: #333;
+  line-height: 1.2;
+  border-bottom: solid 1px #999;
+  margin-bottom: 8px;
+}
+
+a.title {
+  font-size: 15px;
+}
+
+
+
+
+
+.formbox {  background: #ffffff;
+  width: 556px;
+  height: 35px;
+  border: 1px solid #cccccc;
+  padding-left: 10px;
+    padding-top: 4px;
+   border-radius: 5px 5px 5px 5px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+#pageTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+ 
+
+#pageTop i {
+  padding-top: 6px
+}
+
+ 
+
+#pageTop a {
+  display: block;
+  z-index: 999;
+  padding: 5px 0 0 0px;
+  border-radius: 30px;
+  width: 80px;
+  height: 50px;
+  background-color: #7FFFD4;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+ 
+
+#pageTop a:hover {
+  text-decoration: none;
+  opacity: 0.7;
 }

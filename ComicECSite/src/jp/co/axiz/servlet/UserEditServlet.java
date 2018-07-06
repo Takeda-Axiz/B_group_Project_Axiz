@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jp.co.axiz.entity.UserInfo;
+
 /**
  * Servlet implementation class InsertServlet
  */
@@ -31,9 +33,9 @@ public class UserEditServlet extends HttpServlet {
 		String userName = request.getParameter("name");
 		String pass = request.getParameter("pass");
 
-	/*	UserInfo userInfo = new UserInfo();
+		UserInfo userInfo = new UserInfo();
 
-		userInfo.setuserId(userId);
+	/*	userInfo.setuserId(userId);
 		userInfo.setuserName(userName);
 		userInfo.setpassword(pass);
 

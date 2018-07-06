@@ -32,19 +32,17 @@ public class AdminLoginServlet extends HttpServlet {
 		String id;
 		String pass;
 		String setName;
-		Boolean dao = false;
+		Boolean dao = false;//serviceのメソッドが入る
 		AdminInfo adminInfo = new AdminInfo();
 		HttpSession session = request.getSession();
 
 		id = request.getParameter("id");
 		pass = request.getParameter("pass");
 
-		if(dao/*()*/ == true) {
+		if(dao == true) {
 			setName = adminInfo.getAdminName();
 			session.setAttribute("user", setName);
 		}
-
 		request.getRequestDispatcher("/AdminTop.jsp").forward(request, response);
 	}
 }
-

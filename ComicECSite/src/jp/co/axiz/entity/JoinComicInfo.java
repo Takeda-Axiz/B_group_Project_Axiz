@@ -7,7 +7,7 @@ public class JoinComicInfo {
 	private Integer comicId;					// 漫画ID
 	private String comicTitle;					// 漫画タイトル
 	private Integer numberOfTurns;				// 巻数
-	private String Introduction;				// 紹介文
+	private String introduction;				// 紹介文
 	private Integer categoryId;					// カテゴリID
 	private Integer basePrice;					// 原価
 	private Integer taxId;						// 消費税ID
@@ -42,7 +42,7 @@ public class JoinComicInfo {
 		this.comicId = comicId;
 		this.comicTitle = comicTitle;
 		this.numberOfTurns = numberOfTurns;
-		Introduction = introduction;
+		this.introduction = introduction;
 		this.categoryId = categoryId;
 		this.basePrice = basePrice;
 		this.taxId = taxId;
@@ -90,11 +90,11 @@ public class JoinComicInfo {
 	}
 
 	public String getIntroduction() {
-		return Introduction;
+		return introduction;
 	}
 
 	public void setIntroduction(String introduction) {
-		Introduction = introduction;
+		this.introduction = introduction;
 	}
 
 	public Integer getCategoryId() {

@@ -22,7 +22,7 @@ public class ComicInfoDao {
 		"INSERT INTO comic_info (comic_title, number_of_turns, introduction, category_id, "
 		+ "base_price, tax_id, publisher_id, comprehensive_evaluation, release_date, "
 		+ "author_name, image_data, view_page, insert_timestamp, update_timestamp, delete_flag) "
-		+ "VALUES (?, '', ?, ?, ?, '', ?, ?, ?, ?, '', '', '', '', '')";
+		+ "VALUES (?, ?, ?, (SELECT category_id FROM category WHERE category_name = ?), ?, '1', (SELECT publisher_id FROM publisher WHERE publisher_name = ?), ?, ?, ?, ?, ?, ?, '1970-01-01 00:00:00', '0')";
 	// (comicId, comicTitle, numberOfTurns, introduction, categoryId, basePrice, taxId, publisherId, comprehensiveEvaluation, releaseDate, authorName, imageData, viewPage, insertTimestamp, updateTimestamp, deleteFlag)
 	//	private static final String SQL_UPDATE =
 	//		"UPDATE comic_info SET delivery_user_id = ?, user_nanme = ?, password = ?, birthday = ?, update_timestamp = ?";
@@ -92,7 +92,58 @@ public class ComicInfoDao {
 	 *
 	 * @return
 	 */
-	public void insert(String title, String category, Integer price, String publisher,
+	public void insert(String title, String category, Integer price,
+			String publisher, Integer evaluation, Date releaseDate,
+			String author, String introduction, String timeStamp) {
+		// 変数宣言
+		Integer categoryId;
+		Integer publisherId;
+		List<Category> listCategory;
+		List<Publisher> listPublisher;
+
+		CategoryDao categoryDao = new CategoryDao();
+		PublisherDao publisherDao = new PublisherDao();
+
+		// 初期化
+
+		listCategory = categoryDao.findByCategoryName(category);
+
+		if(listCategory == null) {
+			categoryDao.insert(category);
+		}
+		categoryId = listCategory.get(0).getCategoryId();
+
+		listPublisher = publisherDao.findByPublisherName(publisher);
+
+		if(listPublisher == null) {
+			publisherDao.insert(publisher);
+		}
+		publisherId = (Integer) listPublisher.get(0).getPublisherId();
+
+		try (PreparedStatement stmt = connection.prepareStatement
+				(SQL_INSERT)) {
+			stmt.setString(1, title);			// 1
+			stmt.setString(2, introduction);	// 8
+			stmt.setInt(3, categoryId);			// 2
+			stmt.setInt(4, price);				// 3
+			stmt.setInt(5, publisherId);		// 4
+			stmt.setInt(6, evaluation);			// 5
+			stmt.setDate(7, releaseDate);		// 6
+			stmt.setString(8, author);			// 7
+			stmt.setString(9, timeStamp);		// 9
+
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 漫画情報更新
+	 *
+	 * @return
+	 */
+	public void update(Integer comicId, String title, String category, Integer price, String publisher,
 			Integer evaluation, Date releaseDate, String author, String introduction) {
 		// 変数宣言
 		Integer categoryId;
@@ -104,7 +155,7 @@ public class ComicInfoDao {
 		PublisherDao publisherDao = new PublisherDao();
 
 		// 初期化
-		
+
 		listCategory = categoryDao.findByCategoryName(category);
 
 		if(listCategory == null) {

@@ -34,7 +34,7 @@
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="AdminTop.html">管理者専用ページ</a>
+					<a class="logo" href="AdminTop.jsp">管理者専用ページ</a>
 				</section>
 			</section>
 		</section>

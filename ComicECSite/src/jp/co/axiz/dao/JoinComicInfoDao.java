@@ -22,27 +22,27 @@ public class JoinComicInfoDao {
 		"SELECT * FROM comic_info ci LEFT OUTER JOIN "
 		+ "category ct ON ci.category_id = ct.category_id LEFT OUTER JOIN "
 		+ "publisher pb ON ci.publisher_id = pb.publisher_id LEFT OUTER JOIN "
-		+ "tax tax ON ci.tax_id = tax.tax_id WHERE comic_title = ?";
+		+ "tax tax ON ci.tax_id = tax.tax_id WHERE comic_title LIKE ? ORDER BY comic_title";
 	private static final String SQL_SELECT_WHERE_AUTHOR =
 		"SELECT * FROM comic_info ci LEFT OUTER JOIN "
 		+ "category ct ON ci.category_id = ct.category_id LEFT OUTER JOIN "
 		+ "publisher pb ON ci.publisher_id = pb.publisher_id LEFT OUTER JOIN "
-		+ "tax tax ON ci.tax_id = tax.tax_id WHERE author_name = ?";
+		+ "tax tax ON ci.tax_id = tax.tax_id WHERE author_name LIKE ? ORDER BY author_name";
 	private static final String SQL_SELECT_WHERE_CATEGORY =
 		"SELECT * FROM comic_info ci LEFT OUTER JOIN "
 		+ "category ct ON ci.category_id = ct.category_id LEFT OUTER JOIN "
 		+ "publisher pb ON ci.publisher_id = pb.publisher_id LEFT OUTER JOIN "
-		+ "tax tax ON ci.tax_id = tax.tax_id WHERE category_name = ?";
+		+ "tax tax ON ci.tax_id = tax.tax_id WHERE category_name LIKE ? ORDER BY category_id";
 	private static final String SQL_SELECT_WHERE_SALEDAY =
 		"SELECT * FROM comic_info ci LEFT OUTER JOIN "
 		+ "category ct ON ci.category_id = ct.category_id LEFT OUTER JOIN "
 		+ "publisher pb ON ci.publisher_id = pb.publisher_id LEFT OUTER JOIN "
-		+ "tax tax ON ci.tax_id = tax.tax_id WHERE release_date = ?";
+		+ "tax tax ON ci.tax_id = tax.tax_id WHERE release_date LIKE ? ORDER BY sale_day";
 	private static final String SQL_SELECT_WHERE_PUBLISHER =
 		"SELECT * FROM comic_info ci LEFT OUTER JOIN "
 		+ "category ct ON ci.category_id = ct.category_id LEFT OUTER JOIN "
 		+ "publisher pb ON ci.publisher_id = pb.publisher_id LEFT OUTER JOIN "
-		+ "tax tax ON ci.tax_id = tax.tax_id WHERE publisher_name = ?";
+		+ "tax tax ON ci.tax_id = tax.tax_id WHERE publisher_name LIKE ? ORDER BY publisher_id";
 
 	/*---  Field End  ---*/
 

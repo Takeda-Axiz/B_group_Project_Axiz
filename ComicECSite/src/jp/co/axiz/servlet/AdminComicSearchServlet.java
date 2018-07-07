@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jp.co.axiz.entity.JoinComicInfo;
+import jp.co.axiz.service.ComicInfoService;
+
 /**
  * Servlet implementation class AdminComicSearchServlet
  */
@@ -39,30 +42,13 @@ public class AdminComicSearchServlet extends HttpServlet {
 		// doPost
 		String category;
 		String search;
-		List list = null;
+		List<JoinComicInfo> list = null;
+		ComicInfoService cIS = new ComicInfoService();
 
-		category = request.getParameter("Category");
+		category = request.getParameter("category");
 		search = request.getParameter("search");
 
-		switch(category) {
-		case "title":
-//			list = dao(search);
-			break;
-		case "author":
-//			list = dao(search);
-			break;
-		case "category":
-//			list = dao(search);
-			break;
-		case "saleDay":
-//			list = dao(search);
-			break;
-		case "publisher":
-//			list = dao(search);
-			break;
-		default:
-			throw new ServletException();
-		}
+		list = cIS.searchComicInfo(category, search);
 
 		request.setAttribute("comicList", list);
 

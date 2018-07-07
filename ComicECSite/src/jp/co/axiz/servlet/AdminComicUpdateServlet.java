@@ -1,8 +1,6 @@
 package jp.co.axiz.servlet;
 
 import java.io.IOException;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -60,7 +58,7 @@ public class AdminComicUpdateServlet extends HttpServlet {
 		// Date releaseDate = Integer.valueOf (request.getParameter("releaseDate "));
 		//発売日
 		String relesedate = (String)request.getParameter("releaseDate");
-		Date date = (Date) new SimpleDateFormat("yyyy/MM/dd").parse(relesedate);
+//		Date date = (Date) new SimpleDateFormat("yyyy/MM/dd").parse(relesedate);
 
 		//原作者
 		String authorName = request.getParameter("authorName");
@@ -72,7 +70,7 @@ public class AdminComicUpdateServlet extends HttpServlet {
 
 		try{
 			JoinComicInfoDao joincomicinfoDao = new JoinComicInfoDao();
-			joincomicinfoDao.update(comicTitle,categoryName,basePrice,publisherName,imageData,relesedate,authorName,number_of_turns);
+//			joincomicinfoDao.update(comicTitle,categoryName,basePrice,publisherName,imageData,relesedate,authorName,number_of_turns);
 			request.getRequestDispatcher("ComicUpdateResult.jsp").forward(request, response);
 		}catch(Exception e) {
 			e.printStackTrace();

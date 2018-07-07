@@ -64,14 +64,15 @@
 									<label>シリアルコード</label>
 									<input type="hidden" class="form-control" name="serialCode" value="${fn:escapeXml(SerialCode)}">
 									<div class="formbox">
-										<% ${fn:escapeXml(SerialCode)} %>
+										<!--  <% //${fn:escapeXml(SerialCode)}; %>
+										-->
 									</div>
 								</div>
 
 								<div class="form">
 									<label>チャージ金額</label> <input type="hidden" class="form-control" name="chargeMoney" value="${fn:escapeXml(Money)}">
 									<div class="formbox">
-										<% ${fn:escapeXml(Money)} %>
+										${fn:escapeXml(Money)};
 									</div>
 								</div>
 

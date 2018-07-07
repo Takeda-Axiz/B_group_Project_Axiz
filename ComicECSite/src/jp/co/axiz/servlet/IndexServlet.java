@@ -1,4 +1,4 @@
-package servlet;
+package jp.co.axiz.servlet;
 
 import java.io.IOException;
 import java.sql.Date;

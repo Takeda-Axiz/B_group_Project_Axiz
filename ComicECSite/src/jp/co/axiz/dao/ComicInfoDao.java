@@ -23,7 +23,6 @@ public class ComicInfoDao {
 		+ "VALUES (?, ?, ?, (SELECT category_id FROM category WHERE category_name = ?), ?, '1', "
 		+ "(SELECT publisher_id FROM publisher WHERE publisher_name = ?), '', ?, ?, ?, ?, ?, "
 		+ "'1970-01-01 00:00:00', '0')";
-	// (comicId, comicTitle, numberOfTurns, introduction, categoryId, basePrice, taxId, publisherId, comprehensiveEvaluation, releaseDate, authorName, imageData, viewPage, insertTimestamp, updateTimestamp, deleteFlag)
 	private static final String SQL_UPDATE_COMIC_INFO =
 		"UPDATE comic_info SET comic_title = ?, number_of_turns = ?, introduction = ?, category_id = "
 		+ "(SELECT category_id FROM category WHERE category_name = ?), base_price = ?, "

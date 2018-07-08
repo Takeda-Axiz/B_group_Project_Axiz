@@ -8,7 +8,7 @@
 <title>管理者漫画更新・削除検索</title>
 
 <!-- meta -->
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,6 +45,9 @@
 			<section class="row">
 				<div class="col-md-6">
 					<form action="" method="post">
+						<c:if test="${not empty errmsg}">
+							<p class="error">${fn:escapeXml(errmsg)}</p>
+						</c:if>
 						<c:forEach var="comicList" items="comic">
 							<h3>※更新・削除する項目を選択してください</h3>
 
@@ -96,12 +99,8 @@
 									本体価格:</label> <input type="text" name="id" value="${comic.basePrice}">
 							</p>
 
-							<input type="hidden" name="comic" value="${comic}">
-
-							<input class="btn btn-primary btn-lg" type="submit" value="更新"
-								onclick="location.href='ComicUpdateResult.jsp'; return false;">
-							<input class="btn btn-primary btn-lg" type="submit" value="削除"
-								onclick="location.href='ComicDeleteResult.jsp'; return false;">
+							<input class="btn btn-primary btn-lg" id="update" type="submit" value="更新">
+							<input class="btn btn-primary btn-lg" id="delete" type="submit" value="削除">
 						</c:forEach>
 					</form>
 				</div>
@@ -127,6 +126,20 @@
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/owl.carousel.js"></script>
 	<script src="assets/js/script.js"></script>
+
+	<script>
+		$(':submit#update').click(function() {
+			$('form').attr('action', 'ComicUpdateResult.jsp');
+			$('form').attr('method', 'post');
+			$('form').submit();
+		});
+
+		$(':submit#delete').click(function() {
+			$('form').attr('action', 'AdminComicDelete');
+			$('form').attr('method', 'post');
+			$('form').submit();
+		});
+	</script>
 
 </body>
 </html>

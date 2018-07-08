@@ -7,15 +7,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import jp.co.axiz.dao.ComicInfoDao;
+import jp.co.axiz.common.CommonMethod;
+import jp.co.axiz.service.ComicInfoService;
 
 
 /**
  * Servlet implementation class AdminComicDeleteServlet
  */
-@WebServlet("/AdminComicDeleteServlet")
+@WebServlet("/AdminComicDelete")
 public class AdminComicDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,26 +34,31 @@ public class AdminComicDeleteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		String comicStrId;
+		Integer comicIntId;
+		ComicInfoService cIS = new ComicInfoService();
 
 		request.setCharacterEncoding("UTF-8");
 
-		HttpSession session = request.getSession();
+		comicStrId = (String)request.getParameter("comic_id");
+		comicStrId = CommonMethod.resetNull(comicStrId);
 
-		String comicid = (String)request.getParameter("comic_id");
-		Integer comic_id =Integer.parseInt(comicid);
-
-
-
-
-		if (comicid == null || comicid.isEmpty()) {
+		if (comicStrId.isEmpty()) {
 			request.setAttribute("errmsg", "漫画IDを入力してください");
-			request.getRequestDispatcher("ComicDelete.jsp").forward(request, response);
+			request.getRequestDispatcher("AdminSelect.jsp").forward(request, response);
 			return;
 		}
 
-		ComicInfoDao comicinfoDao = new ComicInfoDao();
-		comicinfoDao.delete(Integer.parseInt(comicid));
+		comicIntId = CommonMethod.changeInteger(comicStrId);
+
+		if(comicIntId == null) {
+			request.setAttribute("errmsg", "正しい漫画IDを入力してください");
+			request.getRequestDispatcher("AdminSelect.jsp").forward(request, response);
+			return;
+		}
+		cIS.deleteComicInfo(comicIntId);
 
 		request.getRequestDispatcher("ComicDeleteResult.jsp").forward(request, response);
+		return;
 	}
 }

@@ -78,10 +78,6 @@
 					<a class="btn btn-primary btn-xs" href="index.html" roll="btn">top画面へ</a>
 				</div>
 
-
-
-
-
 				</section>
 			</div>
 		</section>

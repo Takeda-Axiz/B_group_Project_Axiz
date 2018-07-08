@@ -112,14 +112,14 @@
 						<div class="row col-xs-6 col-md-3 pull-right">
 							<input type="submit" class="btn btn-lg btn-primary btn-block"
 								name="button" value="カートへ戻る"
-								onclick="location.href='cart.html'; return false;">
+								onclick="location.href='Cart.jsp'; return false;">
 						</div>
+					</form>
 				</div>
-				</form>
+
 				<br>
 				<div class="link">
 					<a href="Index.html"><p>TOPへ</p></a> <a href="MyPage.html"><p>マイページへ</p></a>
-				</div>
 				</div>
 			</section>
 		</section>

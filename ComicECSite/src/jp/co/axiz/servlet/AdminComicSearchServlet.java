@@ -45,6 +45,8 @@ public class AdminComicSearchServlet extends HttpServlet {
 		List<JoinComicInfo> list = null;
 		ComicInfoService cIS = new ComicInfoService();
 
+		request.setCharacterEncoding("UTF-8");
+
 		category = request.getParameter("category");
 		search = request.getParameter("search");
 
@@ -53,5 +55,6 @@ public class AdminComicSearchServlet extends HttpServlet {
 		request.setAttribute("comicList", list);
 
 		request.getRequestDispatcher("/AdminReference.jsp").forward(request, response);
+		return;
 	}
 }

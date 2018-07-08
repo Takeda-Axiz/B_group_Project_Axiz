@@ -5,11 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import jp.co.axiz.common.CommonMethod;
+import jp.co.axiz.dao.ComicInfoDao;
 import jp.co.axiz.dao.JoinComicInfoDao;
 import jp.co.axiz.entity.JoinComicInfo;
 
 public class ComicInfoService {
 	/*---  Field  ---*/
+	private ComicInfoDao cID = new ComicInfoDao();	//変数名概要
 	private JoinComicInfoDao jCID = new JoinComicInfoDao();	//変数名概要
 
 	/*---  Field End  ---*/
@@ -119,6 +121,11 @@ public class ComicInfoService {
 			}
 		}
 		return list;
+	}
+
+	//  処理概要
+	public void deleteComicInfo(Integer comicId) {
+		cID.delete(comicId);
 	}
 
 	/*---  Method End  ---*/

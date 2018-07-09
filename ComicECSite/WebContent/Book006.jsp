@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<!DOCTYPE html>
 <html>
 <head>
 <title>漫画の詳細(名探偵コナン)</title>
@@ -52,7 +51,7 @@ div.z {
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-12">
-					<a class="logo" href="">MY本棚ページ</a>
+					<a class="logo" href="">電子漫画購入サイト</a>
 				</section>
 			</section>
 		</section>
@@ -64,7 +63,7 @@ div.z {
 				<article>
 					<h1>名探偵コナン 2巻</h1>
 					<div class="b">
-						<img src="gazou/konan02.jpg" alt="写真" width="300" height="300">
+						<img src="gazou/konan02.jpg" alt="写真" width="80%" height="100%">
 					</div>
 					<p>タイトル 名探偵コナン</p>
 					<p>原作者名 鈴木稔也</p>
@@ -74,8 +73,31 @@ div.z {
 					<p>海賊王を夢見る少年モンキー・D・ルフィを主人公とする、「ひとつなぎの大秘宝（ワンピース）」を巡る海洋冒険ロマン。
 						夢への冒険・仲間たちとの友情といったテーマを前面に掲げ、バトルやギャグシーン、感動エピソードをメインとする少年漫画の王道を行く物語として人気を博している</p>
 					<div class="z">
-						<input type="submit" value="閲覧する"> <br>
-						<a href="BookSelect.html">戻る</a>
+						<br>
+						<form role="form" method="post" action="Book001.jsp">
+							<div class="col-xs-2">
+								<select class="form-control" name="Category">
+									<option value="title">評価を選択</option>
+									<option value="valuation1」">1</option>
+									<option value="valuation2">2</option>
+									<option value="valuation3">3</option>
+									<option value="valuation4">4</option>
+									<option value="valuation5">5</option>
+								</select>
+							</div>
+							<div class="col-xs-1">
+								<button type="submit" class="btn btn-custom"
+									style="font-size: 14px;">
+									<i class="ion-ios-arrow-thin-right"></i>
+								</button>
+							</div>
+						</form>
+					</div>
+					<div>
+						<br> <br>
+						<input type="submit" class="btn btn-primary" value="閲覧する">
+						<br> <br>
+						<a class="btn btn-primary" href="BookSelect.jsp">本棚へ戻る</a>
 					</div>
 				</article>
 			</section>
@@ -85,5 +107,26 @@ div.z {
 			</section>
 		</section>
 	</section>
+	<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
+	</section>
+	<!-- All the scripts -->
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="assets/js/wow.min.js"></script>
+	<script src="assets/js/owl.carousel.js"></script>
+	<script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -64,6 +64,11 @@ public class JoinComicInfoDao {
 		+ "category ct ON ci.category_id = ct.category_id LEFT OUTER JOIN "
 		+ "publisher pb ON ci.publisher_id = pb.publisher_id LEFT OUTER JOIN "
 		+ "tax tax ON ci.tax_id = tax.tax_id WHERE publisher_name LIKE ? ORDER BY pb.publisher_id";
+	private static final String SQL_SELECT_WHERE_COMIC_ID =
+			"SELECT * FROM comic_info ci LEFT OUTER JOIN "
+			+ "category ct ON ci.category_id = ct.category_id LEFT OUTER JOIN "
+			+ "publisher pb ON ci.publisher_id = pb.publisher_id LEFT OUTER JOIN "
+			+ "tax tax ON ci.tax_id = tax.tax_id WHERE comic_id = ? ORDER BY comic_id";
 
 	/*---  Field End  ---*/
 
@@ -526,6 +531,57 @@ public class JoinComicInfoDao {
 				}
 			}
 			return list;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	//  処理概要
+	public JoinComicInfo findById(Integer comicId) {
+		// 変数宣言
+		List<JoinComicInfo> list = new ArrayList<JoinComicInfo>();
+
+		// 初期化
+
+		try (PreparedStatement stmt = connection.prepareStatement
+				(SQL_SELECT_WHERE_COMIC_ID)) {
+			stmt.setInt(1, comicId);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				// 削除済みかどうか確認
+				if(rs.getInt("delete_flag") == 0) {
+					JoinComicInfo comic = new JoinComicInfo(
+							rs.getInt("comic_id"),
+							rs.getString("comic_title"),
+							rs.getInt("number_of_turns"),
+							rs.getString("introduction"),
+							rs.getInt("category_id"),
+							rs.getInt("base_price"),
+							rs.getInt("tax_id"),
+							rs.getInt("publisher_id"),
+							rs.getDouble("comprehensive_evaluation"),
+							rs.getDate("release_date"),
+							rs.getString("author_name"),
+							rs.getString("image_data"),
+							rs.getString("view_page"),
+							rs.getString("insert_timestamp"),
+							rs.getString("update_timestamp"),
+							rs.getInt("delete_flag"),
+							rs.getString("category_name"),
+							rs.getString("publisher_name"),
+							rs.getDouble("tax"),
+							rs.getDate("introduction_date")
+						);
+					list.add(comic);
+				}
+			}
+
+			if(list.isEmpty()) {
+				return null;
+			}else {
+				return list.get(0);
+			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

@@ -125,7 +125,7 @@ public class ComicInfoService {
 
 	//  処理概要
 	public void deleteComicInfo(Integer comicId) {
-		cID.delete(comicId);
+		cID.logicalDelete(comicId);
 	}
 
 	/*---  Method End  ---*/

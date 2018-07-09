@@ -30,7 +30,6 @@ public class CommonMethod {
 		Integer cntNum = 0;
 		char[] chgStrChar = chgStr.toCharArray();
 
-
 		for(char chgChar : chgStrChar) {
 			if(Character.isDigit(chgChar)) {
 				cntNum++;

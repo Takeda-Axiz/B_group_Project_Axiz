@@ -37,7 +37,7 @@
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="Index.html">電子漫画購入サイト</a>
+					<a class="logo" href="Index.jsp">電子漫画購入サイト</a>
 				</section>
 			</section>
 		</section>
@@ -49,25 +49,23 @@
 				<div class="field">
 
 					<div class="headline">
-						<h3>
-							<p>購入確認</p>
-						</h3>
+						<h3>購入確認</h3>
 						<p>現在のチャージ残高：3000円</p>
 					</div>
-					<form action="buyconfirm.html" method="post">
+					<form action="BuyConfirm.jsp" method="post">
 						<div class="">
-							<table border="1" class="table table-striped">
+							<table class="table table-striped">
 								<tr>
 									<th>No</th>
-									<th>名前</th>
-									<th>作者</th>
+									<th>タイトル</th>
+									<th>原作者</th>
 									<th>出版社</th>
 									<th>値段</th>
 								</tr>
 
 								<tr class="info">
 									<td>1</td>
-									<td><a href="Book0001.html">sample01</a></td>
+									<td><a href="Book0001.jsp">sample01</a></td>
 									<td>00000001</td>
 									<td>出版社</td>
 									<td>500</td>
@@ -75,7 +73,7 @@
 
 								<tr>
 									<td>2</td>
-									<td><a href="Book0001.html">sample02</a></td>
+									<td><a href="Book0001.jsp">sample02</a></td>
 									<td>00000002</td>
 									<td>出版社</td>
 									<td>1000</td>
@@ -83,7 +81,7 @@
 
 								<tr class="info">
 									<td>3</td>
-									<td><a href="Book0001.html">sample03</a></td>
+									<td><a href="Book0001.jsp">sample03</a></td>
 									<td>00000003</td>
 									<td>出版社</td>
 									<td>5000</td>
@@ -91,7 +89,7 @@
 
 								<tr>
 									<td>4</td>
-									<td><a href="Book0001.html">sample04</a></td>
+									<td><a href="Book0001.jsp">sample04</a></td>
 									<td>00000004</td>
 									<td>出版社</td>
 									<td>10000</td>
@@ -102,12 +100,12 @@
 								</tr>
 							</table>
 						</div>
-						<form action="buy.html" method="post">
-							<div class="row col-xs-6 col-md-3 pull-right">
-								<button class="btn btn-lg btn-primary btn-block " name="Submit"
-									value="Login" type="Submit">購入確定</button>
-							</div>
-						</form>
+					</form>
+					<form action="BuyConfirm.jsp" method="post">
+						<div class="row col-xs-6 col-md-3 pull-right">
+							<button class="btn btn-lg btn-primary btn-block " name="Submit"
+								value="Login" type="Submit">購入確定</button>
+						</div>
 						<br> <br> <br>
 						<div class="row col-xs-6 col-md-3 pull-right">
 							<input type="submit" class="btn btn-lg btn-primary btn-block"
@@ -118,12 +116,40 @@
 				</div>
 
 				<br>
-				<div class="link">
-					<a href="Index.html"><p>TOPへ</p></a> <a href="MyPage.html"><p>マイページへ</p></a>
+				<form action="Index.jsp" method="post" class="col-md-2">
+					<div class="link">
+						<input type="submit" class="btn btn-lg btn-primary btn-block"
+							value="トップページ"> <input type="submit"
+							class="btn btn-lg btn-primary btn-block" name="button"
+							value="マイページ" onclick="location.href='MyPage.jsp'; return false;">
+					</div>
+				</form>
+
+
+				<div>
+					<img src="assets/img/clearline.png" class="img-responsive" alt=""
+						style="margin: 0 auto;">
 				</div>
+
 			</section>
 		</section>
 	</section>
+
+	<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
+	</section>
+
 
 
 	<!-- All the scripts -->

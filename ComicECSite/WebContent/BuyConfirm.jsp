@@ -27,6 +27,15 @@
 	href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700|Oxygen:400,300,700'
 	rel='stylesheet'>
 
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!--[if lt IE 9]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
 </head>
 <body>
 
@@ -44,30 +53,31 @@
 	<section id="banner">
 		<section class="container">
 			<section class="row">
-
+				<div class="col-md-9">
 					<div class="headings">
+
 						<h2 class="wow animated fadeInDown">ご購入ありがとうございました。</h2>
 						<p>現在のチャージ残高：100円</p>
 						<div class="row">
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<div>
-									<a href="Index.html"
+									<a href="Index.jsp"
 										class="polo-btn store wow animated bounceInUp"
-										style="color: #000;"><i></i>トップページへ</a>
+										style="color: #000;"><i></i>トップページ</a>
 								</div>
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<div>
-									<a href="MyPage.html"
+									<a href="MyPage.jsp"
 										class="polo-btn store wow animated bounceInUp"
-										style="color: #000;"><i></i>マイページへ</a>
+										style="color: #000;"><i></i>マイページ</a>
 								</div>
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<div>
-									<a href="BookSelect.html"
+									<a href="BookSelect.jsp"
 										class="polo-btn store wow animated bounceInUp"
-										style="color: #000;"><i></i>本棚へ</a>
+										style="color: #000;"><i></i>本棚検索</a>
 								</div>
 							</div>
 						</div>
@@ -78,7 +88,21 @@
 		</section>
 	</section>
 
- 	<!-- All the scripts -->
+	<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
+	</section>
+	<!-- All the scripts -->
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

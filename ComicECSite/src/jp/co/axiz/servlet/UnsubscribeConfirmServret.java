@@ -51,7 +51,7 @@ public class UnsubscribeConfirmServret extends HttpServlet {
 		String deliveryUserId = userData.getDeliveryUserId();
 		session.setAttribute("user_id", deliveryUserId);
 
-		UserInfoService userInfoService = new UserInfoService();
+		UserInfoService userInfoService = new UserInfoService(request);
 		userInfoService.unSubscribe();
 
 		//次画面指定

@@ -26,7 +26,9 @@ public class UserInfoService {
 	String chargePoint;
 	String usePoint;
 
-	public void UserInfoDao(HttpServletRequest request) {
+	/*---  Constructor  ---*/
+	//  処理概要
+	public UserInfoService(HttpServletRequest request) {
 		this.request = request;
 
 		//現在日時を変数timeStampに代入
@@ -35,6 +37,10 @@ public class UserInfoService {
 		timeStamp = dtf.format(ldt);
 	}
 
+	/*---  Constructor End  ---*/
+
+	/*---  Method  ---*/
+	//  処理概要
 	public boolean register() {
 		deliveryUserId = request.getParameter("user_id");
 		userName = request.getParameter("user_name");
@@ -64,7 +70,6 @@ public class UserInfoService {
 	//
 	//		uid.update(userId, userName, password, birthday, timeStamp, loginUserId);
 	//	}
-
 
 	public void unSubscribe() {
 		deliveryUserId = request.getParameter("user_id");
@@ -131,9 +136,4 @@ public class UserInfoService {
 
 		uid.updatePoint(deliveryUserId, point);
 	}
-
-
-
-
-
 }

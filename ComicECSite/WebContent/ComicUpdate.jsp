@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
@@ -43,60 +43,68 @@
 
 	<section id="banner">
 		<section class="container">
-			<form action="ComicUpdateResult.html" method="post">
+			<form action="ComicUpdateResult.jsp" method="post">
 				<section class="row">
 					<div class="col-md-6">
-						<p><h3>※この内容で更新してよろしいですか？</h3></p>
+						<h3>※この内容で更新してよろしいですか？</h3>
 
 						<p>
-						<label for="inputEmail3" class=" col-xs-3 control-label" >
-						ID:</label><input type="text" name="id" readonly>
+							<label for="inputEmail3" class=" col-xs-3 control-label">
+								ID:</label><input type="text" name="id" readonly>
 						</p>
 
 						<p>
-						<label for="inputEmail3" class=" col-xs-3 control-label">
-						作品名:</label><input type="text" name="id" readonly>
+							<label for="inputEmail3" class=" col-xs-3 control-label">
+								タイトル:</label><input type="text" name="id" readonly>
 						</p>
 
 						<p>
-						<label for="inputEmail3" class=" col-xs-3 control-label">
-						巻数:</label><input type="text" name="id" readonly>
+							<label for="inputEmail3" class=" col-xs-3 control-label">
+								巻数:</label><input type="text" name="id" readonly>
 						</p>
 
 						<p>
-						<label for="inputEmail3" class=" col-xs-3 control-label">
-						原作者名:</label><input type="text" name="id" readonly>
+							<label for="inputEmail3" class=" col-xs-3 control-label">
+								原作者:</label><input type="text" name="id" readonly>
 						</p>
 
 						<p>
-						<label for="inputEmail3" class=" col-xs-3 control-label">
-						カテゴリー:</label><input type="text" name="id" readonly>
+							<label for="inputEmail3" class=" col-xs-3 control-label">
+								カテゴリー:</label><input type="text" name="id" readonly>
 						</p>
 
 						<p>
-						<label for="inputEmail3" class=" col-xs-3 control-label">
-						発売日:</label><input type="text" name="id" readonly>
+							<label for="inputEmail3" class=" col-xs-3 control-label">
+								発売日:</label><input type="text" name="id" readonly>
 						</p>
 
 						<p>
-						<label for="inputEmail3" class=" col-xs-3 control-label">
-						出版社:</label><input type="text" name="id" readonly>
+							<label for="inputEmail3" class=" col-xs-3 control-label">
+								表紙画像:</label><input type="text" name="id" readonly>
 						</p>
 
 						<p>
-						<label for="inputEmail3" class=" col-xs-3 control-label">
-						本体価格:</label><input type="text" name="id" readonly>
+							<label for="inputEmail3" class=" col-xs-3 control-label">
+								出版社:</label><input type="text" name="id" readonly>
+						</p>
+
+						<p>
+							<label for="inputEmail3" class=" col-xs-3 control-label">
+								本体価格:</label><input type="text" name="id" readonly>
 						</p>
 					</div>
 				</section>
 				<section class="row">
 					<input class="btn btn-primary btn-md" type="submit" value="更新">
-					<input class="btn btn-primary btn-md" type="submit" value="戻る" onclick="location.href='AdminSelect.html'; return false;">
+					<input class="btn btn-primary btn-md" type="submit"
+						value="漫画更新ページへ戻る"
+						onclick="location.href='AdminSelect.jsp'; return false;">
 				</section>
 			</form>
 			<section class="row">
 				<div>
-					<img src="assets/img/clearline.png" class="img-responsive" alt="" style="margin: 0 auto;">
+					<img src="assets/img/clearline.png" class="img-responsive" alt=""
+						style="margin: 0 auto;">
 				</div>
 			</section>
 		</section>

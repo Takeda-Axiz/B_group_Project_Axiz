@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
@@ -36,7 +36,7 @@
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="Index.html">電子漫画購入サイト</a>
+					<a class="logo" href="Index.jsp">電子漫画購入サイト</a>
 				</section>
 			</section>
 		</section>
@@ -46,111 +46,126 @@
 	<section id="banner">
 		<section class="container">
 			<section class="row">
-	<div class="field">
+				<div class="field">
 
-		<div class="headline">
-			<h3><p>カート</p></h3>
-		</div>
-		<div class="">
-			<table border="1" class="table table-striped">
-				<tr>
-					<th>No</th>
-					<th>名前</th>
-					<th>作者</th>
-					<th>出版社</th>
-					<th>値段</th>
-					<th></th>
-				</tr>
-
-				<tr class="info">
-					<td>1</td>
-					<td><a href="Book0001.html">sample01</a></td>
-					<td>00000001</td>
-					<td>出版社</td>
-					<td>500</td>
-					<form action="cart.html" method="post">
-					<td>
-					<div class="row col-xs-6 col-md-7">
-						<button class="btn btn-sm btn-primary btn-block" name="Submit" value="Login" type="Submit">
-							削除
-						</button>
+					<div class="headline">
+						<h3>カート</h3>
 					</div>
-					</td>
-					</form>
-				</tr>
 
-				<tr>
-					<td>2</td>
-					<td><a href="Book0001.html">sample02</a></td>
-					<td>00000002</td>
-					<td>出版社</td>
-					<td>1000</td>
-					<form action="cart.html" method="post">
-					<td>
-					<div class="row col-xs-6 col-md-7">
-						<button class="btn btn-sm btn-primary btn-block" name="Submit" value="Login" type="Submit">
-							削除
-						</button>
-					</div>
-					</td>
-					</form>
-				</tr>
+					<form action="Cart.jsp" method="post">
+						<div class="">
+							<table class="table table-striped">
+								<tr>
+									<th>No</th>
+									<th>タイトル</th>
+									<th>原作者</th>
+									<th>出版社</th>
+									<th>値段</th>
+									<th></th>
+								</tr>
 
-				<tr class="info">
-					<td>3</td>
-					<td><a href="Book0001.html">sample03</a></td>
-					<td>00000003</td>
-					<td>出版社</td>
-					<td>5000</td>
-					<form action="cart.html" method="post">
-					<td>
-						<div class="row col-xs-6 col-md-7">
-							<button class="btn btn-sm btn-primary btn-block" name="Submit" value="Login" type="Submit">
-								削除
-							</button>
+								<tr class="info">
+									<td>1</td>
+									<td><a href="Book0001.jsp">sample01</a></td>
+									<td>00000001</td>
+									<td>出版社</td>
+									<td>500</td>
+
+									<td>
+										<div class="row col-xs-6 col-md-12">
+											<button class="btn btn-sm btn-primary btn-block"
+												name="Submit" value="Login" type="Submit">削除</button>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<td>2</td>
+									<td><a href="Book0001.jsp">sample02</a></td>
+									<td>00000002</td>
+									<td>出版社</td>
+									<td>1000</td>
+
+									<td>
+										<div class="row col-xs-6 col-md-12">
+											<button class="btn btn-sm btn-primary btn-block"
+												name="Submit" value="Login" type="Submit">削除</button>
+										</div>
+									</td>
+
+								</tr>
+
+								<tr class="info">
+									<td>3</td>
+									<td><a href="Book0001.jsp">sample03</a></td>
+									<td>00000003</td>
+									<td>出版社</td>
+									<td>5000</td>
+
+									<td>
+										<div class="row col-xs-6 col-md-12">
+											<button class="btn btn-sm btn-primary btn-block"
+												name="Submit" value="Login" type="Submit">削除</button>
+										</div>
+									</td>
+
+								</tr>
+
+								<tr>
+									<td>4</td>
+									<td><a href="Book0001.jsp">sample04</a></td>
+									<td>00000004</td>
+									<td>出版社</td>
+									<td>10000</td>
+
+									<td>
+										<div class="row col-xs-6 col-md-12">
+											<button class="btn btn-sm btn-primary btn-block"
+												name="Submit" value="Login" type="Submit">削除</button>
+										</div>
+									</td>
+
+								</tr>
+							</table>
 						</div>
-					</td>
 					</form>
-				</tr>
-
-				<tr>
-					<td>4</td>
-					<td><a href="Book0001.html">sample04</a></td>
-					<td>00000004</td>
-					<td>出版社</td>
-					<td>10000</td>
-					<form action="cart.html" method="post">
-					<td>
-					<div class="row col-xs-6 col-md-7">
-						<button class="btn btn-sm btn-primary btn-block" name="Submit" value="Login" type="Submit">
-							削除
-						</button>
-					</div>
-					</td>
+					<form action="Buy.jsp" method="post">
+						<div class="row col-xs-6 col-md-3 pull-right">
+							<button class="btn btn-lg btn-primary btn-block " name="Submit"
+								value="Login" type="Submit">購入</button>
+						</div>
 					</form>
-				</tr>
-			</table>
-		</div>
-			<form action="buy.html" method="post">
-				<div class="row col-xs-6 col-md-3 pull-right">
-					<button class="btn btn-lg btn-primary btn-block " name="Submit" value="Login" type="Submit">
-						購入
-					</button>
+					<br>
+					<form action="Index.jsp" method="post" class="col-md-2">
+						<div class="link">
+							<input type="submit" class="btn btn-lg btn-primary btn-block"
+								value="トップページ"> <input type="submit"
+								class="btn btn-lg btn-primary btn-block" name="button"
+								value="マイページ"
+								onclick="location.href='MyPage.jsp'; return false;"> <br>
+						</div>
+					</form>
 				</div>
-			</form>
-			<br>
-			<div class="link">
-				<a href="Index.html"><p>TOPへ</p></a>
-				<a href="MyPage.html"><p>マイページへ</p></a>
-			</div>
-					</div>
-				</section>
+				<div>
+					<img src="assets/img/clearline.png" class="img-responsive" alt=""
+						style="margin: 0 auto;">
+				</div>
+			</section>
 		</section>
 	</section>
-
-
+	<!-- ****************************** Footer ************************** -->
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
+	</section>
 	<!-- All the scripts -->
-
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="assets/js/wow.min.js"></script>

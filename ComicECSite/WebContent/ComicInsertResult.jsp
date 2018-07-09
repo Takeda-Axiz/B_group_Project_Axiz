@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="AdminTop.html">管理者専用ページ</a>
+					<a class="logo" href="AdminTop.jsp">管理者専用ページ</a>
 				</section>
 			</section>
 		</section>
@@ -57,10 +57,33 @@
 					<div class="headings">
 						<h3>漫画情報登録確定</h3>
 						<p>漫画情報が確定しましました。</p>
-						<a class="btn btn-primary btn-md" href="AdminReference.html">参照画面へ</a>
-						<a class="btn btn-primary btn-md" href="AdminTop.html">管理者ページへ</a>
+						<a class="btn btn-primary btn-md" href="AdminReference.jsp">登録漫画一覧</a>
+						<a class="btn btn-primary btn-md" href="AdminTop.jsp">管理者ページ</a>
 					</div>
 				</div>
+
+				<div>
+					<img src="assets/img/clearline.png" class="img-responsive" alt=""
+						style="margin: 0 auto;">
+				</div>
+
+			</section>
+		</section>
+	</section>
+
+
+
+	<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
 			</section>
 		</section>
 	</section>

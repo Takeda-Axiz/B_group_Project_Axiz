@@ -49,7 +49,7 @@ public class UserLeaveServlet extends HttpServlet {
 		String id = (String)session.getAttribute("loginId");
 		session.setAttribute("user_id", id);
 
-		UserInfoService userInfoService = new UserInfoService();
+		UserInfoService userInfoService = new UserInfoService(request);
 		userInfoService.unSubscribe();
 
 		//次画面指定

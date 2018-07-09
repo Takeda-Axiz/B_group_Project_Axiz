@@ -59,20 +59,20 @@
 					<div class="headings">
 						<div class="field">
 
-							<form action="ChargeResult.html" method="post">
+							<form action="ChargeResult.jsp" method="post">
 								<div class="form">
-									<label>シリアルコード</label>
-									<input type="hidden" class="form-control" name="serialCode" value="${fn:escapeXml(SerialCode)}">
+									<label>シリアルコード</label> <input type="hidden"
+										class="form-control" name="serialCode" value="0123401234">
 									<div class="formbox">
-										<!--  <% //${fn:escapeXml(SerialCode)}; %>
-										-->
+										<p>0123401234</p>
 									</div>
 								</div>
 
 								<div class="form">
-									<label>チャージ金額</label> <input type="hidden" class="form-control" name="chargeMoney" value="${fn:escapeXml(Money)}">
+									<label>チャージ金額</label> <input type="hidden" class="form-control"
+										name="chargeMoney" value="100000">
 									<div class="formbox">
-										${fn:escapeXml(Money)};
+										<p>100000円</p>
 									</div>
 								</div>
 
@@ -82,7 +82,7 @@
 										value="はい"> <input type="submit"
 										class="btn btn-lg btn-primary btn-block" name="button"
 										value="いいえ"
-										onclick="location.href='Charge.html'; return false;">
+										onclick="location.href='Charge.jsp'; return false;">
 								</div>
 							</form>
 

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
@@ -50,7 +50,7 @@
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="Index.html">電子漫画購入サイト</a>
+					<a class="logo" href="Index.jsp">電子漫画購入サイト</a>
 				</section>
 			</section>
 		</section>
@@ -67,16 +67,16 @@
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-5">
 								<div>
-									<a href="Index.html"
+									<a href="Index.jsp"
 										class="polo-btn store wow animated bounceInUp"
-										style="color: #000;"><i></i>トップページへ</a>
+										style="color: #000;"><i></i>トップページ</a>
 								</div>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-5">
 								<div>
-									<a href="MyPage.html"
+									<a href="MyPage.jsp"
 										class="polo-btn store wow animated bounceInUp"
-										style="color: #000;"><i></i>マイページへ</a>
+										style="color: #000;"><i></i>マイページ</a>
 								</div>
 							</div>
 						</div>
@@ -87,6 +87,20 @@
 		</section>
 	</section>
 
+	<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
+	</section>
 	<!-- ****************************** Gallery Section ************************** -->
 
 	<!-- All the scripts -->

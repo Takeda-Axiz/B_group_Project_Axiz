@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="AdminTop.html">管理者ページ</a>
+					<a class="logo" href="AdminTop.jsp">管理者ページ</a>
 				</section>
 			</section>
 		</section>
@@ -56,11 +56,33 @@
 				<div class="col-md-6">
 					<div class="headings">
 
-<p><h3>正常にデータを更新しました</h3></p>
-<a href="AdminReference.html"><input type="submit" class="btn btn-primary btn-md" value="参照画面へ"></a>
-<a href="AdminTop.html"><input type="submit" class="btn btn-primary btn-md" value="管理者ページへ"></a>
+						<h3>正常にデータを更新しました</h3>
+						<a href="AdminReference.jsp"><input type="submit"
+							class="btn btn-primary btn-md" value="登録漫画一覧"></a> <a
+							href="AdminTop.jsp"><input type="submit"
+							class="btn btn-primary btn-md" value="管理者ページ"></a>
 
+						<div>
+							<img src="assets/img/clearline.png" class="img-responsive" alt=""
+								style="margin: 0 auto;">
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+	</section>
 
+	<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
 			</section>
 		</section>
 	</section>

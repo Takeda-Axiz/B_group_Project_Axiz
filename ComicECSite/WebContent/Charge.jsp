@@ -27,13 +27,22 @@
 	href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700|Oxygen:400,300,700'
 	rel='stylesheet'>
 
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!--[if lt IE 9]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
 </head>
 <body>
 	<header class="sticky" id="header">
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="Index.html">電子漫画購入サイト</a>
+					<a class="logo" href="Index.jsp">電子漫画購入サイト</a>
 				</section>
 			</section>
 		</section>
@@ -44,7 +53,7 @@
 			<section class="row">
 				<div class="headings">
 					<div class="col-md-6">
-						<form action="ChargeConfirm.html">
+						<form action="ChargeConfirm.jsp">
 							<div class="">
 								<label>シリアルコード</label> <input type="text" class="form-control"
 									name="serialCode" value="0123401234"
@@ -59,13 +68,13 @@
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-5">
 								<div>
-									<a href="Index.html"
+									<a href="Index.jsp"
 										class="polo-btn store wow animated bounceInUp"><i></i>トップページ</a>
 								</div>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-5">
 								<div>
-									<a href="MyPage.html"
+									<a href="MyPage.jsp"
 										class="polo-btn store wow animated bounceInUp"><i></i>マイページ</a>
 								</div>
 							</div>
@@ -83,7 +92,20 @@
 		</section>
 	</section>
 
-	<footer></footer>
+	<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
+	</section>
 
 	<!-- All the scripts -->
 

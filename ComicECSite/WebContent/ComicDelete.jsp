@@ -59,18 +59,16 @@ div.b {
 	<section id="banner">
 		<section class="container">
 			<section class="row">
-				<form action="ComicDeleteResult.html" method="post">
+				<form action="ComicDeleteResult.jsp" method="post">
 					<div class="col-md-6">
-						<p>
 						<h3>※本当に以下のデータを削除してよろしいですか？</h3>
-						</p>
 						<div class="a">
 							<label for="inputEmail3" class="col-sm-3 control-label">ID:</label><input
 								type="text" name="id" value="" readonly>
 						</div>
 
 						<div class="a">
-							<label for="inputEmail3" class="col-sm-3 control-label">作品名:</label><input
+							<label for="inputEmail3" class="col-sm-3 control-label">タイトル:</label><input
 								type="text" name="title" value="" readonly>
 						</div>
 
@@ -80,7 +78,7 @@ div.b {
 						</div>
 
 						<div class="a">
-							<label for="inputEmail3" class="col-sm-3 control-label">原作者名:</label><input
+							<label for="inputEmail3" class="col-sm-3 control-label">原作者:</label><input
 								type="text" name="author" value="" readonly>
 						</div>
 
@@ -94,6 +92,10 @@ div.b {
 								type="text" name="sale day" value="" readonly>
 						</div>
 						<div class="a">
+							<label for="inputEmail3" class="col-sm-3 control-label">表紙画像:</label><input
+								type="text" name="Path" value="" readonly>
+						</div>
+						<div class="a">
 							<label for="inputEmail3" class="col-sm-3 control-label">出版社:</label><input
 								type="text" name="publisher" value="" readonly>
 						</div>
@@ -105,8 +107,8 @@ div.b {
 						<div class="b">
 							<input class="btn btn-primary btn-md" type="submit" value="削除">
 							<input class="btn btn-primary btn-md" type="submit"
-								onclick="location.href='AdminSelect.html'; return false;"
-								value="戻る">
+								onclick="location.href='AdminSelect.jsp'; return false;"
+								value="漫画削除ページへ戻る">
 						</div>
 					</div>
 				</form>
@@ -117,6 +119,21 @@ div.b {
 			</section>
 		</section>
 	</section>
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
+	</section>
+
+
 
 	<!-- All the scripts -->
 

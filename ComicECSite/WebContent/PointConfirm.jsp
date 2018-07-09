@@ -51,7 +51,7 @@
 
 
 						<h3>ポイントを使用して購入しますか？</h3>
-						<p>現在所持しているポイント：32ポイント</p>
+						<p>現在所持しているポイント：${fn:escapeXml(point)}</p>
 						<p>(使用ポイント：20ポイント)</p>
 						<form action="PointResult.jsp" method="post">
 							<button class="btn btn-lg btn-primary btn-block" name="Submit"

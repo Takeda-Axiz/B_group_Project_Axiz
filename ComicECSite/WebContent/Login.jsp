@@ -29,7 +29,9 @@
 
 </head>
 <body>
-
+<c:if test="${not empty msg}">
+<p class="error">${msg}</p>
+</c:if>
 	<header class="sticky" id="header">
 		<section class="container">
 			<section class="row" id="logo_menu">

@@ -63,7 +63,7 @@ form {
 								type="text" name="name">
 						</div>
 						<div>
-							<label for="inputEmail3" class="col-xs-2 control-label">※巻数</label><input
+							<label for="inputEmail3" class="col-xs-2 control-label">巻数</label><input
 								type="text" name="numberOfTurns">
 						</div>
 						<div>

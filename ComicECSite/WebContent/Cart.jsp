@@ -63,13 +63,13 @@
 									<th>値段</th>
 									<th></th>
 								</tr>
-
+								<c:forEach items="${userCart}" var="userCart" varStatus="status">
 								<tr class="info">
-									<td>1</td>
-									<td><a href="Book0001.jsp">sample01</a></td>
-									<td>00000001</td>
-									<td>出版社</td>
-									<td>500</td>
+									<td>${status.index + 1}</td>
+									<td><a href="Book.jsp"></a>${fn:escapeXml(userCart.comicTitle)}</td>
+									<td>${fn:escapeXml(userCart.authorName)}</td>
+									<td>${fn:escapeXml(userCart.publisherName)}</td>
+									<td>${fn:escapeXml(userCart.basePrice)}</td>
 
 									<td>
 										<div class="row col-xs-6 col-md-12">
@@ -78,54 +78,7 @@
 										</div>
 									</td>
 								</tr>
-
-								<tr>
-									<td>2</td>
-									<td><a href="Book0001.jsp">sample02</a></td>
-									<td>00000002</td>
-									<td>出版社</td>
-									<td>1000</td>
-
-									<td>
-										<div class="row col-xs-6 col-md-12">
-											<button class="btn btn-sm btn-primary btn-block"
-												name="Submit" value="Login" type="Submit">削除</button>
-										</div>
-									</td>
-
-								</tr>
-
-								<tr class="info">
-									<td>3</td>
-									<td><a href="Book0001.jsp">sample03</a></td>
-									<td>00000003</td>
-									<td>出版社</td>
-									<td>5000</td>
-
-									<td>
-										<div class="row col-xs-6 col-md-12">
-											<button class="btn btn-sm btn-primary btn-block"
-												name="Submit" value="Login" type="Submit">削除</button>
-										</div>
-									</td>
-
-								</tr>
-
-								<tr>
-									<td>4</td>
-									<td><a href="Book0001.jsp">sample04</a></td>
-									<td>00000004</td>
-									<td>出版社</td>
-									<td>10000</td>
-
-									<td>
-										<div class="row col-xs-6 col-md-12">
-											<button class="btn btn-sm btn-primary btn-block"
-												name="Submit" value="Login" type="Submit">削除</button>
-										</div>
-									</td>
-
-								</tr>
+								</c:forEach>
 							</table>
 						</div>
 					</form>

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,10 +48,12 @@
 				<div class="field">
 
 					<div class="headline">
-						<h3>購入確認</h3>
-						<p>現在のチャージ残高：3000円</p>
+						<h3>
+							<p>購入確認</p>
+						</h3>
+						<p>現在のチャージ残高：${balance }円</p>
 					</div>
-					<form action="BuyConfirm.jsp" method="post">
+					<form action="buyconfirm.html" method="post">
 						<div class="">
 							<table class="table table-striped">
 								<tr>
@@ -63,68 +64,44 @@
 									<th>値段</th>
 								</tr>
 
-								<tr class="info">
-									<td>1</td>
-									<td><a href="Book0001.jsp">sample01</a></td>
-									<td>00000001</td>
-									<td>出版社</td>
-									<td>500</td>
-								</tr>
+								<c:forEach var="list" items="${bookShelfList}">
+									<tr class="info">
 
-								<tr>
-									<td>2</td>
-									<td><a href="Book0001.jsp">sample02</a></td>
-									<td>00000002</td>
-									<td>出版社</td>
-									<td>1000</td>
-								</tr>
+										<td>${list.comicId}</td>
+										<td><a href="selectResultInfo.jsp">${list.comicTitle}</a></td>
+										<td>${list.auhtorName}</td>
+										<td>${list.publisher}</td>
+										<td>${list.price}</td>
+									</tr>
+								</c:forEach>
 
-								<tr class="info">
-									<td>3</td>
-									<td><a href="Book0001.jsp">sample03</a></td>
-									<td>00000003</td>
-									<td>出版社</td>
-									<td>5000</td>
-								</tr>
-
-								<tr>
-									<td>4</td>
-									<td><a href="Book0001.jsp">sample04</a></td>
-									<td>00000004</td>
-									<td>出版社</td>
-									<td>10000</td>
-								</tr>
-								<tr class="info">
-									<th colspan="4">合計</th>
-									<td>16500</td>
-								</tr>
 							</table>
 						</div>
-					</form>
-					<form action="BuyConfirm.jsp" method="post">
-						<div class="row col-xs-6 col-md-3 pull-right">
-							<button class="btn btn-lg btn-primary btn-block " name="Submit"
-								value="Login" type="Submit">購入確定</button>
-						</div>
+						<form action="buy.jsp" method="post">
+							<div class="row col-xs-6 col-md-3 pull-right">
+								<button class="btn btn-lg btn-primary btn-block " name="Submit"
+									value="Login" type="Submit">購入確定</button>
+							</div>
+						</form>
 						<br> <br> <br>
 						<div class="row col-xs-6 col-md-3 pull-right">
 							<input type="submit" class="btn btn-lg btn-primary btn-block"
 								name="button" value="カートへ戻る"
-								onclick="location.href='Cart.jsp'; return false;">
+								onclick="location.href='cart.jsp'; return false;">
 						</div>
-					</form>
 				</div>
-
+				</form>
 				<br>
 				<form action="Index.jsp" method="post" class="col-md-2">
 					<div class="link">
 						<input type="submit" class="btn btn-lg btn-primary btn-block"
 							value="トップページ"> <input type="submit"
 							class="btn btn-lg btn-primary btn-block" name="button"
-							value="マイページ" onclick="location.href='MyPage.jsp'; return false;">
+							value="マイページ"
+							onclick="location.href='Mypage.jsp'; return false;">
 					</div>
 				</form>
-
+				</div>
 
 				<div>
 					<img src="assets/img/clearline.png" class="img-responsive" alt=""

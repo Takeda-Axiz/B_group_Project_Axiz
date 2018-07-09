@@ -45,41 +45,41 @@
 		<section class="container">
 			<section class="row">
 				<div class="col-md-6">
-<form method="post" action="UserRegisterComfirm.html">
+<form method="post" action="UserRegisterComfirm.jsp">
 <h1>新規会員登録確認フォーム</h1>
 <p>入力項目に間違いはありませんか？</p>
 <div class="form-group">
- <label>※名前</label><input type="hidden" class="form-control" name="user_name" value="佐藤">
+ <label>※名前</label><input type="hidden" class="form-control" name="user_name" value="${user_name}">
  <div class="formbox">
- <p>佐藤</p>
+ <p>${user_name}</p>
  </div>
   </div>
   <div class="form-group">
     <label>※生年月日</label>
-    <input type="hidden" class="form-control" name="user_birthday" value="1994/3/6">
+    <input type="hidden" class="form-control" name="user_birthday" value="${ birthday}">
     <div class="formbox">
-    <p>1994/3/6</p>
+    <p>${ birthday}</p>
     </div>
   </div>
   <div class="form-group">
     <label>※会員ID (メールアドレス)</label>
-    <input type="hidden"  class="form-control" name="user_id" value="aaaa@mail">
+    <input type="hidden"  class="form-control" name="user_id" value="${user_id}">
         <div class="formbox">
-    <p>aaaa@mail</p>
+    <p>${user_id}</p>
     </div>
   </div>
   <div class="form-group">
    <label>※パスワード(再入力)</label> <input type="password" class="form-control" name="password">
   </div>
   <div align="center">
-  <button type="submit" class="btn btn-primary" name="signup" onclick="location.href='UserRegisterResult.html'; return false;">会員登録確定する</button>
+  <button type="submit" class="btn btn-primary" name="signup" onclick="location.href='UserRegisterResult.jsp'; return false;">会員登録確定する</button>
   </div>
   <br>
-   <button type="submit" class="btn btn-primary " name="signup" onclick="location.href='UserRegister.html'; return false;">新規会員登録ページへ戻る</button>
+   <button type="submit" class="btn btn-primary " name="signup" onclick="location.href='UserRegister.jsp'; return false;">新規会員登録ページへ戻る</button>
 </form>
 <br>
 			<div class="col-xs-6 col-md-3">
-					<a class="btn btn-primary " href="index02.html">トップページ</a>
+					<a class="btn btn-primary " href="Index02.jsp">トップページ</a>
 				</div>
 
 				</div>

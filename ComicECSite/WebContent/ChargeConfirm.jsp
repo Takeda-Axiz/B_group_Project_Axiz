@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,26 +60,21 @@
 
 							<form action="ChargeResult.jsp" method="post">
 								<div class="form">
-									<label>シリアルコード</label> <input type="hidden"
-										class="form-control" name="serialCode" value="0123401234">
-									<div class="formbox">
-										<p>0123401234</p>
-									</div>
+									<label>シリアルコード</label>
+									<input type="hidden" class="form-control" name="serialCode" value="0123401234" >
+										<div class="formbox"><p>${code }</p></div>
 								</div>
 
 								<div class="form">
-									<label>チャージ金額</label> <input type="hidden" class="form-control"
-										name="chargeMoney" value="100000">
-									<div class="formbox">
-										<p>100000円</p>
-									</div>
+									<label>チャージ金額</label>
+									<input type="hidden" class="form-control" name="chargeMoney" value="100000">
+									<div class="formbox"><p>${money }</p></div>
 								</div>
 
 								<div class="submit">
 									<label>上記の内容でチャージします</label><br> <label>よろしいですか？</label><br>
-									<input type="submit" class="btn btn-lg btn-primary btn-block"
-										value="はい"> <input type="submit"
-										class="btn btn-lg btn-primary btn-block" name="button"
+									<input type="submit" class="btn btn-lg btn-primary btn-block" value="はい">
+									<input type="submit" class="btn btn-lg btn-primary btn-block" name="button"
 										value="いいえ"
 										onclick="location.href='Charge.jsp'; return false;">
 								</div>
@@ -93,7 +87,7 @@
 		</section>
 	</section>
 
-	<!-- ****************************** Footer ************************** -->
+		<!-- ****************************** Footer ************************** -->
 
 	<section id="footer">
 		<section class="container">
@@ -103,7 +97,9 @@
 					<h1 class="footer-logo">B group</h1>
 				</div>
 
-				<div class="col-sm-6"></div>
+				<div class="col-sm-6">
+
+				</div>
 			</section>
 		</section>
 	</section>

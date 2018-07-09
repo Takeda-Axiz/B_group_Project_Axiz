@@ -58,7 +58,7 @@
 				<div>
 					<div class="headings">
 						<h2 class="wow animated fadeInDown">ご購入ありがとうございました。</h2>
-						<p>現在使用可能なポイント：11ポイント</p>
+						<p>現在使用可能なポイント：${fn:escapeXml(afterPoint)}</p>
 						<div class="row">
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<div>

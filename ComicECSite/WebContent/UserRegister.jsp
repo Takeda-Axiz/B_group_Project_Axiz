@@ -57,9 +57,11 @@
 					<form method="post" action="UserRegisterComfirm.jsp">
 						<h2>新規会員登録フォーム</h2>
 						<p>
-							※は必須項目です<br>生年月日は登録後変更できません
+							※は必須項目です。登録済みのメールアドレスはご利用できません。<br>生年月日は登録後変更できません。
 						</p>
-
+						<c:if test="${not empty errmsg}">
+							<p class="error">${errmsg}</p>
+						</c:if>
 						<div class="form-group">
 							<label class="required">※名前</label><input type="text"
 								class="form-control" name="use_name">

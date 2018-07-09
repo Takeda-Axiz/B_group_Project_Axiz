@@ -62,7 +62,7 @@ public class EvaluateServlet extends HttpServlet {
 //		UserComicInfoDao ud = new UserComicInfoDao();
 //		List<UserComicInfo> userComicInfo = ud.updata(user_comic_id,va);
 
-		UserComicInfoService us = new UserComicInfoService();
+		UserComicInfoService us = new UserComicInfoService(request);
 		//List<UserComicInfo> userComicInfo = ud.updata(user_comic_id,va);
 
 		if(va == 1) {

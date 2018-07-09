@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +56,7 @@
 					<div class="headings">
 
 						<h2 class="wow animated fadeInDown">ご購入ありがとうございました。</h2>
-						<p>現在のチャージ残高：100円</p>
+						<p>現在のチャージ残高：${afterBalance }円</p>
 						<div class="row">
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<div>
@@ -88,7 +87,7 @@
 		</section>
 	</section>
 
-	<!-- ****************************** Footer ************************** -->
+		<!-- ****************************** Footer ************************** -->
 
 	<section id="footer">
 		<section class="container">
@@ -98,11 +97,13 @@
 					<h1 class="footer-logo">B group</h1>
 				</div>
 
-				<div class="col-sm-6"></div>
+				<div class="col-sm-6">
+
+				</div>
 			</section>
 		</section>
 	</section>
-	<!-- All the scripts -->
+ 	<!-- All the scripts -->
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

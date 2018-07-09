@@ -68,12 +68,12 @@
 							<form role="form" method="post">
 								<div class="col-xs-12">
 
-									あなたの所有しているチャージ金額 <font color="red">1000円</font>
+									あなたの所有しているチャージ金額 <font color="red">${charge}円</font>
 
 								</div>
 								<div class="col-xs-10">
 									<div class="form-group">
-										ポイント数 <font color="red">10pt</font>
+										ポイント数 <font color="red">${point}pt</font>
 									</div>
 								</div>
 							</form>

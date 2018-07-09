@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,30 +54,27 @@
 			<section class="row">
 				<div class="col-md-6">
 					<div class="headings">
-						<h3>強制退会確認</h3>
-						<p>本当にこの会員でよろしいですか？</p>
-						<form action="administratorTaikyoResult.jsp" method="post">
-							<div>
-								<label class="required">会員ID</label><input type="text"
-									name="user_id" value="abcd@eee.com" readonly>
-								<p>会員名前：山田太郎</p>
-							</div>
-						</form>
-						<div align="center">
-							<button type="submit" class="btn btn-primary" name="signup"
-								onclick="location.href='UnsubscribeResult.jsp'; return false;">退会させる</button>
-							<button type="submit" class="btn btn-primary" name="signup"
-								onclick="location.href='Unsubscribe.jsp'; return false;">強制退会ページに戻る</button>
-						</div>
-						<div></div>
-					</div>
-				</div>
+        <h3>強制退会確認</h3>
+        <p>本当にこの会員でよろしいですか？</p>
+            <form action="administratorTaikyoResult.jsp" method="post">
+             <div>
+             <label class="required">会員ID</label><input type="text" name="user_id" value="${userId }" readonly>
+             <p>会員名前：${userName }</p>
+             </div>
+            </form>
+             <div align="center">
+             <button type="submit" class="btn btn-primary" name="signup" onclick="location.href='UnsubscribeResult.jsp'; return false;">退会させる</button>
+             <button type="submit" class="btn btn-primary" name="signup" onclick="location.href='Unsubscribe.jsp'; return false;">強制退会ページに戻る</button>
+             </div>
+            <div>
 
-			</section>
+            </div>
+
+            			</section>
 		</section>
 	</section>
 
-	<!-- ****************************** Footer ************************** -->
+			<!-- ****************************** Footer ************************** -->
 
 	<section id="footer">
 		<section class="container">
@@ -88,7 +84,9 @@
 					<h1 class="footer-logo">B group</h1>
 				</div>
 
-				<div class="col-sm-6"></div>
+				<div class="col-sm-6">
+
+				</div>
 			</section>
 		</section>
 	</section>
@@ -101,5 +99,5 @@
 	<script src="assets/js/owl.carousel.js"></script>
 	<script src="assets/js/script.js"></script>
 
-</body>
-</html>
+      </body>
+ </html>

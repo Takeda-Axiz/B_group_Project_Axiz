@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
@@ -58,17 +58,38 @@
 
 
 
-<p>ポイント・チャージ残高・購入した漫画情報が<br>無くなりますがよろしいですか？</p>
-
-<div>
-<a href="UserLeaveResult.html"><input type="submit" value="はい"></a>
-<a href="Mypage.html"><input type="submit" value="いいえ"></a>
-</div>
+						<h3>
+							ポイント・チャージ残高・購入した漫画情報が<br>無くなりますがよろしいですか？
+						</h3>
+						<form action="UserLeaveResult.jsp" method="post">
+							<div>
+								<input type="submit" class="btn btn-lg btn-primary btn-block"
+									value="はい"> <input type="submit"
+									class="btn btn-lg btn-primary btn-block" name="button"
+									value="いいえ"
+									onclick="location.href='MyPage.jsp'; return false;">
+							</div>
+						</form>
+					</div>
+				</div>
 			</section>
 		</section>
 	</section>
 
+	<!-- ****************************** Footer ************************** -->
 
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
+	</section>
 
 	<!-- All the scripts -->
 

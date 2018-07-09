@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,47 +50,46 @@
 		<section class="container">
 			<section class="row">
 				<div class="headings">
-					<div class="col-md-6">
-						<form action="ChargeConfirm.jsp">
-							<div class="">
-								<label>シリアルコード</label> <input type="text" class="form-control"
-									name="serialCode" value="0123401234"
-									placeholder="10桁のシリアルコードを入力してください" /><br>
+								<div class="col-md-6">
+					<form action="./charge">
+						<div class="">
+							<label>シリアルコード</label> <input type="text" class="form-control"
+								name="serialCode" value="0123401234"
+								placeholder="10桁のシリアルコードを入力してください" /><br>
+						</div>
+						<div class="">
+							<button class="btn btn-lg btn-primary btn-block" name="Submit"
+								value="serialCode" type="Submit">確認</button>
+						</div>
+					</form>
+					<br>
+					<div class="row">
+						<div class="col-xs-6 col-sm-6 col-md-5">
+							<div>
+								<a href="Index.jsp"
+									class="polo-btn store wow animated bounceInUp"><i></i>トップページ</a>
 							</div>
-							<div class="">
-								<button class="btn btn-lg btn-primary btn-block" name="Submit"
-									value="serialCode" type="Submit">確認</button>
-							</div>
-						</form>
-						<br>
-						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-5">
-								<div>
-									<a href="Index.jsp"
-										class="polo-btn store wow animated bounceInUp"><i></i>トップページ</a>
-								</div>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-5">
-								<div>
-									<a href="MyPage.jsp"
-										class="polo-btn store wow animated bounceInUp"><i></i>マイページ</a>
-								</div>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-5">
+							<div>
+								<a href="MyPage.jsp"
+									class="polo-btn store wow animated bounceInUp"><i></i>マイページ</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 hidden-xs hidden-sm">
-						<div class="hand-container">
-							<img class="iphone-hand img_res wow animated bounceInUp"
-								data-wow-duration="1.2s"></img>
-							<div class="clearfix"></div>
-						</div>
+				</div>
+				<div class="col-md-6 hidden-xs hidden-sm">
+					<div class="hand-container">
+						<img class="iphone-hand img_res wow animated bounceInUp"
+							data-wow-duration="1.2s"></img>
+						<div class="clearfix"></div>
 					</div>
 				</div>
 			</section>
 		</section>
 	</section>
 
-	<!-- ****************************** Footer ************************** -->
+		<!-- ****************************** Footer ************************** -->
 
 	<section id="footer">
 		<section class="container">
@@ -102,7 +99,9 @@
 					<h1 class="footer-logo">B group</h1>
 				</div>
 
-				<div class="col-sm-6"></div>
+				<div class="col-sm-6">
+
+				</div>
 			</section>
 		</section>
 	</section>

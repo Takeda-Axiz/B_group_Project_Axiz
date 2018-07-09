@@ -1,5 +1,6 @@
 package jp.co.axiz.service;
 
+import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -13,6 +14,7 @@ public class ComicInfoService {
 	/*---  Field  ---*/
 	private ComicInfoDao cID = new ComicInfoDao();				//変数名概要
 	private JoinComicInfoDao jCID = new JoinComicInfoDao();	//変数名概要
+	private String nowTimeStamp = "";							//変数名概要
 
 	/*---  Field End  ---*/
 
@@ -123,8 +125,9 @@ public class ComicInfoService {
 	}
 
 //  処理概要
-	public void updateComicInfo(Integer comicId) {
-//		cID.updateComicInfo(comicId);
+	public void updateComicInfo(Integer comicId, String comicTitle, Integer numberOfTurns, String categoryName, Integer basePrice, String publisherName, String imageData, String viewPage, Date releaseDate, String authorName, String introduction) {
+
+		cID.updateComicInfo(comicId, comicTitle, numberOfTurns, categoryName, basePrice, publisherName, imageData, viewPage, releaseDate, authorName, introduction, this.nowTimeStamp);
 	}
 
 	//  処理概要

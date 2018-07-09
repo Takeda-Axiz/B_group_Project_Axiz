@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +41,7 @@
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="AdminTop.html">管理者専用ページ</a>
+					<a class="logo" href="AdminTop.jsp">管理者専用ページ</a>
 				</section>
 			</section>
 		</section>
@@ -57,11 +55,28 @@
 					<div class="headings">
        <p><h3>強制退会が完了しました。</h3></p>
 <a href="AdminTop.jsp"><input type="submit" class="btn btn-primary btn-md" value="管理者ページ"></a>
-</div>
- </div>       			</section>
+
+        			</section>
 		</section>
 	</section>
 
+
+			<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6">
+
+				</div>
+			</section>
+		</section>
+	</section>
 
 
 	<!-- All the scripts -->

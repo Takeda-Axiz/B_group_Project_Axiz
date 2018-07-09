@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+/*
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+*/
 <html>
 <head>
 <title>漫画の詳細（ワンピース）</title>
@@ -60,39 +61,45 @@ div.z {
 	<section id="banner">
 		<section class="container">
 			<section class="row">
-				<h3>ワンピース 1巻</h3>
-				<div class="b">
-					<img src="assets/img/screenshot-3.png" width="80%" height="100%">
-				</div>
-				<p>タイトル:ワンピース</p>
-				<p>原作者名:鈴木稔也</p>
-				<p>購入日:1000年6月5日</p>
-				<p>カテゴリー:少年漫画</p>
-
-				<p>海賊王を夢見る少年モンキー・D・ルフィを主人公とする、「ひとつなぎの大秘宝（ワンピース）」を巡る海洋冒険ロマン。
-					夢への冒険・仲間たちとの友情といったテーマを前面に掲げ、バトルやギャグシーン、感動エピソードをメインとする少年漫画の王道を行く物語として人気を博している</p>
+				<c:if test="${empty comicId}">
+					<p>見つかりませんでした</p>
+				</c:if>
 
 
+				<c:if test="${not empty comicId}">
+					<h3>${comicTitle}</h3>
+					<div class="b">
+						<img src=${imageData } width="80%" height="100%">
+					</div>
+					<p>タイトル:${comicTitle}</p>
+					<p>原作者:${authorName}</p>
+					<p>購入日:${purchase}</p>
+					<p>カテゴリー:${category}</p>
 
+					<p>${introduction}</p>
 
-
-
+				</c:if>
 
 				<div class="z">
 
 
 					<br>
-					<form role="form" method="post" action="Book001.jsp">
-						<div class="col-xs-2">
-							<select class="form-control" name="Category">
-								<option value="title">評価を選択</option>
-								<option value="valuation1」">1</option>
-								<option value="valuation2">2</option>
-								<option value="valuation3">3</option>
-								<option value="valuation4">4</option>
-								<option value="valuation5">5</option>
-							</select>
-						</div>
+					<form role="form" method="post" action="Book001.html">
+						<c:if test="${not empty individual_evaluation }">
+							<p>あなたの評価：${individual }</p>
+						</c:if>
+						<c:if test="${empty individual_evaluation}">
+							<div class="col-xs-2">
+								<select class="form-control" name="Category">
+									<option value="title">評価を選択</option>
+									<option value="valuation1">1</option>
+									<option value="valuation2">2</option>
+									<option value="valuation3">3</option>
+									<option value="valuation4">4</option>
+									<option value="valuation5">5</option>
+								</select>
+							</div>
+						</c:if>
 						<div class="col-xs-1">
 							<button type="submit" class="btn btn-custom"
 								style="font-size: 14px;">
@@ -101,10 +108,9 @@ div.z {
 						</div>
 					</form>
 				</div>
-				<div>
 				<br> <br>
 				<input type="button" class="btn btn-primary " value="閲覧する"
-					onclick="location.href='ComicRead.jsp'; return false;"> <br>
+					onclick="location.href='ComicRead.html'; return false;"> <br>
 				<br>
 				<a class="btn btn-primary " href="BookSelect.jsp">本棚へ戻る</a>
 				</div>

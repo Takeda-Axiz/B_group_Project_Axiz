@@ -1,6 +1,7 @@
 package jp.co.axiz.servlet;
 
 import java.io.IOException;
+import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,17 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import jp.co.axiz.entity.ComicInfo;
+
 /**
- * Servlet implementation class ChargeServlet
+ * Servlet implementation class AdminReferenceServlet
  */
-@WebServlet("/ChargeServlet")
-public class ChargeServlet extends HttpServlet {
+@WebServlet("/AdminReference")
+public class AdminReferenceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ChargeServlet() {
+    public AdminReferenceServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,7 +32,7 @@ public class ChargeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	//	response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -37,30 +40,24 @@ public class ChargeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		doGet(request, response);
-
-		//リクエスト、レスポンス時の文字化け防止
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("index.jsp; charset=UTF-8");
+	//	doGet(request, response);
+		String comicTitle;
+		String authorName;
+		Integer categoryId;
+		Date releaseDate = Date.valueOf("2018-06-02");
+		Integer publisherId;
+		String select;  //カテゴリー検索の欄
+		ComicInfo comicInfo = new ComicInfo();
 		HttpSession session = request.getSession();
-		int n = 3;
-		int money = 1000;
 
-		String serialCode = request.getParameter("serialCode");
-		int codeLength = serialCode.length();
+		comicTitle = request.getParameter("title");
+		authorName = request.getParameter("name");
+		categoryId = Integer.parseInt(request.getParameter("categoryId"));
+		System.out.println(releaseDate);
+		publisherId = Integer.parseInt(request.getParameter("publisherId"));
+		select = request.getParameter("select");
 
-		if(codeLength >= n) {
-
-			session.setAttribute("SerialCode", codeLength);
-			session.setAttribute("Money", money);
-
-			request.getRequestDispatcher("ChargeConfirm.jsp").forward(request, response);
-			return;
-		}else {
-
-			request.setAttribute("msg", "正しくシリアルコードを入力してください");
-			request.getRequestDispatcher("Charge.jsp").forward(request, response);
-			return;
-		}
+		request.getRequestDispatcher("/AdminReference.jsp").forward(request, response);
 	}
+
 }

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AdminComicRegisterServlet
  */
-@WebServlet("/AdminComicRegisterServlet")
+@WebServlet("/AdminComicRegister")
 public class AdminComicRegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -97,10 +97,5 @@ public class AdminComicRegisterServlet extends HttpServlet {
 //
 //
 //
-//	}
-//
-//	private Integer parseInt(String price) {
-//		// TODO 自動生成されたメソッド・スタブ
-//		return null;
 //	}
 }

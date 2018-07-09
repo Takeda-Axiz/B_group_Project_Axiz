@@ -48,7 +48,7 @@
 						<c:if test="${not empty errmsg}">
 							<p class="error">${fn:escapeXml(errmsg)}</p>
 						</c:if>
-						<c:forEach var="comicList" items="comic">
+						<c:forEach var="comic" items="${comicList}">
 							<h3>※更新・削除する項目を選択してください</h3>
 
 							<p>

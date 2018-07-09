@@ -8,33 +8,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 /**
- * Servlet implementation class PointBuyConfirmServlet
+ * Servlet implementation class PointBuyResultServlet
  */
-@WebServlet("/point")
+@WebServlet("/pointResult")
 public class PointBuyConfirmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-/*
+		/*
+		//一時的にStringにしているだけ・・・
+		String  beforePoint = request.getParameter("point");
+
+		PointService pointService = new PointService();
+
+		Integer afterPoint = pointService.point(beforePoint);
+
 		HttpSession session = request.getSession();
 
-		String user_id = (String) session.getAttribute("user_id");
+		session.setAttribute("afterPoint", afterPoint);
 
-		SelectService select = new SelectService();
-
-		List<User> user = select.authentication(user_id);
-
-		Integer point = user.get(0).getPoint();
-
-		session.setAttribute("point", point);
-
-		request.getRequestDispatcher("/pointConfirm.jsp").forward(request, response);
-*/
+		request.getRequestDispatcher("/pointResult.jsp").forward(request, response);
+		*/
 	}
 
 }

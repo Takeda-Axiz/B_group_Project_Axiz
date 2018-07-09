@@ -183,7 +183,7 @@ public class ComicInfoDao {
 //	}
 
 	/**
-	 * 漫画情報更新
+	 * 漫画情報論理削除
 	 *
 	 * @return
 	 */

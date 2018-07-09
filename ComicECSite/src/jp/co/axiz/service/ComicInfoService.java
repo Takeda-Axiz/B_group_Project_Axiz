@@ -123,6 +123,11 @@ public class ComicInfoService {
 		return list;
 	}
 
+//  処理概要
+	public void updateComicInfo(Integer comicId) {
+//		cID.updateComicInfo(comicId);
+	}
+
 	//  処理概要
 	public void deleteComicInfo(Integer comicId) {
 		cID.logicalDelete(comicId);

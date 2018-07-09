@@ -8,7 +8,7 @@
 <title>管理者漫画更新・削除検索</title>
 
 <!-- meta -->
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,7 +34,7 @@
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-6">
-					<a class="logo" href="AdminTop.html">管理者専用ページ</a>
+					<a class="logo" href="AdminTop.jsp">管理者専用ページ</a>
 				</section>
 			</section>
 		</section>
@@ -45,58 +45,63 @@
 			<section class="row">
 				<div class="col-md-6">
 					<form action="" method="post">
-						<h3>※更新・削除する項目を選択してください</h3>
+						<c:if test="${not empty errmsg}">
+							<p class="error">${fn:escapeXml(errmsg)}</p>
+						</c:if>
+						<c:forEach var="comicList" items="comic">
+							<h3>※更新・削除する項目を選択してください</h3>
 
-						<p>
-							<label for="inputEmail3" class=" col-xs-3 control-label">
-								ID:</label><input type="text" name="id">
-						</p>
+							<p>
+								<label for="inputEmail3" class=" col-xs-3 control-label">
+									ID:</label> <input type="text" name="id" value="${comic.comicId}"
+									readonly>
+							</p>
 
-						<p>
-							<label for="inputEmail3" class=" col-xs-3 control-label">
-								作品名:</label><input type="text" name="id">
-						</p>
+							<p>
+								<label for="inputEmail3" class=" col-xs-3 control-label">
+									作品名:</label> <input type="text" name="id" value="${comic.comicTitle}">
+							</p>
 
-						<p>
-							<label for="inputEmail3" class=" col-xs-3 control-label">
-								巻数:</label><input type="text" name="id">
-						</p>
+							<p>
+								<label for="inputEmail3" class=" col-xs-3 control-label">
+									巻数:</label> <input type="text" name="id" value="${comic.numberOfTurns}">
+							</p>
 
-						<p>
-							<label for="inputEmail3" class=" col-xs-3 control-label">
-								原作者名:</label><input type="text" name="id">
-						</p>
+							<p>
+								<label for="inputEmail3" class=" col-xs-3 control-label">
+									原作者名:</label> <input type="text" name="id" value="${comic.authorName}">
+							</p>
 
-						<p>
-							<label for="inputEmail3" class=" col-xs-3 control-label">
-								カテゴリー:</label><input type="text" name="id">
-						</p>
+							<p>
+								<label for="inputEmail3" class=" col-xs-3 control-label">
+									カテゴリー:</label> <input type="text" name="id"
+									value="${comic.categoryName}">
+							</p>
 
-						<p>
-							<label for="inputEmail3" class=" col-xs-3 control-label">
-								発売日:</label><input type="text" name="id">
-						</p>
+							<p>
+								<label for="inputEmail3" class=" col-xs-3 control-label">
+									発売日:</label> <input type="text" name="id" value="${comic.releaseDate}">
+							</p>
 
-						<p>
-							<label for="inputEmail3" class=" col-xs-3 control-label">
-								表紙画像:</label><input type="text" name="id">
-						</p>
+							<p>
+								<label for="inputEmail3" class=" col-xs-3 control-label">
+									表紙画像:</label> <input type="text" name="id" value="${comic.imageData}">
+							</p>
 
+							<p>
+								<label for="inputEmail3" class=" col-xs-3 control-label">
+									出版社:</label> <input type="text" name="id"
+									value="${comic.publisherName}">
+							</p>
 
-						<p>
-							<label for="inputEmail3" class=" col-xs-3 control-label">
-								出版社:</label><input type="text" name="id">
-						</p>
+							<p>
+								<label for="inputEmail3" class=" col-xs-3 control-label">
+									本体価格:</label> <input type="text" name="id" value="${comic.basePrice}">
+							</p>
 
-						<p>
-							<label for="inputEmail3" class=" col-xs-3 control-label">
-								本体価格:</label><input type="text" name="id">
-						</p>
-
-						<input class="btn btn-primary btn-lg" type="submit" value="更新"
-							onclick="location.href='ComicUpdateResult.jsp'; return false;">
-						<input class="btn btn-primary btn-lg" type="submit" value="削除"
-							onclick="location.href='ComicDeleteResult.jsp'; return false;">
+							<input class="btn btn-primary btn-lg" id="update" type="submit" value="更新">
+							<input class="btn btn-primary btn-lg" id="delete" type="submit" value="削除">
+						</c:forEach>
 					</form>
 				</div>
 			</section>
@@ -121,6 +126,20 @@
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/owl.carousel.js"></script>
 	<script src="assets/js/script.js"></script>
+
+	<script>
+		$(':submit#update').click(function() {
+			$('form').attr('action', 'ComicUpdateResult.jsp');
+			$('form').attr('method', 'post');
+			$('form').submit();
+		});
+
+		$(':submit#delete').click(function() {
+			$('form').attr('action', 'AdminComicDelete');
+			$('form').attr('method', 'post');
+			$('form').submit();
+		});
+	</script>
 
 </body>
 </html>

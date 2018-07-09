@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@
 				<section class="subscribe-wrap">
 					<div class="col-xs-3">
 						<div class="row">
-							<form role="form" method="post" action="SearchResult.html">
+							<form role="form" method="post" action="SearchResult.jsp">
 								<div class="col-xs-12">
 									<select class="form-control" name="Category">
 										<option value="title">タイトル</option>
@@ -59,12 +59,13 @@
 								</div>
 								<div class="col-xs-10">
 									<div class="form-group">
-										<input type="text" class="form-control"
-											name="search" placeholder="カテゴリー検索">
+										<input type="text" class="form-control" name="search"
+											placeholder="カテゴリー検索">
 									</div>
 								</div>
 								<div class="col-xs-2">
-									<button type="submit" class="btn btn-custom" style="font-size: 14px;">
+									<button type="submit" class="btn btn-custom"
+										style="font-size: 14px;">
 										<i class="ion-ios-arrow-thin-right"></i>
 									</button>
 								</div>
@@ -74,15 +75,13 @@
 				</section>
 
 				<div class="col-xs-3">
-					<form action="Login.html" class="pull-right">
+					<form action="Login.jsp" class="pull-right">
 						<input class="btn btn-primary btn-sm active" id="setLogin"
 							type="button" value="ログイン"
-							onclick= "location.href='Login.html'; return false;">
-													<input class="btn btn-primary btn-sm active"
-							type="button" value="新規登録"
-							onclick="location.href='Agreement.html'; return false;">
-
-						<a class="btn" href="cart.html" role="button"><img
+							onclick="location.href='Login.jsp'; return false;"> <input
+							class="btn btn-primary btn-sm active" type="button" value="新規登録"
+							onclick="location.href='Agreement.jsp'; return false;"> <a
+							class="btn" href="Cart.jsp" role="button"><img
 							src="assets/img/cart.png" class="img-responsive" alt="cartImage"></a>
 					</form>
 					<!--<a class="btn btn-primary btn-lg active" href="Login.html" role="button">ログイン</a>
@@ -100,11 +99,13 @@
 		<section class="container">
 			<section class="row">
 				<div>
-					<img src="assets/img/clearline.png" class="img-responsive" alt="" style="margin: 0 auto;">
+					<img src="assets/img/clearline.png" class="img-responsive" alt=""
+						style="margin: 0 auto;">
 				</div>
 
 				<div class="col-md-12">
-					<img src="assets/img/ad.png" class="img-responsive" alt="advertisement" style="margin: 0 auto;">
+					<img src="assets/img/ad.png" class="img-responsive"
+						alt="advertisement" style="margin: 0 auto;">
 				</div>
 			</section>
 		</section>
@@ -128,53 +129,43 @@
 				<div class="col-xs-12">
 					<div id="screenshots" class="owl-carousel owl-theme">
 						<div class="item">
-							<a href="Book0001.html"><img
-								src="assets/img/screenshot-1.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-1.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.html"><img
-								src="assets/img/screenshot-2.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-2.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.html"><img
-								src="assets/img/screenshot-3.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-3.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.html"><img
-								src="assets/img/screenshot-4.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-4.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.html"><img
-								src="assets/img/screenshot-5.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-5.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.html"><img
-								src="assets/img/screenshot-6.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-6.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.html"><img
-								src="assets/img/screenshot-7.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-7.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.html"><img
-								src="assets/img/screenshot-3.png"
+							<a href="Book0001jsp"><img src="assets/img/screenshot-3.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.html"><img
-								src="assets/img/screenshot-5.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-5.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.html"><img
-								src="assets/img/screenshot-1.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-1.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 					</div>

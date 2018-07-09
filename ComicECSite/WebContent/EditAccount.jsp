@@ -59,7 +59,7 @@
 					<div class="headings">
 						<div class="field">
 
-							<form action="AccountResult.html" method="post">
+							<form action="AccountResult.jsp" method="post">
 								<div class="form">
 									<label>メールアドレス</label><input type="email" class="form-control"
 										name="mailAddress" value="example@gmail.com">
@@ -80,9 +80,9 @@
 										value="確定">
 								</div>
 							</form>
-
+<br>
 							<div class="link">
-								<a href="mypage.html">マイページへ</a>
+								<a href="MyPage.jsp" class="btn btn-primary ">マイページ</a>
 							</div>
 
 						</div>
@@ -92,7 +92,22 @@
 		</section>
 	</section>
 
-	<footer></footer>
+		<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6">
+
+				</div>
+			</section>
+		</section>
+	</section>
 
 	<!-- All the scripts -->
 

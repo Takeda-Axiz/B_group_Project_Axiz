@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
@@ -50,19 +50,22 @@
 					<div class="headings">
 
 
-	<h3>ポイントを使用して購入しますか？</h3>
-	<p>現在所持しているポイント：32ポイント</p>
-	<p>(使用ポイント：20ポイント)</p>
-<form action="PointResult.html" method="post">
-		<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">はい</button>
-		<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit" onclick="location.href='Book0001.html'; return false;">いいえ</button>
-</form>
+						<h3>ポイントを使用して購入しますか？</h3>
+						<p>現在所持しているポイント：32ポイント</p>
+						<p>(使用ポイント：20ポイント)</p>
+						<form action="PointResult.jsp" method="post">
+							<button class="btn btn-lg btn-primary btn-block" name="Submit"
+								value="Login" type="Submit">はい</button>
+							<button class="btn btn-lg btn-primary btn-block" name="Submit"
+								value="Login" type="Submit"
+								onclick="location.href='Book0001.jsp'; return false;">いいえ</button>
+						</form>
 
-</div>
-</div>
-</section>
-</section>
-</section>
+					</div>
+				</div>
+			</section>
+		</section>
+	</section>
 
 	<footer></footer>
 

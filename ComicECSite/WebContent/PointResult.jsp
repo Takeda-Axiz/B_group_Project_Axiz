@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,28 +55,28 @@
 	<section id="banner">
 		<section class="container">
 			<section class="row">
-
+				<div>
 					<div class="headings">
 						<h2 class="wow animated fadeInDown">ご購入ありがとうございました。</h2>
 						<p>現在使用可能なポイント：11ポイント</p>
 						<div class="row">
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<div>
-									<a href="Index.html"
+									<a href="Index.jsp"
 										class="polo-btn store wow animated bounceInUp"
 										style="color: #000;"><i></i>トップページ</a>
 								</div>
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<div>
-									<a href="MyPage.html"
+									<a href="MyPage.jsp"
 										class="polo-btn store wow animated bounceInUp"
 										style="color: #000;"><i></i>マイページ</a>
 								</div>
 							</div>
 							<div class="col-xs-3 col-sm-3 col-md-3">
 								<div>
-									<a href="BookSelect.html"
+									<a href="BookSelect.jsp"
 										class="polo-btn store wow animated bounceInUp"
 										style="color: #000;"><i></i>本棚検索</a>
 								</div>
@@ -87,8 +88,22 @@
 			</section>
 		</section>
 	</section>
+	<!-- ****************************** Footer ************************** -->
 
- 	<!-- All the scripts -->
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
+	</section>
+
+	<!-- All the scripts -->
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

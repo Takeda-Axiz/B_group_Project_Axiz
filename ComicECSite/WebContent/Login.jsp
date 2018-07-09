@@ -34,7 +34,7 @@
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-xs-12">
-					<a class="logo" href="Index.html">電子漫画購入サイト</a>
+					<a class="logo" href="">電子漫画購入サイト</a>
 				</section>
 			</section>
 		</section>
@@ -43,7 +43,7 @@
 	<section id="banner">
 		<section class="container">
 			<div class="headings" style="padding:0 0 50% 0;">
-				<form action="Index.html" method="post">
+				<form action="Index.jsp" method="post">
 					<section class="row">
 						<div class="row col-xs-12 col-md-6">
 							<h3>メールアドレスとパスワードを入力してください</h3>
@@ -54,7 +54,7 @@
 					</section>
 					<br>
 					<section class="row">
-						<div class="row col-xs-6 col-md-3">
+						<div class="row col-xs-6 col-md-4">
 							<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">
 								ログイン
 							</button>
@@ -67,24 +67,43 @@
 					</div>
 				</section>
 				<section class="row">
-				<div class="col-xs-2 col-md-1">
-					<a href="Agreement.html">
-						<button name="register" value="Login" type="Submit" class="btn btn-primary btn-xs">
-							新規登録
-						</button>
-						</a>
-				</div>
-				<div class="col-xs-2 col-md-1">
-					<a class="btn btn-primary btn-xs" href="index.html" roll="btn">top画面へ</a>
-				</div>
+					<div class="">
+						<a href="Agreement.jsp">
+							<button name="register" value="Login" type="Submit" class="btn btn-primary btn-lg">
+								新規登録
+							</button>
+							</a>
+					</div><br>
 
+
+					<div class="">
+						<a href="Index.jsp">
+							<button name="register" value="Login" type="Submit" class="btn btn-primary btn-lg">
+								トップページ
+							</button>
+							</a>
+					</div>
 				</section>
 			</div>
 		</section>
 	</section>
 
-	<footer>
-					</footer>
+		<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6">
+
+				</div>
+			</section>
+		</section>
+	</section>
 
 	<!-- All the scripts -->
 

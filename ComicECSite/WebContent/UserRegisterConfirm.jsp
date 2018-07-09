@@ -45,22 +45,60 @@
 		<section class="container">
 			<section class="row">
 				<div class="col-md-6">
-					<div class="headings">
-						<p>
-						<h3>
-							ポイント・チャージ残高・購入した漫画情報が<br>無くなりますがよろしいですか？
-						</h3>
-						</p>
+<form method="post" action="UserRegisterComfirm.html">
+<h1>新規会員登録確認フォーム</h1>
+<p>入力項目に間違いはありませんか？</p>
+<div class="form-group">
+ <label>※名前</label><input type="hidden" class="form-control" name="user_name" value="佐藤">
+ <div class="formbox">
+ <p>佐藤</p>
+ </div>
+  </div>
+  <div class="form-group">
+    <label>※生年月日</label>
+    <input type="hidden" class="form-control" name="user_birthday" value="1994/3/6">
+    <div class="formbox">
+    <p>1994/3/6</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>※会員ID (メールアドレス)</label>
+    <input type="hidden"  class="form-control" name="user_id" value="aaaa@mail">
+        <div class="formbox">
+    <p>aaaa@mail</p>
+    </div>
+  </div>
+  <div class="form-group">
+   <label>※パスワード(再入力)</label> <input type="password" class="form-control" name="password">
+  </div>
+  <div align="center">
+  <button type="submit" class="btn btn-primary" name="signup" onclick="location.href='UserRegisterResult.html'; return false;">会員登録確定する</button>
+  </div>
+  <br>
+   <button type="submit" class="btn btn-primary " name="signup" onclick="location.href='UserRegister.html'; return false;">新規会員登録ページへ戻る</button>
+</form>
+<br>
+			<div class="col-xs-6 col-md-3">
+					<a class="btn btn-primary " href="index02.html">トップページ</a>
+				</div>
 
-						<form action="UserLeaveResult.jsp" method="post">
-							<div>
-								<input type="submit" class="btn btn-lg btn-primary btn-block"
-									value="はい"> <input type="submit"
-									class="btn btn-lg btn-primary btn-block" name="button"
-									value="いいえ" onclick="location.href='MyPage.jsp'; return false;">
-							</div>
-						</form>
-					</div>
+				</div>
+			</section>
+		</section>
+	</section>
+
+	<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6">
+
 				</div>
 			</section>
 		</section>

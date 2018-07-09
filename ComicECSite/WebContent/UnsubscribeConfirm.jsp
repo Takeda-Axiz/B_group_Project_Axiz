@@ -70,13 +70,28 @@
 							<button type="submit" class="btn btn-primary" name="signup"
 								onclick="location.href='Unsubscribe.jsp'; return false;">強制退会ページに戻る</button>
 						</div>
+						<div></div>
 					</div>
 				</div>
+
 			</section>
 		</section>
 	</section>
 
+	<!-- ****************************** Footer ************************** -->
 
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
+	</section>
 
 	<!-- All the scripts -->
 

@@ -53,48 +53,59 @@
 		<section class="container">
 			<section class="row">
 				<div class="col-md-6">
-					<div class="headings">
 
-						<form method="post" action="UserRegisterComfirm.jsp">
-							<h2>新規会員登録フォーム</h2>
-							<p>
-								※は必須項目です<br>生年月日は登録後変更できません
-							</p>
+					<form method="post" action="UserRegisterComfirm.jsp">
+						<h2>新規会員登録フォーム</h2>
+						<p>
+							※は必須項目です<br>生年月日は登録後変更できません
+						</p>
 
-							<div class="form-group">
-								<label class="required">※名前</label><input type="text"
-									class="form-control" name="use_name">
-							</div>
-							<div class="form-group">
-								<label class="required">※生年月日</label><input type="date"
-									class="form-control" name="birthday">
-							</div>
-							<div class="form-group">
-								<p></p>
-								<label class="required">※会員ID</label><input type="email"
-									class="form-control" name="user_id" placeholder="メールアドレス">
-							</div>
-							<div class="form-group">
-								<label class="required">※パスワード</label> <input type="password"
-									class="form-control" name="password">
-							</div>
-							<div align="center">
-								<button type="submit" class="btn btn-primary " name="signup"
-									onclick="location.href='UserRegisterComfirm.jsp'; return false;">会員登録する</button>
-							</div>
+						<div class="form-group">
+							<label class="required">※名前</label><input type="text"
+								class="form-control" name="use_name">
+						</div>
+						<div class="form-group">
+							<label class="required">※生年月日</label><input type="date"
+								class="form-control" name="birthday">
+						</div>
+						<div class="form-group">
+							<p></p>
+							<label class="required">※会員ID</label><input type="email"
+								class="form-control" name="user_id" placeholder="メールアドレス">
+						</div>
+						<div class="form-group">
+							<label class="required">※パスワード</label> <input type="password"
+								class="form-control" name="password">
+						</div>
+						<div align="center">
+							<button type="submit" class="btn btn-primary " name="signup"
+								onclick="location.href='UserRegisterComfirm.jsp'; return false;">会員登録する</button>
+						</div>
 
-						</form>
+					</form>
+					<div class="col-xs-6 col-md-3">
+						<a class="btn btn-primary" href="index02.jsp">トップページ</a>
 					</div>
 				</div>
 			</section>
 		</section>
 	</section>
 
+	<!-- ****************************** Footer ************************** -->
+
 	<section id="footer">
-		<div class="col-xs-6 col-md-3">
-			<a class="btn btn-primary btn-xs" href="index02.jsp" roll="btn">トップページ</a>
-		</div>
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6"></div>
+			</section>
+		</section>
 	</section>
+
 	<!-- All the scripts -->
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>

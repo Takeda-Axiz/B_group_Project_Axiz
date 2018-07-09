@@ -79,6 +79,23 @@
 		</section>
 	</section>
 
+	<!-- ****************************** Footer ************************** -->
+
+	<section id="footer">
+		<section class="container">
+			<section class="row">
+				<div class="col-sm-6">
+					<span>Developed By</span>
+					<h1 class="footer-logo">B group</h1>
+				</div>
+
+				<div class="col-sm-6">
+
+				</div>
+			</section>
+		</section>
+	</section>
+
 	<!-- All the scripts -->
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>

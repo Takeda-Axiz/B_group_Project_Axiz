@@ -67,7 +67,6 @@ public class ComicInfoService {
 				list = jCID.findByCategory(formInfo);
 				break;
 			case "saleDay":
-
 				if(formDate == null) {
 					sDF = new SimpleDateFormat("yyyyMMdd");
 

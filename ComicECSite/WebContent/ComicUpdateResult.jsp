@@ -87,8 +87,6 @@
 		</section>
 	</section>
 
-
-
 	<!-- All the scripts -->
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -96,8 +94,6 @@
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/owl.carousel.js"></script>
 	<script src="assets/js/script.js"></script>
-
-
 
 </body>
 </html>

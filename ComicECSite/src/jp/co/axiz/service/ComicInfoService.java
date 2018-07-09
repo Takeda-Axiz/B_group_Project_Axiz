@@ -124,7 +124,7 @@ public class ComicInfoService {
 		return list;
 	}
 
-//  処理概要
+	//  処理概要
 	public void updateComicInfo(Integer comicId, String comicTitle, Integer numberOfTurns, String categoryName, Integer basePrice, String publisherName, String imageData, String viewPage, Date releaseDate, String authorName, String introduction) {
 
 		cID.updateComicInfo(comicId, comicTitle, numberOfTurns, categoryName, basePrice, publisherName, imageData, viewPage, releaseDate, authorName, introduction, this.nowTimeStamp);

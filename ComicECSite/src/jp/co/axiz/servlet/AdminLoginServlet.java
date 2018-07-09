@@ -39,10 +39,18 @@ public class AdminLoginServlet extends HttpServlet {
 		id = request.getParameter("id");
 		pass = request.getParameter("pass");
 
+		//AdminDao adminDao = new AdminDao();
+		//Admin admin = adminDao.findByIdAndPassword(id, pass);
+
+
 		if(dao == true) {
-			setName = adminInfo.getAdminName();
-			session.setAttribute("user", setName);
+
+			//session.setAttribute("user", admin);
+			response.sendRedirect(request.getContextPath() + "/Menu.jsp");
 		}
+
+		request.setAttribute("errmsg", "IDまたはPASSが間違っています");
 		request.getRequestDispatcher("/AdminTop.jsp").forward(request, response);
 	}
 }
+

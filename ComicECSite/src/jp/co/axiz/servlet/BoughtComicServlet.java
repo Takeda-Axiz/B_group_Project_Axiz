@@ -37,6 +37,7 @@ public class BoughtComicServlet extends HttpServlet {
 		Timestamp purchaseTimestamp = (Timestamp) request.getAttribute("purchaseTimestamp");
 		String imageDate = request.getParameter("imageDate");
 
+
 		ComicInfo cond = new ComicInfo();
 	/*	try {
 			cond.setId(Integer.parseInt(comicId));
@@ -58,3 +59,5 @@ public class BoughtComicServlet extends HttpServlet {
 			request.getRequestDispatcher("Book001.jsp").forward(request, response);
 		}
 	}
+
+

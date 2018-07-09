@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import jp.co.axiz.dao.JoinComicInfoDao;
 import jp.co.axiz.entity.JoinComicInfo;
 
 /**
@@ -46,10 +45,8 @@ public class AdminComicInfoServlet extends HttpServlet {
 
 		List<JoinComicInfo> list = null;
 
-//		ComicInfoService c = new ComicInfoService();
-//		List<JoinComicInfo> user = c.findAll();
-		JoinComicInfoDao c = new JoinComicInfoDao();
-		//list = c.findAll();
+		//ComicInfoService c = new ComicInfoService();
+		//List<JoinComicInfo> user = c.findAll();
 
 		if(list.isEmpty()||list == null) {
 			request.setAttribute("errmsg", "登録された漫画はありません。");

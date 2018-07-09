@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>漫画一覧</title>
 
 <!-- meta -->
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -51,9 +51,9 @@
 				<section class="subscribe-wrap">
 					<div class="col-xs-offset-3 col-xs-6">
 						<div class="row">
-							<form action="AdminComicSearch" role="form" method="post">
+							<form role="form" method="post">
 								<div class="col-xs-12">
-									<select class="form-control" name="category">
+									<select class="form-control" name="Category">
 										<option value="title">作品名</option>
 										<option value="author">原作者名</option>
 										<option value="category">カテゴリー</option>
@@ -79,100 +79,101 @@
 				</section>
 
 				<div class="adminReference">
-					<form action="AdminSelect.jsp" method="post">
-						<table border="1" class="table table-striped table-hover">
-							<thead class="active">
-								<tr>
-									<th>ID</th>
-									<th>作品名</th>
-									<th>巻数</th>
-									<th>原作者名</th>
-									<th>カテゴリー</th>
-									<th>発売日</th>
-									<th>出版社</th>
-									<th>本体価格</th>
-									<th>更新責任者</th>
-									<th>更新日付</th>
-									<th>更新・削除</th>
-								</tr>
-							</thead>
+					<table border="1" class="table table-striped table-hover">
+						<thead class="active">
+							<tr>
+								<th>ID</th>
+								<th>作品名</th>
+								<th>巻数</th>
+								<th>原作者名</th>
+								<th>カテゴリー</th>
+								<th>発売日</th>
+								<th>出版社</th>
+								<th>本体価格</th>
+								<th>更新責任者</th>
+								<th>更新日付</th>
+								<th>更新・削除</th>
+							</tr>
+						</thead>
 
-							<tbody>
-								<c:forEach var="comicList" items="comic">
-									<tr class="active">
-										<td>${fn:escapeXml(comic.comicId)}</td>
-										<td>${comic.comicTitle}</td>
-										<td>${comic.numberOfTurns}</td>
-										<td>${comic.authorName}</td>
-										<td>${comic.categoryName}</td>
-										<td>${comic.releaseDate}</td>
-										<td>${comic.publisherName}</td>
-										<td>${comic.basePrice}</td>
-										<td>?</td>
-										<td>${comic.updateTimestamp}</td>
-										<td><input type="submit" value="更新・削除"> <input
-											type="hidden" name="comic" value="${comic}"></td>
-									</tr>
 
-									<tr class="active">
-										<td>002</td>
-										<td>Sample2</td>
-										<td>2巻</td>
-										<td>ああああ</td>
-										<td>少年漫画</td>
-										<td>2001年9月3日</td>
-										<td>Axiz月間文集</td>
-										<td>400円</td>
-										<td>鈴木稔也</td>
-										<td>2018年7月3日</td>
-										<td><input type="submit" value="更新・削除"></td>
-									</tr>
+						<tbody>
+							<tr class="active">
+								<td>001</td>
+								<td>Sample</td>
+								<td>1巻</td>
+								<td>ああああ</td>
+								<td>少年漫画</td>
+								<td>2001年9月3日</td>
+								<td>Axiz月間文集</td>
+								<td>400円</td>
+								<td>鈴木稔也</td>
+								<td>2018年7月3日</td>
+								<td><a href="AdminSelect.jsp"><input type="submit"
+										value="更新・削除"></a></td>
+							</tr>
 
-									<tr class="active">
-										<td>003</td>
-										<td>Sample3</td>
-										<td>3巻</td>
-										<td>ああああ</td>
-										<td>少年漫画</td>
-										<td>2001年9月3日</td>
-										<td>Axiz月間文集</td>
-										<td>400円</td>
-										<td>鈴木稔也</td>
-										<td>2018年7月3日</td>
-										<td><input type="submit" value="更新・削除"></td>
-									</tr>
+							<tr class="active">
+								<td>002</td>
+								<td>Sample2</td>
+								<td>2巻</td>
+								<td>ああああ</td>
+								<td>少年漫画</td>
+								<td>2001年9月3日</td>
+								<td>Axiz月間文集</td>
+								<td>400円</td>
+								<td>鈴木稔也</td>
+								<td>2018年7月3日</td>
+								<td><a href="AdminSelect.jsp"><input type="submit"
+										value="更新・削除"></a></td>
+							</tr>
 
-									<tr class="active">
-										<td>004</td>
-										<td>Sample4</td>
-										<td>4巻</td>
-										<td>ああああ</td>
-										<td>少年漫画</td>
-										<td>2001年9月3日</td>
-										<td>Axiz月間文集</td>
-										<td>400円</td>
-										<td>鈴木稔也</td>
-										<td>2018年7月3日</td>
-										<td><input type="submit" value="更新・削除"></td>
-									</tr>
+							<tr class="active">
+								<td>003</td>
+								<td>Sample3</td>
+								<td>3巻</td>
+								<td>ああああ</td>
+								<td>少年漫画</td>
+								<td>2001年9月3日</td>
+								<td>Axiz月間文集</td>
+								<td>400円</td>
+								<td>鈴木稔也</td>
+								<td>2018年7月3日</td>
+								<td><a href="AdminSelect.jsp"><input type="submit"
+										value="更新・削除"></a></td>
+							</tr>
 
-									<tr class="active">
-										<td>005</td>
-										<td>Sample5</td>
-										<td>5巻</td>
-										<td>ああああ</td>
-										<td>少年漫画</td>
-										<td>2001年9月3日</td>
-										<td>Axiz月間文集</td>
-										<td>400円</td>
-										<td>鈴木稔也</td>
-										<td>2018年7月3日</td>
-										<td><input type="submit" value="更新・削除"></td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					</form>
+							<tr class="active">
+								<td>004</td>
+								<td>Sample4</td>
+								<td>4巻</td>
+								<td>ああああ</td>
+								<td>少年漫画</td>
+								<td>2001年9月3日</td>
+								<td>Axiz月間文集</td>
+								<td>400円</td>
+								<td>鈴木稔也</td>
+								<td>2018年7月3日</td>
+								<td><a href="AdminSelect.jsp"><input type="submit"
+										value="更新・削除"></a></td>
+							</tr>
+
+							<tr class="active">
+								<td>005</td>
+								<td>Sample5</td>
+								<td>5巻</td>
+								<td>ああああ</td>
+								<td>少年漫画</td>
+								<td>2001年9月3日</td>
+								<td>Axiz月間文集</td>
+								<td>400円</td>
+								<td>鈴木稔也</td>
+								<td>2018年7月3日</td>
+								<td><a href="AdminSelect.jsp"><input type="submit"
+										value="更新・削除"></a></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</section>
 			<section class="row">

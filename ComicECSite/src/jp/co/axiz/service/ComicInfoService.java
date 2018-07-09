@@ -11,7 +11,7 @@ import jp.co.axiz.entity.JoinComicInfo;
 
 public class ComicInfoService {
 	/*---  Field  ---*/
-	private ComicInfoDao cID = new ComicInfoDao();	//変数名概要
+	private ComicInfoDao cID = new ComicInfoDao();				//変数名概要
 	private JoinComicInfoDao jCID = new JoinComicInfoDao();	//変数名概要
 
 	/*---  Field End  ---*/

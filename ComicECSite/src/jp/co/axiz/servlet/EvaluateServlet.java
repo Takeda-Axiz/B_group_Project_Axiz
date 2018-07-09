@@ -12,16 +12,16 @@ import javax.servlet.http.HttpSession;
 import jp.co.axiz.service.UserComicInfoService;
 
 /**
- * Servlet implementation class ExaluateServlet
+ * Servlet implementation class EvaluateServlet
  */
-@WebServlet("/Exaluate")
-public class ExaluateServlet extends HttpServlet {
+@WebServlet("/Evaluate")
+public class EvaluateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ExaluateServlet() {
+    public EvaluateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -54,7 +54,7 @@ public class ExaluateServlet extends HttpServlet {
 
 		//評価の分岐
 		if(va == 0) {
-			request.setAttribute("errmsg", "評価を選択してください");
+			request.setAttribute("msg", "評価を選択してください");
 			request.getRequestDispatcher("Book001.jsp").forward(request, response);
 			return;
 		}
@@ -66,19 +66,19 @@ public class ExaluateServlet extends HttpServlet {
 		//List<UserComicInfo> userComicInfo = ud.updata(user_comic_id,va);
 
 		if(va == 1) {
-			request.setAttribute("errmsg", "評価:1");//評価：1 or va
+			request.setAttribute("msg", "評価:1");//評価：1 or va
 			request.getRequestDispatcher("Book001.jsp").forward(request, response);
 		}else if(va == 2) {
-			request.setAttribute("errmsg", "評価:2");
+			request.setAttribute("msg", "評価:2");
 			request.getRequestDispatcher("Book001.jsp").forward(request, response);
 		}else if(va == 3) {
-			request.setAttribute("errmsg", "評価:3");
+			request.setAttribute("msg", "評価:3");
 			request.getRequestDispatcher("Book001.jsp").forward(request, response);
 		}else if(va == 4) {
-			request.setAttribute("errmsg", "評価:4");
+			request.setAttribute("msg", "評価:4");
 			request.getRequestDispatcher("Book001.jsp").forward(request, response);
 		}else if(va == 5) {
-			request.setAttribute("errmsg", "評価:5");
+			request.setAttribute("msg", "評価:5");
 			request.getRequestDispatcher("Book001.jsp").forward(request, response);
 		}
 	}

@@ -24,7 +24,7 @@ public class ComicInfoDao {
 		+ "author_name, image_data, view_page, insert_timestamp, update_timestamp, delete_flag) "
 		+ "VALUES (?, ?, ?, (SELECT category_id FROM category WHERE category_name = ?), ?, '1', "
 		+ "(SELECT publisher_id FROM publisher WHERE publisher_name = ?), '', ?, ?, ?, ?, ?, "
-		+ "'1970-01-01 00:00:00', '0')";
+		+ "?, '0')";
 	private static final String SQL_UPDATE_COMIC_INFO =
 		"UPDATE comic_info SET comic_title = ?, number_of_turns = ?, introduction = ?, category_id = "
 		+ "(SELECT category_id FROM category WHERE category_name = ?), base_price = ?, "
@@ -146,7 +146,7 @@ public class ComicInfoDao {
 	 *
 	 * @return
 	 */
-	public void insert(String title, String numberOfTurns, String category,
+	public void insert(String title, Integer numberOfTurns, String category,
 			Integer price, String publisher, String imgPath, String viewPath,
 			Date releaseDate, String author, String introduction,
 			String timeStamp) {
@@ -156,7 +156,7 @@ public class ComicInfoDao {
 		try (PreparedStatement stmt = connection.prepareStatement
 				(SQL_INSERT)) {
 			stmt.setString(1, title);			// 1
-			stmt.setString(2, numberOfTurns);	// 2
+			stmt.setInt(2, numberOfTurns);		// 2
 			stmt.setString(3, introduction);	// 10
 			stmt.setString(4, category);		// 3
 			stmt.setInt(5, price);				// 4
@@ -165,7 +165,8 @@ public class ComicInfoDao {
 			stmt.setString(8, author);			// 9
 			stmt.setString(9, imgPath);			// 6
 			stmt.setString(10, viewPath);		// 7
-			stmt.setString(11, timeStamp);		// 11
+			stmt.setString(11, timeStamp);		// 11(insertTimeStamp)
+			stmt.setString(12, timeStamp);		// 11(updateTimeStamp)
 
 			stmt.executeUpdate();
 		} catch (SQLException e) {
@@ -188,7 +189,7 @@ public class ComicInfoDao {
 		try (PreparedStatement stmt = connection.prepareStatement
 				(SQL_UPDATE_COMIC_INFO)) {
 			stmt.setString(1, title);			// 2
-			stmt.setInt(2, numberOfTurns);	// 3
+			stmt.setInt(2, numberOfTurns);		// 3
 			stmt.setString(3, introduction);	// 11
 			stmt.setString(4, category);		// 4
 			stmt.setInt(5, price);				// 5

@@ -1,5 +1,8 @@
 package jp.co.axiz.common;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class CommonMethod {
 
 	/**
@@ -41,5 +44,16 @@ public class CommonMethod {
 		}else {
 			return null;
 		}
+	}
+
+	/**
+	 *
+	 * @return
+	 */
+	public static String getTimeStamp() {
+		LocalDateTime ldt = LocalDateTime.now();
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+
+		return dtf.format(ldt);
 	}
 }

@@ -14,13 +14,14 @@ public class ComicInfoService {
 	/*---  Field  ---*/
 	private ComicInfoDao cID = new ComicInfoDao();				//変数名概要
 	private JoinComicInfoDao jCID = new JoinComicInfoDao();	//変数名概要
-	private String nowTimeStamp = "";							//変数名概要
+	private String nowTimeStamp;								//変数名概要
 
 	/*---  Field End  ---*/
 
 	/*---  Constructor  ---*/
 	//  処理概要
 	public ComicInfoService() {
+		this.nowTimeStamp = CommonMethod.getTimeStamp();
 	}
 
 	/*---  Constructor End  ---*/
@@ -125,13 +126,36 @@ public class ComicInfoService {
 	}
 
 	//  処理概要
+	public void insert(String comicTitle, Integer numberOfTurns, String categoryName, Integer basePrice, String publisherName, String imageData, String viewPage, Date releaseDate, String authorName, String introduction) {
+		// 変数宣言
+		// 初期化
+
+		cID.insert(comicTitle, numberOfTurns, categoryName, basePrice, publisherName, imageData, viewPage, releaseDate, authorName, introduction, this.nowTimeStamp);
+	}
+
+	//  処理概要
 	public void updateComicInfo(Integer comicId, String comicTitle, Integer numberOfTurns, String categoryName, Integer basePrice, String publisherName, String imageData, String viewPage, Date releaseDate, String authorName, String introduction) {
+		// 変数宣言
+		// 初期化
 
 		cID.updateComicInfo(comicId, comicTitle, numberOfTurns, categoryName, basePrice, publisherName, imageData, viewPage, releaseDate, authorName, introduction, this.nowTimeStamp);
 	}
 
 	//  処理概要
+	public void evaluateUpdate(Integer comicId) {
+		// 変数宣言
+		Double totalEvaluate = null;
+
+		// 初期化
+
+		cID.updateEvaluate(comicId, totalEvaluate);
+	}
+
+	//  処理概要
 	public void deleteComicInfo(Integer comicId) {
+		// 変数宣言
+		// 初期化
+
 		cID.logicalDelete(comicId);
 	}
 

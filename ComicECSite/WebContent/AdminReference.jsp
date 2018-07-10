@@ -54,10 +54,10 @@
 							<form action="AdminComicSearch" role="form" method="post">
 								<div class="col-xs-12">
 									<select class="form-control" name="category">
-										<option value="title">作品名</option>
-										<option value="author">原作者名</option>
+										<option value="title">タイトル</option>
 										<option value="category">カテゴリー</option>
-										<option value="saleDay">発売日</option>
+										<option value="author">原作者</option>
+										<option value="sale day">発売日</option>
 										<option value="publisher">出版社</option>
 									</select>
 								</div>

@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.co.axiz.entity.UserInfo;
 
@@ -35,7 +36,7 @@ public class UserEditServlet extends HttpServlet {
 
 		UserInfo userInfo = new UserInfo();
 
-	/*	userInfo.setuserId(userId);
+		userInfo.setuserId(userId);
 		userInfo.setuserName(userName);
 		userInfo.setpassword(pass);
 
@@ -58,7 +59,7 @@ public class UserEditServlet extends HttpServlet {
 			request.setAttribute("errmsg", "PASSは必須です");
 			request.getRequestDispatcher("insert.jsp").forward(request, response);
 			return;
-		}*/
+		}
 
 		request.getRequestDispatcher("EditAccount.jsp").forward(request, response);
 	}

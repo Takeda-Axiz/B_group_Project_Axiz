@@ -57,10 +57,11 @@
 					</div>
 
 					<div class="searchResult">
-						<table border="1" class="table table-striped">
+						<table class="table table-striped">
 							<tr>
 								<th>No</th>
 								<th>タイトル</th>
+								<th>カテゴリー</th>
 								<th>原作者</th>
 								<th>出版社</th>
 								<th>値段</th>
@@ -69,6 +70,7 @@
 							<tr class="info">
 								<td>1</td>
 								<td><a href="Book0001.jsp">sample01</a></td>
+								<td>少年漫画</td>
 								<td>00000001</td>
 								<td>出版社</td>
 								<td>500</td>
@@ -77,6 +79,7 @@
 							<tr>
 								<td>2</td>
 								<td><a href="Book0001.jsp">sample02</a></td>
+								<td>青年漫画</td>
 								<td>00000002</td>
 								<td>出版社</td>
 								<td>1000</td>
@@ -85,6 +88,7 @@
 							<tr class="info">
 								<td>3</td>
 								<td><a href="Book0001.jsp">sample03</a></td>
+								<td>少女漫画</td>
 								<td>00000003</td>
 								<td>出版社</td>
 								<td>5000</td>
@@ -93,6 +97,7 @@
 							<tr>
 								<td>4</td>
 								<td><a href="Book0001.jsp">sample04</a></td>
+								<td>少年漫画</td>
 								<td>00000004</td>
 								<td>出版社</td>
 								<td>10000</td>

@@ -39,8 +39,6 @@ public class IndexServlet extends HttpServlet {
 		Integer delete_flg = (Integer) session.getAttribute("delete_flg");
 
 
-
-		/*
 		//SelectService selectService = new SelectService();
 
 		//最新お勧め漫画を検索
@@ -65,8 +63,5 @@ public class IndexServlet extends HttpServlet {
 
 			session.setAttribute("user_id", user_id);
 		}
-		*/
-
 	}
-
 }

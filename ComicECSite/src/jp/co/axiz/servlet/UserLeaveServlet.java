@@ -56,5 +56,4 @@ public class UserLeaveServlet extends HttpServlet {
 		request.getRequestDispatcher("UnsubscribeResult.jsp").forward(request, response);
 		return;
 	}
-
 }

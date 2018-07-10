@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import jp.co.axiz.dao.UserComicInfoDao;
+import jp.co.axiz.entity.UserComicInfo;
 import jp.co.axiz.service.UserComicInfoService;
 
 /**
@@ -30,7 +32,6 @@ public class EvaluateServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -38,7 +39,6 @@ public class EvaluateServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		//文字化け対策
 		request.setCharacterEncoding("UTF-8");
 
@@ -59,8 +59,8 @@ public class EvaluateServlet extends HttpServlet {
 			return;
 		}
 
-//		UserComicInfoDao ud = new UserComicInfoDao();
-//		List<UserComicInfo> userComicInfo = ud.updata(user_comic_id,va);
+		UserComicInfoDao ud = new UserComicInfoDao();
+		List<UserComicInfo> userComicInfo = ud.updata(user_comic_id,va);
 
 		UserComicInfoService us = new UserComicInfoService(request);
 		//List<UserComicInfo> userComicInfo = ud.updata(user_comic_id,va);
@@ -82,5 +82,4 @@ public class EvaluateServlet extends HttpServlet {
 			request.getRequestDispatcher("Book001.jsp").forward(request, response);
 		}
 	}
-
 }

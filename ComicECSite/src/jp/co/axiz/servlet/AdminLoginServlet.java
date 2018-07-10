@@ -17,13 +17,13 @@ import jp.co.axiz.entity.AdminInfo;
 public class AdminLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AdminLoginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public AdminLoginServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -39,13 +39,12 @@ public class AdminLoginServlet extends HttpServlet {
 		id = request.getParameter("id");
 		pass = request.getParameter("pass");
 
-		//AdminDao adminDao = new AdminDao();
-		//Admin admin = adminDao.findByIdAndPassword(id, pass);
-
+		AdminDao adminDao = new AdminDao();
+		Admin admin = adminDao.findByIdAndPassword(id, pass);
 
 		if(dao == true) {
 
-			//session.setAttribute("user", admin);
+			session.setAttribute("user", admin);
 			response.sendRedirect(request.getContextPath() + "/Menu.jsp");
 		}
 
@@ -53,4 +52,3 @@ public class AdminLoginServlet extends HttpServlet {
 		request.getRequestDispatcher("/AdminTop.jsp").forward(request, response);
 	}
 }
-

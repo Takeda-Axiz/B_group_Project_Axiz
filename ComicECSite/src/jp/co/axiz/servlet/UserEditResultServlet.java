@@ -35,11 +35,11 @@ public class UserEditResultServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		UserInfo afterUser = (UserInfo) session.getAttribute("afterUser");
 
-	/*	if (!afterUser.getPassword().equals(rePass)) {
+		if (!afterUser.getPassword().equals(rePass)) {
 			request.setAttribute("errmsg", "前画面で入力したパスワードと一致しません");
 			request.getRequestDispatcher("updateConfirm.jsp").forward(request, response);
 			return;
-		}*/
+		}
 
 		UserInfoDao userInfoDao = new UserInfoDao();
 		//userInfoDao.update(afterUser);

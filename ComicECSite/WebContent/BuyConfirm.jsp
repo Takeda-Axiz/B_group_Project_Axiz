@@ -82,7 +82,6 @@
 						</div>
 					</div>
 				</div>
-
 			</section>
 		</section>
 	</section>
@@ -110,7 +109,6 @@
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/owl.carousel.js"></script>
 	<script src="assets/js/script.js"></script>
-
 
 </body>
 </html>

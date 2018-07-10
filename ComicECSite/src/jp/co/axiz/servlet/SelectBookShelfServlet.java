@@ -18,7 +18,7 @@ public class SelectBookShelfServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-/*
+
 		HttpSession session= request.getSession();
 
 		String inputValue = null;
@@ -57,7 +57,5 @@ public class SelectBookShelfServlet extends HttpServlet {
 			session.setAttribute("serch", list);
 			request.getRequestDispatcher("BookSelect.jsp").forward(request, response);
 		}
-	*/
 	}
-
 }

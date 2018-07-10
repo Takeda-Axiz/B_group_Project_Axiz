@@ -80,7 +80,7 @@
 								<tfoot>
 									<tr class="info">
 										<th colspan="4">合計</th>
-										<td>16500</td>
+										<td>${escapeXml(priceSum)}</td>
 									</tr>
 								</tfoot>
 							</table>

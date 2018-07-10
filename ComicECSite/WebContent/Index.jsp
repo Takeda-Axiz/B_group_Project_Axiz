@@ -72,15 +72,15 @@
 								<div class="col-xs-12">
 									<select class="form-control hidden-xs" name="Category">
 										<option value="title">タイトル</option>
+										<option value="category">カテゴリー</option>
 										<option value="author">原作者</option>
-										<option value="release date">発売日</option>
 										<option value="publisher">出版社</option>
 									</select>
 								</div>
 								<div class="col-xs-10">
 									<div class="form-group hidden-xs">
 										<input type="text" class="form-control"
-											name="search" placeholder="カテゴリー検索">
+											name="search" placeholder="">
 									</div>
 								</div>
 								<div class="col-xs-2 hidden-xs">
@@ -142,8 +142,8 @@
 								<div class="col-xs-10">
 									<select class="form-control hidden-lg" name="Category">
 										<option value="title">タイトル</option>
+										<option value="category">カテゴリー</option>
 										<option value="author">原作者</option>
-										<option value="release date">発売日</option>
 										<option value="publisher">出版社</option>
 									</select>
 								</div>
@@ -152,7 +152,7 @@
 								<div class="col-xs-10">
 									<div class="form-group hidden-lg">
 										<input type="text" class="form-control"
-											name="search" placeholder="カテゴリー検索">
+											name="search" placeholder="">
 									</div>
 								</div>
 								<div class="col-xs-2 hidden-lg">

@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jp.co.axiz.dao.ComicInfoDao;
+import jp.co.axiz.entity.ComicInfo;
+
 /**
  * Servlet implementation class SelectServlet
  */
@@ -14,13 +17,13 @@ import javax.servlet.http.HttpServletResponse;
 public class BrowsingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public BrowsingServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public BrowsingServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,7 +33,7 @@ public class BrowsingServlet extends HttpServlet {
 		String imageDate = request.getParameter("imageDate");
 		Integer comicId = Integer.parseInt(request.getParameter("comicId"));
 
-	/*	ComicInfo cond = new ComicInfo();
+		ComicInfo cond = new ComicInfo();
 		try {
 			cond.setId(Integer.parseInt(comicId));
 		} catch (NumberFormatException e) {
@@ -47,7 +50,7 @@ public class BrowsingServlet extends HttpServlet {
 			request.getRequestDispatcher("select.jsp").forward(request, response);
 		} else {
 			request.setAttribute("userlist", list);
-		*/	request.getRequestDispatcher(".jsp").forward(request, response);
+			request.getRequestDispatcher(".jsp").forward(request, response);
 		}
 	}
-
+}

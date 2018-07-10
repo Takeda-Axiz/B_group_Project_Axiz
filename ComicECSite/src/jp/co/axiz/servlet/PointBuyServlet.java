@@ -7,8 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class PointBuyConfirmServlet
@@ -18,9 +17,8 @@ public class PointBuyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-/*
+
 		HttpSession session = request.getSession();
 
 		String user_id = (String) session.getAttribute("user_id");
@@ -34,7 +32,6 @@ public class PointBuyServlet extends HttpServlet {
 		session.setAttribute("point", point);
 
 		request.getRequestDispatcher("/pointConfirm.jsp").forward(request, response);
-*/
-	}
 
+	}
 }

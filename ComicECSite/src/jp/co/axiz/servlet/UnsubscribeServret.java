@@ -40,7 +40,6 @@ public class UnsubscribeServret extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		//文字化け対策
 		request.setCharacterEncoding("UTF-8");
 
@@ -59,7 +58,6 @@ public class UnsubscribeServret extends HttpServlet {
 			//次画面指定
 			request.getRequestDispatcher("Unsubscribe.jsp").forward(request, response);
 			return;
-
 		}
 
 		//IDチェック
@@ -84,5 +82,4 @@ public class UnsubscribeServret extends HttpServlet {
 			request.getRequestDispatcher("Unsubscribe.jsp").forward(request, response);
 		}
 	}
-
 }

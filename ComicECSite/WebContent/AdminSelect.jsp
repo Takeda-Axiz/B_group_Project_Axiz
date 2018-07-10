@@ -34,12 +34,14 @@ form {
 #banner div {
 	margin-top: 20px;
 }
+
 .form_conf {
-    margin-top: 20px;
+	margin-top: 20px;
 }
+
 .form_conf form {
-    display: inline-block;
-    margin: 0 10px;
+	display: inline-block;
+	margin: 0 10px;
 }
 </style>
 </head>
@@ -61,82 +63,86 @@ form {
 				<div class="col-md-6">
 					<div class="headings" style="padding: 0 0 50% 0;">
 
-				<h3>
-					<b>更新・削除する項目を選択してください<br> <span class="required"></span></b>
-				</h3>
+						<h3>
+							<b>更新・削除する項目を選択してください<br> <span class="required"></span></b>
+						</h3>
 
-					<c:if test="${not empty errmsg}">
-						<p class="error">${fn:escapeXml(errmsg)}</p>
-					</c:if>
-					<c:forEach var="comic" items="${comicList}">
-						<fieldset class="label-60">
-							<input type="hidden" value="${comic.comicId}">
-							<div>
-								<label for="inputEmail3" class="col-xs-2 control-label">タイトル</label><input
-									type="text" name="name" value="${comic.comicTitle}" readonly>
-							</div>
-							<div>
-								<label for="inputEmail3" class="col-xs-2 control-label">巻数</label><input
-									type="text" name="numberOfTurns" value="${comic.numberOfTurns}">
-							</div>
-							<div>
-								<label for="inputEmail3" class="col-xs-2 control-label">カテゴリー選択</label>
-								<select class="control-labell" name="Category" value="${comic.categoryName}" style="width: 142px">
-									<option value="0">少年漫画</option>
-									<option value="1">青年漫画</option>
-									<option value="2">少女漫画</option>
-								</select>
-							</div>
-							<div>
-								<label for="inputEmail3" class="col-xs-2 control-label">値段</label><input
-									type="text" name="price" value="${comic.basePrice}">
-							</div>
-
-
-							<div>
-								<label for="inputEmail3" class="col-xs-2 control-label">出版社選択</label>
-								<select class="control-labell" name="publisher"
-									value="${comic.publisherName}" style="width: 142px">
-									<option value="0">集英社</option>
-									<option value="1">講談社</option>
-									<option value="2">ノース・スターズ・ピクチャーズ</option>
-								</select>
-							</div>
+						<c:if test="${not empty errmsg}">
+							<p class="error">${fn:escapeXml(errmsg)}</p>
+						</c:if>
+						<c:forEach var="comic" items="${comicList}">
+							<fieldset class="label-60">
+								<input type="hidden" value="${comic.comicId}">
+								<div>
+									<label for="inputEmail3" class="col-xs-2 control-label">タイトル</label><input
+										type="text" name="name" value="${comic.comicTitle}" readonly>
+								</div>
+								<div>
+									<label for="inputEmail3" class="col-xs-2 control-label">巻数</label><input
+										type="text" name="numberOfTurns"
+										value="${comic.numberOfTurns}">
+								</div>
+								<div>
+									<label for="inputEmail3" class="col-xs-2 control-label">カテゴリー選択</label>
+									<select class="control-labell" name="Category"
+										value="${comic.categoryName}" style="width: 142px">
+										<option value="0">少年漫画</option>
+										<option value="1">青年漫画</option>
+										<option value="2">少女漫画</option>
+									</select>
+								</div>
+								<div>
+									<label for="inputEmail3" class="col-xs-2 control-label">値段</label><input
+										type="text" name="price" value="${comic.basePrice}">
+								</div>
 
 
-							<div>
-								<label for="inputEmail3" class="col-xs-2 control-label">表紙画像</label><input
-									type="text" name="front" value="${comic.imageData}"
-									placeholder="Path">
-							</div>
-							<div>
-								<label for="inputEmail3" class="col-xs-2 control-label">URL</label><input
-									type="text" name="URL" value="${comic.viewPage}" placeholder="Path">
-							</div>
-							<div>
-								<label for="inputEmail3" class="col-xs-2 control-label">発売日</label><input
-									type="date" name="release_date" value="${comic.releaseDate}">
-							</div>
-							<div>
-								<label for="inputEmail3" class="col-xs-2 control-label">原作者</label><input
-									type="text" name="author" value="${comic.authorName}">
-							</div>
-							あらすじ<br>
-							<textarea name="summary" rows="11" cols="80" value="${comic.introduction}"></textarea>
-							<br>
-						</fieldset>
-					</c:forEach>
-					<div class="form_conf">
-					<form action="ComicUpdateResult.jsp" method="post" onsubmit="return update()">
-						<input class="btn btn-primary btn-lg" type="submit"
-							value="更新">
-					</form>
-					<form action="ComicDeleteResult.jsp" method="post" onsubmit="return dele()">
-						<input class="btn btn-primary btn-lg" type="submit"
-							value="削除">
-					</form>
+								<div>
+									<label for="inputEmail3" class="col-xs-2 control-label">出版社選択</label>
+									<select class="control-labell" name="publisher"
+										value="${comic.publisherName}" style="width: 142px">
+										<option value="0">集英社</option>
+										<option value="1">講談社</option>
+										<option value="2">ノース・スターズ・ピクチャーズ</option>
+									</select>
+								</div>
+
+
+								<div>
+									<label for="inputEmail3" class="col-xs-2 control-label">表紙画像</label><input
+										type="text" name="front" value="${comic.imageData}"
+										placeholder="Path">
+								</div>
+								<div>
+									<label for="inputEmail3" class="col-xs-2 control-label">URL</label><input
+										type="text" name="URL" value="${comic.viewPage}"
+										placeholder="Path">
+								</div>
+								<div>
+									<label for="inputEmail3" class="col-xs-2 control-label">発売日</label><input
+										type="date" name="release_date" value="${comic.releaseDate}">
+								</div>
+								<div>
+									<label for="inputEmail3" class="col-xs-2 control-label">原作者</label><input
+										type="text" name="author" value="${comic.authorName}">
+								</div>
+								あらすじ<br>
+								<textarea name="summary" rows="11" cols="80"
+									value="${comic.introduction}"></textarea>
+								<br>
+							</fieldset>
+						</c:forEach>
+						<div class="form_conf">
+							<form action="ComicUpdateResult.jsp" method="post"
+								onsubmit="return update()">
+								<input class="btn btn-primary btn-lg" type="submit" value="更新">
+							</form>
+							<form action="ComicDeleteResult.jsp" method="post"
+								onsubmit="return dele()">
+								<input class="btn btn-primary btn-lg" type="submit" value="削除">
+							</form>
+						</div>
 					</div>
-</div>
 				</div>
 			</section>
 			<br> <br>
@@ -178,34 +184,33 @@ form {
 	<script src="assets/js/script.js"></script>
 
 	<script>
-//		$(':submit#update').click(function() {
-//			$('form').attr('action', 'ComicUpdateResult.jsp');
-//			$('form').attr('method', 'post');
-//			$('form').submit();
-//		});
+		//		$(':submit#update').click(function() {
+		//			$('form').attr('action', 'ComicUpdateResult.jsp');
+		//			$('form').attr('method', 'post');
+		//			$('form').submit();
+		//		});
 
-//		$(':submit#delete').click(function() {
-//			$('form').attr('action', 'ComicDeleteResult.jsp');
-//			$('form').attr('method', 'post');
-//			$('form').submit();
-//		});
+		//		$(':submit#delete').click(function() {
+		//			$('form').attr('action', 'ComicDeleteResult.jsp');
+		//			$('form').attr('method', 'post');
+		//			$('form').submit();
+		//		});
 
-    function update(){
-      if(window.confirm("内容を更新しますか？")){
-        return true;
-      } else {
-        return false;
-      }
-    }
+		function update() {
+			if (window.confirm("内容を更新しますか？")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 
-
-    function dele(){
-        if(window.confirm("内容を削除しますか？")){
-          return true;
-        } else {
-          return false;
-        }
-      }
+		function dele() {
+			if (window.confirm("内容を削除しますか？")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	</script>
 
 </body>

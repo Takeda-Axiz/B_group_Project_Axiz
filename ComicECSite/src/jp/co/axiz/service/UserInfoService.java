@@ -59,17 +59,16 @@ public class UserInfoService {
 		return true;
 	}
 
-	//	public void update() {
-	//		deliveryUserId = request.getParameter("user_id");
-	//		userName = request.getParameter("user_name");
-	//		birthday = request.getParameter("birthday");
-	//		password = request.getParameter("password");
-	//
-	//		//ログインしたユーザーの情報をで取得
-	//		String loginUserId = session.getAttribute("loginUser");
-	//
-	//		uid.update(userId, userName, password, birthday, timeStamp, loginUserId);
-	//	}
+//		public void update() {
+//			deliveryUserId = request.getParameter("user_id");
+//			userName = request.getParameter("user_name");
+//			password = request.getParameter("password");
+//
+//			//ログインしたユーザーの情報をで取得
+//			String loginUserId = (String) session.getAttribute("loginUser");
+//
+//			uid.update(userId, userName, password, birthday, timeStamp, loginUserId);
+//		}
 
 	public void unSubscribe() {
 		deliveryUserId = request.getParameter("user_id");

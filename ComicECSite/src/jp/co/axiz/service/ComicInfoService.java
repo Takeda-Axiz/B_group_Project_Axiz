@@ -8,6 +8,7 @@ import java.util.List;
 import jp.co.axiz.common.CommonMethod;
 import jp.co.axiz.dao.ComicInfoDao;
 import jp.co.axiz.dao.JoinComicInfoDao;
+import jp.co.axiz.entity.ComicInfo;
 import jp.co.axiz.entity.JoinComicInfo;
 
 public class ComicInfoService {
@@ -123,6 +124,13 @@ public class ComicInfoService {
 			}
 		}
 		return list;
+	}
+
+	public ComicInfo findComicInfo(Integer comicId){
+		// 変数宣言
+		// 初期化
+
+		return cID.findById(comicId);
 	}
 
 	//  処理概要

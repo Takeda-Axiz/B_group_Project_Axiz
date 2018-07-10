@@ -7,14 +7,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import jp.co.axiz.entity.UserInfo;
+import jp.co.axiz.common.CommonMethod;
 
 /**
  * Servlet implementation class InsertServlet
  */
-@WebServlet("/Mypage")
+@WebServlet("/userEdit")
 public class UserEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,33 +33,29 @@ public class UserEditServlet extends HttpServlet {
 		String userName = request.getParameter("name");
 		String pass = request.getParameter("pass");
 
-		UserInfo userInfo = new UserInfo();
+//		UserInfo userInfo = new UserInfo();
 
-		userInfo.setuserId(userId);
-		userInfo.setuserName(userName);
-		userInfo.setpassword(pass);
+//		userInfo.setuserId(userId);
+//		userInfo.setuserName(userName);
+//		userInfo.setpassword(pass);
 
-		HttpSession session = request.getSession();
-		session.setAttribute("registerUser", userInfo);
+//		HttpSession session = request.getSession();
+//		session.setAttribute("registerUser", userInfo);
 
-		if (name == null || name.isEmpty()) {
-			request.setAttribute("errmsg", "名前は必須です");
+		userId = CommonMethod.resetNull(userId);
+		userName = CommonMethod.resetNull(userName);
+		pass = CommonMethod.resetNull(pass);
+
+		if (userId.isEmpty() || userName.isEmpty() || pass == null || pass.isEmpty()) {
+			request.setAttribute("errmsg", "未入力の項目があります");
 			request.getRequestDispatcher("insert.jsp").forward(request, response);
 			return;
+
+		}else {
+//			UserInfoService 　　　 =new UserInfoService(request);
+//			AdminInfo admin = 　　　.　　　(　　　);
 		}
 
-		if (tel == null || tel.isEmpty()) {
-			request.setAttribute("errmsg", "TELは必須です");
-			request.getRequestDispatcher("insert.jsp").forward(request, response);
-			return;
-		}
 
-		if (pass == null || pass.isEmpty()) {
-			request.setAttribute("errmsg", "PASSは必須です");
-			request.getRequestDispatcher("insert.jsp").forward(request, response);
-			return;
-		}
-
-		request.getRequestDispatcher("EditAccount.jsp").forward(request, response);
 	}
 }

@@ -28,20 +28,18 @@
 	rel='stylesheet'>
 
 
-	<style>
-.img_res{
-    display: block;
-    width: 70%;
-    height: auto;
-    max-width: 100%;
-    margin: auto;
+<style>
+.img_res {
+	display: block;
+	width: 70%;
+	height: auto;
+	max-width: 100%;
+	margin: auto;
 }
 
-    .block-title {
-        font-size: 2.8em;
-    }
-
-
+.block-title {
+	font-size: 2.8em;
+}
 </style>
 
 
@@ -61,7 +59,7 @@
 			<section class="row" id="logo_menu">
 				<div class="col-xs-6">
 					<a class="logo hidden-xs" href="Index.jsp">電子漫画購入サイト</a>
-				<!-- ****************************** 携帯端末用タイトル ************************** -->
+					<!-- ****************************** 携帯端末用タイトル ************************** -->
 					<a class="title hidden-lg col-xs-6.5" href="Index.jsp">電子漫画購入サイト</a>
 				</div>
 
@@ -79,12 +77,13 @@
 								</div>
 								<div class="col-xs-10">
 									<div class="form-group hidden-xs">
-										<input type="text" class="form-control"
-											name="search" placeholder="">
+										<input type="text" class="form-control" name="search"
+											placeholder="">
 									</div>
 								</div>
 								<div class="col-xs-2 hidden-xs">
-									<button type="submit" class="btn btn-custom" style="font-size: 14px;">
+									<button type="submit" class="btn btn-custom"
+										style="font-size: 14px;">
 										<i class="ion-ios-arrow-thin-right"></i>
 									</button>
 								</div>
@@ -95,22 +94,24 @@
 
 				<div class="col-xs-3 ">
 					<form action="Login.jsp" class="pull-right">
-						<input class="btn btn-primary btn-sm active" id="setLogin"
-							type="button" value="ログアウト"
-							onclick="changeGlyphicon(); location.href='Index02.jsp'; return false;">
-						<input class="btn btn-primary btn-sm active"
-							type="button" value="マイページ"
-							onclick="location.href='MyPage.jsp'; return false;">
-						<input class="btn btn-primary btn-sm active hidden" id="setLogout"
-							type="button" value="ログアウト"
-							onclick="changeGlyphicon(); location.href=''; return false;">
-						<a class="btn" href="cart.jsp" role="button">
-						<img src="assets/img/cart.png" class="img-responsive hidden-xs" alt="cartImage"></a>
-					</form>
-					<!--<a class="btn btn-primary btn-lg active" href="Login.jsp" role="button">ログイン</a>
-				<a class="btn btn-primary btn-lg active" href="Login.jsp" role="button" disabled>ログアウト</a>
-				<a class="btn" href="cart.jsp" role="button"><img src="assets/img/cart.png" class="img-responsive" alt="cartImage"></a>-->
+						<c:if test="${not empty userLogin}">
+							<input class="btn btn-primary btn-sm active" id="logout"
+								type="button" value="ログアウト">
+							<input class="btn btn-primary btn-sm active" id="myPage"
+								type="button" value="マイページ">
+						</c:if>
 
+						<c:if test="${empty userLogin}">
+							<input class="btn btn-primary btn-sm active" id="login"
+								type="button" value="ログイン">
+							<input class="btn btn-primary btn-sm active hidden" id="signUp"
+								type="button" value="新規登録">
+						</c:if>
+
+						<a class="btn" href="cart.jsp" role="button"> <img
+							src="assets/img/cart.png" class="img-responsive hidden-xs"
+							alt="cartImage"></a>
+					</form>
 				</div>
 			</section>
 		</section>
@@ -118,17 +119,17 @@
 
 	<!-- ****************************** Banner ************************** -->
 
-
-
 	<section id="banner">
 		<section class="container">
 			<section class="row">
 				<div>
-					<img src="assets/img/clearline.png" class="img-responsive" alt="" style="margin: 0 auto;">
+					<img src="assets/img/clearline.png" class="img-responsive" alt=""
+						style="margin: 0 auto;">
 				</div>
 
 				<div class="col-md-12">
-					<img src="assets/img/ad.png" class="img-responsive" alt="advertisement" style="margin: 0 auto;">
+					<img src="assets/img/ad.png" class="img-responsive"
+						alt="advertisement" style="margin: 0 auto;">
 				</div>
 			</section>
 		</section>
@@ -136,35 +137,37 @@
 
 
 	<!-- ****************************** 携帯端末用検索フォーム ************************** -->
-		<section id="banner" class="block hidden-lg">
-						<div class="row">
-							<form role="form" method="post" action="SearchResult.jsp">
-								<div class="col-xs-10">
-									<select class="form-control hidden-lg" name="Category">
-										<option value="title">タイトル</option>
-										<option value="category">カテゴリー</option>
-										<option value="author">原作者</option>
-										<option value="publisher">出版社</option>
-									</select>
-								</div>
-														<a class="btn" href="cart.jsp" role="button">
-						<img src="assets/img/cart_tell.png" class="img-responsive hidden-lg" alt="cartImage"></a>
-								<div class="col-xs-10">
-									<div class="form-group hidden-lg">
-										<input type="text" class="form-control"
-											name="search" placeholder="">
-									</div>
-								</div>
-								<div class="col-xs-2 hidden-lg">
-									<button type="submit" class="btn btn-custom" style="font-size: 14px;">
-										<i class="ion-ios-arrow-thin-right"></i>
-									</button>
-								</div>
-							</form>
-						</div>
+	<section id="banner" class="block hidden-lg">
+		<div class="row">
+			<form role="form" method="post" action="SearchResult.jsp">
+				<div class="col-xs-10">
+					<select class="form-control hidden-lg" name="Category">
+						<option value="title">タイトル</option>
+						<option value="category">カテゴリー</option>
+						<option value="author">原作者</option>
+						<option value="publisher">出版社</option>
+					</select>
+				</div>
+				<a class="btn" href="cart.jsp" role="button"> <img
+					src="assets/img/cart_tell.png" class="img-responsive hidden-lg"
+					alt="cartImage"></a>
+				<div class="col-xs-10">
+					<div class="form-group hidden-lg">
+						<input type="text" class="form-control" name="search"
+							placeholder="">
+					</div>
+				</div>
+				<div class="col-xs-2 hidden-lg">
+					<button type="submit" class="btn btn-custom"
+						style="font-size: 14px;">
+						<i class="ion-ios-arrow-thin-right"></i>
+					</button>
+				</div>
+			</form>
+		</div>
 
 
-		</section>
+	</section>
 
 	<!-- ****************************** Gallery Section ************************** -->
 
@@ -173,87 +176,77 @@
 			<section class="row hidden-xs" style="height: 30px;">
 				<div class="title-box " style="color: #000; font-size: 10px;">
 					<h1 class="block-title wow animated rollIn">
-						<span class="bb-top-left" style="border-color: #000;"></span>
-						<span class="bb-bottom-left" style="border-color: #000;"></span>
+						<span class="bb-top-left" style="border-color: #000;"></span> <span
+							class="bb-bottom-left" style="border-color: #000;"></span>
 						最新おすすめ漫画 <span class="bb-top-right" style="border-color: #000;"></span>
 						<span class="bb-bottom-right" style="border-color: #000;"></span>
 					</h1>
 				</div>
 			</section>
-				<!-- ****************************** 携帯端末用検索フォーム ************************** -->
+			<!-- ****************************** 携帯端末用検索フォーム ************************** -->
 			<section class="row  hidden-lg" style="height: 15px;">
 				<div class="title-box" style="color: #000; font-size: 6.5px;">
 					<h1 class="block-title wow animated rollIn">
-						<span class="bb-top-left" style="border-color: #000;"></span>
-						<span class="bb-bottom-left" style="border-color: #000;"></span>
+						<span class="bb-top-left" style="border-color: #000;"></span> <span
+							class="bb-bottom-left" style="border-color: #000;"></span>
 						最新おすすめ漫画 <span class="bb-top-right" style="border-color: #000;"></span>
 						<span class="bb-bottom-right" style="border-color: #000;"></span>
 					</h1>
 				</div>
 			</section>
 
-				<div class="col-xs-12">
-					<div id="screenshots" class="owl-carousel owl-theme">
-						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-1.png"
-								class="img_res wow animated zoomIn"></a>
-						</div>
-						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-2.png"
-								class="img_res wow animated zoomIn"></a>
-						</div>
-						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-3.png"
-								class="img_res wow animated zoomIn"></a>
-						</div>
-						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-4.png"
-								class="img_res wow animated zoomIn"></a>
-						</div>
-						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-5.png"
-								class="img_res wow animated zoomIn"></a>
-						</div>
-						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-6.png"
-								class="img_res wow animated zoomIn"></a>
-						</div>
-						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-7.png"
-								class="img_res wow animated zoomIn"></a>
-						</div>
-						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-3.png"
-								class="img_res wow animated zoomIn"></a>
-						</div>
-						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-5.png"
-								class="img_res wow animated zoomIn"></a>
-						</div>
-						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-1.png"
-								class="img_res wow animated zoomIn"></a>
-						</div>
+			<div class="col-xs-12">
+				<div id="screenshots" class="owl-carousel owl-theme">
+					<div class="item">
+						<a href="Book0001.jsp"><img src="assets/img/screenshot-1.png"
+							class="img_res wow animated zoomIn"></a>
 					</div>
-					<div class="customNavigation">
-						<a class="btn prev gallery-nav wow animated bounceInLeft"><i
-							class="ion-ios-arrow-left"></i></a> <a
-							class="btn next gallery-nav wow animated bounceInRight"><i
-							class="ion-ios-arrow-right"></i></a>
+					<div class="item">
+						<a href="Book0001.jsp"><img src="assets/img/screenshot-2.png"
+							class="img_res wow animated zoomIn"></a>
+					</div>
+					<div class="item">
+						<a href="Book0001.jsp"><img src="assets/img/screenshot-3.png"
+							class="img_res wow animated zoomIn"></a>
+					</div>
+					<div class="item">
+						<a href="Book0001.jsp"><img src="assets/img/screenshot-4.png"
+							class="img_res wow animated zoomIn"></a>
+					</div>
+					<div class="item">
+						<a href="Book0001.jsp"><img src="assets/img/screenshot-5.png"
+							class="img_res wow animated zoomIn"></a>
+					</div>
+					<div class="item">
+						<a href="Book0001.jsp"><img src="assets/img/screenshot-6.png"
+							class="img_res wow animated zoomIn"></a>
+					</div>
+					<div class="item">
+						<a href="Book0001.jsp"><img src="assets/img/screenshot-7.png"
+							class="img_res wow animated zoomIn"></a>
+					</div>
+					<div class="item">
+						<a href="Book0001.jsp"><img src="assets/img/screenshot-3.png"
+							class="img_res wow animated zoomIn"></a>
+					</div>
+					<div class="item">
+						<a href="Book0001.jsp"><img src="assets/img/screenshot-5.png"
+							class="img_res wow animated zoomIn"></a>
+					</div>
+					<div class="item">
+						<a href="Book0001.jsp"><img src="assets/img/screenshot-1.png"
+							class="img_res wow animated zoomIn"></a>
 					</div>
 				</div>
-			</section>
+				<div class="customNavigation">
+					<a class="btn prev gallery-nav wow animated bounceInLeft"><i
+						class="ion-ios-arrow-left"></i></a> <a
+						class="btn next gallery-nav wow animated bounceInRight"><i
+						class="ion-ios-arrow-right"></i></a>
+				</div>
+			</div>
 		</section>
+	</section>
 
 
 	<!-- ****************************** Gallery Section ************************** -->
@@ -261,23 +254,23 @@
 	<section id="banner" class="block">
 		<section class="container">
 			<section class="row  hidden-xs" style="height: 30px;">
-				<div class="title-box" style="color: #000; font-size: 10px;" >
+				<div class="title-box" style="color: #000; font-size: 10px;">
 					<h1 class="block-title wow animated rollIn">
 						<span class="bb-top-left" style="border-color: #000;"></span> <span
-							class="bb-bottom-left" style="border-color: #000;"></span>
-						昔懐かし漫画 <span class="bb-top-right" style="border-color: #000;"></span>
-						<span class="bb-bottom-right" style="border-color: #000;"></span>
+							class="bb-bottom-left" style="border-color: #000;"></span> 昔懐かし漫画
+						<span class="bb-top-right" style="border-color: #000;"></span> <span
+							class="bb-bottom-right" style="border-color: #000;"></span>
 					</h1>
 				</div>
 			</section>
-				<!-- ****************************** 携帯端末用検索フォーム ************************** -->
+			<!-- ****************************** 携帯端末用検索フォーム ************************** -->
 			<section class="row  hidden-lg" style="height: 15px;">
-				<div class="title-box" style="color: #000; font-size: 6.5px;" >
+				<div class="title-box" style="color: #000; font-size: 6.5px;">
 					<h1 class="block-title wow animated rollIn">
 						<span class="bb-top-left" style="border-color: #000;"></span> <span
-							class="bb-bottom-left" style="border-color: #000;"></span>
-						昔懐かし漫画 <span class="bb-top-right" style="border-color: #000;"></span>
-						<span class="bb-bottom-right" style="border-color: #000;"></span>
+							class="bb-bottom-left" style="border-color: #000;"></span> 昔懐かし漫画
+						<span class="bb-top-right" style="border-color: #000;"></span> <span
+							class="bb-bottom-right" style="border-color: #000;"></span>
 					</h1>
 				</div>
 			</section>
@@ -285,53 +278,43 @@
 				<div class="col-xs-12">
 					<div id="screenshots2" class="owl-carousel owl-theme">
 						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-1.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-1.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-2.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-2.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-3.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-3.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-4.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-4.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-5.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-5.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-6.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-6.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-7.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-7.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-3.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-3.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-5.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-5.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img
-								src="assets/img/screenshot-1.png"
+							<a href="Book0001.jsp"><img src="assets/img/screenshot-1.png"
 								class="img_res wow animated zoomIn"></a>
 						</div>
 					</div>
@@ -356,9 +339,7 @@
 					<h1 class="footer-logo">B group</h1>
 				</div>
 
-				<div class="col-sm-6">
-
-				</div>
+				<div class="col-sm-6"></div>
 			</section>
 		</section>
 	</section>
@@ -372,17 +353,29 @@
 	<script src="assets/js/script.js"></script>
 
 	<script type="text/javascript">
-		var clickNumber = 0;
-		function changeGlyphicon() {
-			clickNumber++;
-			if ((clickNumber % 2) == 0) {
-				document.getElementById("setLogin").className = "btn btn-primary btn-sm active";
-				document.getElementById("setLogout").className = "btn btn-primary btn-sm active hidden";
-			} else {
-				document.getElementById("setLogin").className = "btn btn-primary btn-sm active hidden";
-				document.getElementById("setLogout").className = "btn btn-primary btn-sm active";
-			}
-		}
+		$(':button#logout').click(function() {
+			$('form').attr('action', 'index');
+			$('form').attr('method', 'post');
+			$('form').submit();
+		});
+
+		$(':button#myPage').click(function() {
+			$('form').attr('action', 'myPage');
+			$('form').attr('method', 'post');
+			$('form').submit();
+		});
+
+		$(':button#login').click(function() {
+			$('form').attr('action', 'login');
+			$('form').attr('method', 'post');
+			$('form').submit();
+		});
+
+		$(':button#signUp').click(function() {
+			$('form').attr('action', 'Agreement.jsp');
+			$('form').attr('method', 'post');
+			$('form').submit();
+		});
 	</script>
 </body>
 </html>

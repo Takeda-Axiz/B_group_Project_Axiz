@@ -101,7 +101,7 @@ public class ComicInfoDao {
 	 */
 	public ComicInfo findById(Integer comicId) {
 		// 変数宣言
-		List<ComicInfo>list = new ArrayList<ComicInfo>();
+		ComicInfo comic = null;
 
 		// 初期化
 
@@ -110,9 +110,9 @@ public class ComicInfoDao {
 			stmt.setInt(1, comicId);	// 1
 			ResultSet rs = stmt.executeQuery();
 
-			while (rs.next()) {
+			if(rs.next()) {
 				if(rs.getInt("delete_flag") == 0) {
-					ComicInfo comic = new ComicInfo(
+					comic = new ComicInfo(
 							rs.getInt("comic_id"),
 							rs.getString("comic_title"),
 							rs.getInt("number_of_turns"),
@@ -130,18 +130,13 @@ public class ComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag")
 						);
-					list.add(comic);
 				}
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 
-		if(list.isEmpty()) {
-			return null;
-		}else {
-			return list.get(0);
-		}
+		return comic;
 	}
 
 	/**

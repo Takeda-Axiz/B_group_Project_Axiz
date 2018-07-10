@@ -19,7 +19,7 @@ public class UserInfoDao {
 	private static final String SQL_SELECT_WHERE_USER_ID_AND_PASSWORD = "SELECT * FROM user_info WHERE user_id = ? AND password = ?";
 	private static final String SQL_SELECT_WHERE_DELIVERY_USER_ID_AND_PASSWORD = "SELECT * FROM user_info WHERE delivery_user_id = ? AND password = ?";
 	private static final String SQL_INSERT = "INSERT INTO user_info VALUES (?, ?, ?, ?, ?, 0, 0, ?, '1970-01-01 00:00:00', 0)";
-	private static final String SQL_UPDATE = "UPDATE user_info SET delivery_user_id = ?, user_nanme = ?, password = ?, birthday = ?, update_timestamp = ? WHERE delivery_user_id = ?";
+	private static final String SQL_UPDATE = "UPDATE user_info SET delivery_user_id = ?, user_nanme = ?, password = ?, update_timestamp = ? WHERE delivery_user_id = ?";
 	private static final String SQL_UPDATE_DELETE_FLG = "UPDATE user_info SET delete_flg = 1 WHERE delivery_user_id = ?";
 	private static final String SQL_UPDATE_BALANCE = "UPDATE user_info SET balance = ? WHERE delivery_user_id = ?";
 	private static final String SQL_UPDATE_POINT = "UPDATE user_info SET point = ? WHERE delivery_user_id = ?";
@@ -171,14 +171,12 @@ public class UserInfoDao {
 						rs.getInt("deleteflg"));
 				list.add(u);
 			}
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 
 		return list;
-
 	}
 
 	public void insert(String userId, String userName, String password, String birthday, String timeStamp) {
@@ -196,26 +194,22 @@ public class UserInfoDao {
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
-
 	}
 
-	public void update(String deliveryUserId, String userName, String password, String birthday, String timeStamp, String loginUserId) {
+	public void update(String deliveryUserId, String userName, String password, String timeStamp, String loginUserId) {
 
 		try(PreparedStatement stmt = connection.prepareStatement(SQL_UPDATE)) {
 			stmt.setString(1, deliveryUserId);
 			stmt.setString(2, userName);
 			stmt.setString(3, password);
-			stmt.setString(4, birthday);
-			stmt.setString(5, timeStamp);
-			stmt.setString(6, loginUserId);
+			stmt.setString(4, timeStamp);
+			stmt.setString(5, loginUserId);
 			stmt.executeUpdate();
-
 
 		}catch(SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
-
 	}
 
 	public void updateDeleteFlg(String deliveryUserId) {

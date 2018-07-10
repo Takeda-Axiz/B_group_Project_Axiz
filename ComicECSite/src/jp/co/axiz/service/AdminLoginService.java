@@ -20,7 +20,7 @@ public class AdminLoginService {
 
 	/*---  Method  ---*/
 	//  処理概要
-	public Boolean insert(String adminId, String password) {
+	public AdminInfo isMatchPass(String adminId, String password) {
 		// 変数宣言
 		AdminInfo adminInfo = null;
 		BitSet chkFlg = new BitSet();
@@ -38,9 +38,9 @@ public class AdminLoginService {
 		}
 
 		if(chkFlg.cardinality() >= 2) {
-			return true;
+			return adminInfo;
 		}else {
-			return false;
+			return null;
 		}
 	}
 

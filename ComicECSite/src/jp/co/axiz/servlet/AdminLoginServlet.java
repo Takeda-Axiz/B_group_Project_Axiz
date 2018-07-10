@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import jp.co.axiz.common.CommonMethod;
 import jp.co.axiz.entity.AdminInfo;
+import jp.co.axiz.service.AdminLoginService;
 
 /**
  * Servlet implementation class LoginServlet
@@ -31,24 +33,30 @@ public class AdminLoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id;
 		String pass;
-		String setName;
-		Boolean dao = false;//serviceのメソッドが入る
-		AdminInfo adminInfo = new AdminInfo();
+		//		String setName;
+		//		Boolean dao = false;//serviceのメソッドが入る
+		//		AdminInfo adminInfo = new AdminInfo();
 		HttpSession session = request.getSession();
 
 		id = request.getParameter("id");
 		pass = request.getParameter("pass");
 
-		AdminDao adminDao = new AdminDao();
-		Admin admin = adminDao.findByIdAndPassword(id, pass);
+		id = CommonMethod.resetNull(id);
+		pass = CommonMethod.resetNull(pass);
 
-		if(dao == true) {
+		AdminLoginService aLS =new AdminLoginService();
+		AdminInfo admin = aLS.isMatchPass(id,pass);
 
-			session.setAttribute("user", admin);
+
+		if(admin == null) {
+			request.setAttribute("errmsg", "IDまたはPASSが間違っています");
+			request.getRequestDispatcher("/AdminTop.jsp").forward(request, response);
+
+		}else {
+
+			session.setAttribute("admin", admin);
 			response.sendRedirect(request.getContextPath() + "/Menu.jsp");
 		}
-
-		request.setAttribute("errmsg", "IDまたはPASSが間違っています");
-		request.getRequestDispatcher("/AdminTop.jsp").forward(request, response);
 	}
 }
+

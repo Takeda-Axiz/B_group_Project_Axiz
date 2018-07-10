@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import jp.co.axiz.entity.ComicInfo;
+import jp.co.axiz.service.ComicInfoService;
+
 /**
  * Servlet implementation class SelectComicServlet
  */
@@ -20,28 +23,27 @@ public class SelectComicServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-
 		HttpSession session = request.getSession();
 
 		Integer comicId = (Integer) session.getAttribute("comic_id");
 
-		SelectService selectService = new SelectService();
+		ComicInfoService cIS = new ComicInfoService();
 
-		List<Comic> idComicList = selectService.findForId(comicId);
+		ComicInfo comicInfo = cIS.findComicInfo(comicId);
 
-		String comicTitle = idComicList.get(0).getComic_title();
-		Integer numberOfTurns = idComicList.get(0).getNumber_of_turns();
-		double comprehensiveEvaluation = idComicList.get(0).getComprehensive_evaluation();
-		String authorName = idComicList.get(0).getAuthor_name();
-		String imageData = idComicList.get(0).getImage_data();
+		String comicTitle = comicInfo.getComicTitle();
+		Integer numberOfTurns = comicInfo.getNumberOfTurns();
+		double comprehensiveEvaluation = comicInfo.getComprehensiveEvaluation();
+		String authorName = comicInfo.getAuthorName();
+		String imageData = comicInfo.getImageData();
 
-		Integer basePrice = idComicList.get(0).getBaseprice();
-		double tax = idComicList.get(0).getTax_id.getTax();
-		Integer price = (int) (basePrice * tax);
+		Integer basePrice = comicInfo.getBasePrice();
+//		double tax = comicInfo.getTaxId.getTax();
+//		Integer price = (int) (basePrice * tax);
 
-		String releaseDate = (String)idComicList.get(0).getRelease_date();
-		String category = idComicList.get(0).getCategory_id.getCategory();
-		String introduction = idComicList.get(0).getIntroduction();
+		String releaseDate = (String)comicInfo.getReleaseDate();
+		String category = comicInfo.getCategory_id.getCategory();
+		String introduction = comicInfo.getIntroduction();
 
 		session.setAttribute("comicId", comicId);
 		session.setAttribute("comicTitle", comicTitle);
@@ -49,7 +51,7 @@ public class SelectComicServlet extends HttpServlet {
 		session.setAttribute("comprehensiveEvaluation", comprehensiveEvaluation);
 		session.setAttribute("authorName", authorName);
 		session.setAttribute("imageData", imageData);
-		session.setAttribute("price", price);
+//		session.setAttribute("price", price);
 		session.setAttribute("releaseDate", releaseDate);
 		session.setAttribute("category", category);
 		session.setAttribute("introduction", introduction);

@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>マイページ</title>
 
@@ -99,7 +97,7 @@
 				<br>
 				<br>
 				<div class="col-lg-12 text-center" style="margin-top: 23px;">
-					<a class="btn btn-primary btn-lg" href="BookSelect.jsp">my本棚ページ</a>
+					<button class="btn btn-primary btn-lg" id="bookShelf">my本棚ページ</button>
 				</div>
 			</section>
 			<section class="row">
@@ -160,17 +158,13 @@
 	<script src="assets/js/script.js"></script>
 
 	<script type="text/javascript">
-		var clickNumber = 0;
-		function changeGlyphicon() {
-			clickNumber++;
-			if ((clickNumber % 2) == 0) {
-				document.getElementById("setLogin").className = "btn btn-primary btn-sm active";
-				document.getElementById("setLogout").className = "btn btn-primary btn-sm active hidden";
-			} else {
-				document.getElementById("setLogin").className = "btn btn-primary btn-sm active hidden";
-				document.getElementById("setLogout").className = "btn btn-primary btn-sm active";
-			}
-		}
+
+	$(':button#bookShelf').click(function() {
+		$('form').attr('action', 'BookSelect');
+		$('form').attr('method', 'post');
+		$('form').submit();
+	});
+
 	</script>
 </body>
 </html>

@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-/*
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-*/
 <html>
 <head>
 <title>漫画の詳細（ワンピース）</title>
@@ -69,7 +67,7 @@ div.z {
 				<c:if test="${not empty comicId}">
 					<h3>${comicTitle}</h3>
 					<div class="b">
-						<img src=${imageData } width="80%" height="100%">
+						<img src="${imageData}" width="80%" height="100%">
 					</div>
 					<p>タイトル:${comicTitle}</p>
 					<p>原作者:${authorName}</p>

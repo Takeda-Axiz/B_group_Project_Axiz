@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import jp.co.axiz.entity.JoinComicInfo;
+import jp.co.axiz.entity.ComicInfo;
 import jp.co.axiz.entity.UserInfo;
 
 @WebServlet("/BuyCart")
@@ -20,9 +20,16 @@ public class BuyCartServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		UserInfo user = session.getAttribute("");
-		List<JoinComicInfo> list = (List<JoinComicInfo>) session.getAttribute("userCart");
 
-		priceSum
+		UserInfo userInfo = (UserInfo) session.getAttribute("LoginUser");
+
+		Integer balance = userInfo.getBalance();
+
+		List<ComicInfo> cartList = (List<ComicInfo>) session.getAttribute("userCart");
+
+		session.setAttribute("userCart", cartList);
+		session.setAttribute("balance", balance);
+
+		request.getRequestDispatcher("/Buy.jsp").forward(request, response);
 	}
 }

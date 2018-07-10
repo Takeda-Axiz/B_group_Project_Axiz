@@ -50,12 +50,9 @@ public class UserEditServlet extends HttpServlet {
 			request.setAttribute("errmsg", "未入力の項目があります");
 			request.getRequestDispatcher("insert.jsp").forward(request, response);
 			return;
-
 		}else {
 //			UserInfoService 　　　 =new UserInfoService(request);
 //			AdminInfo admin = 　　　.　　　(　　　);
 		}
-
-
 	}
 }

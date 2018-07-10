@@ -135,4 +135,12 @@ public class UserInfoService {
 
 		uid.updatePoint(deliveryUserId, point);
 	}
+
+	public UserInfo loginChack(String userId) {
+		List<UserInfo> list = null;
+
+		list = uid.findByDeliveryUserId(userId);
+
+		return list.get(0);
+	}
 }

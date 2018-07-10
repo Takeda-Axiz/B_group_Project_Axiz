@@ -57,5 +57,4 @@ public class BuyCartConfirmServlet extends HttpServlet {
 */
 
 	}
-
 }

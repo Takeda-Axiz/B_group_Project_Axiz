@@ -8,6 +8,7 @@ public class JoinUserComicInfo {
 
 	private String userId;
 	private Timestamp purchaseTimestamp;
+	private Integer comicId;
 	private String comicTitle;
 	private Integer numberOfTurns;
 	private String introduction;
@@ -18,12 +19,13 @@ public class JoinUserComicInfo {
 	private String imageData;
 	private String viewPage;
 
-	public JoinUserComicInfo(String userId, Timestamp purchaseTimestamp, String comicTitle, Integer numberOfTurns,
-			String introduction, String categoryName, String publisherName, double comprehensiveEvaluation,
-			String authorName, String imageData, String viewPage) {
+	public JoinUserComicInfo(String userId, Timestamp purchaseTimestamp, Integer comicId, String comicTitle,
+			Integer numberOfTurns, String introduction, String categoryName, String publisherName,
+			double comprehensiveEvaluation, String authorName, String imageData, String viewPage) {
 		super();
 		this.userId = userId;
 		this.purchaseTimestamp = purchaseTimestamp;
+		this.comicId = comicId;
 		this.comicTitle = comicTitle;
 		this.numberOfTurns = numberOfTurns;
 		this.introduction = introduction;
@@ -33,6 +35,14 @@ public class JoinUserComicInfo {
 		this.authorName = authorName;
 		this.imageData = imageData;
 		this.viewPage = viewPage;
+	}
+
+	public Integer getComicId() {
+		return comicId;
+	}
+
+	public void setComicId(Integer comicId) {
+		this.comicId = comicId;
 	}
 
 	public String getUserId() {
@@ -122,7 +132,4 @@ public class JoinUserComicInfo {
 	public void setViewPage(String viewPage) {
 		this.viewPage = viewPage;
 	}
-
-
-
 }

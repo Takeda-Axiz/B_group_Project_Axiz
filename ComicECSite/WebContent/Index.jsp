@@ -27,6 +27,24 @@
 	href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700|Oxygen:400,300,700'
 	rel='stylesheet'>
 
+
+	<style>
+.img_res{
+    display: block;
+    width: 70%;
+    height: auto;
+    max-width: 100%;
+    margin: auto;
+}
+
+    .block-title {
+        font-size: 2.8em;
+    }
+
+
+</style>
+
+
 </head>
 <body id="home">
 
@@ -44,9 +62,9 @@
 				<div class="col-xs-6">
 					<a class="logo hidden-xs" href="Index.jsp">電子漫画購入サイト</a>
 				<!-- ****************************** 携帯端末用タイトル ************************** -->
-					<a class="title hidden-lg" href="Index.jsp">電子漫画購入サイト</a>
+					<a class="title hidden-lg col-xs-6.5" href="Index.jsp">電子漫画購入サイト</a>
 				</div>
-				
+
 				<section class="subscribe-wrap">
 					<div class="col-xs-3">
 						<div class="row">
@@ -74,7 +92,7 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<div class="col-xs-3 ">
 					<form action="Login.jsp" class="pull-right">
 						<input class="btn btn-primary btn-sm active" id="setLogin"
@@ -97,7 +115,7 @@
 			</section>
 		</section>
 	</header>
-	
+
 	<!-- ****************************** Banner ************************** -->
 
 
@@ -144,25 +162,36 @@
 								</div>
 							</form>
 						</div>
-						
+
 
 		</section>
-						
+
 	<!-- ****************************** Gallery Section ************************** -->
 
 	<section id="banner" class="block">
 		<section class="container">
-			<section class="row">
-				<div class="title-box" style="color: #000; font-size: 10px;">
+			<section class="row hidden-xs" style="height: 30px;">
+				<div class="title-box " style="color: #000; font-size: 10px;">
 					<h1 class="block-title wow animated rollIn">
-						<span class="bb-top-left" style="border-color: #000;"></span> 
+						<span class="bb-top-left" style="border-color: #000;"></span>
 						<span class="bb-bottom-left" style="border-color: #000;"></span>
 						最新おすすめ漫画 <span class="bb-top-right" style="border-color: #000;"></span>
 						<span class="bb-bottom-right" style="border-color: #000;"></span>
 					</h1>
 				</div>
 			</section>
-			<section class="row">
+				<!-- ****************************** 携帯端末用検索フォーム ************************** -->
+			<section class="row  hidden-lg" style="height: 15px;">
+				<div class="title-box" style="color: #000; font-size: 6.5px;">
+					<h1 class="block-title wow animated rollIn">
+						<span class="bb-top-left" style="border-color: #000;"></span>
+						<span class="bb-bottom-left" style="border-color: #000;"></span>
+						最新おすすめ漫画 <span class="bb-top-right" style="border-color: #000;"></span>
+						<span class="bb-bottom-right" style="border-color: #000;"></span>
+					</h1>
+				</div>
+			</section>
+
 				<div class="col-xs-12">
 					<div id="screenshots" class="owl-carousel owl-theme">
 						<div class="item">
@@ -225,14 +254,25 @@
 				</div>
 			</section>
 		</section>
-	</section>
+
 
 	<!-- ****************************** Gallery Section ************************** -->
 
 	<section id="banner" class="block">
 		<section class="container">
-			<section class="row">
+			<section class="row  hidden-xs" style="height: 30px;">
 				<div class="title-box" style="color: #000; font-size: 10px;" >
+					<h1 class="block-title wow animated rollIn">
+						<span class="bb-top-left" style="border-color: #000;"></span> <span
+							class="bb-bottom-left" style="border-color: #000;"></span>
+						昔懐かし漫画 <span class="bb-top-right" style="border-color: #000;"></span>
+						<span class="bb-bottom-right" style="border-color: #000;"></span>
+					</h1>
+				</div>
+			</section>
+				<!-- ****************************** 携帯端末用検索フォーム ************************** -->
+			<section class="row  hidden-lg" style="height: 15px;">
+				<div class="title-box" style="color: #000; font-size: 6.5px;" >
 					<h1 class="block-title wow animated rollIn">
 						<span class="bb-top-left" style="border-color: #000;"></span> <span
 							class="bb-bottom-left" style="border-color: #000;"></span>
@@ -243,7 +283,7 @@
 			</section>
 			<section class="row">
 				<div class="col-xs-12">
-					<div id="screenshots2" class="owl-carousel owl-theme"">
+					<div id="screenshots2" class="owl-carousel owl-theme">
 						<div class="item">
 							<a href="Book0001.jsp"><img
 								src="assets/img/screenshot-1.png"

@@ -24,7 +24,7 @@ public class ComicInfoDao {
 		+ "author_name, image_data, view_page, insert_timestamp, update_timestamp, delete_flag) "
 		+ "VALUES (?, ?, ?, (SELECT category_id FROM category WHERE category_name = ?), ?, '1', "
 		+ "(SELECT publisher_id FROM publisher WHERE publisher_name = ?), '', ?, ?, ?, ?, ?, "
-		+ "?, '0')";
+		+ "'1970-01-01 00:00:00', '0')";
 	private static final String SQL_UPDATE_COMIC_INFO =
 		"UPDATE comic_info SET comic_title = ?, number_of_turns = ?, introduction = ?, category_id = "
 		+ "(SELECT category_id FROM category WHERE category_name = ?), base_price = ?, "
@@ -32,7 +32,10 @@ public class ComicInfoDao {
 		+ "release_date = ?, author_name = ?, image_data = ?, "
 		+ "view_page = ?, update_timestamp = ? WHERE comic_id = ?";
 	private static final String SQL_UPDATE_EVALUATE =
-		"UPDATE comic_info SET comprehensive_evaluation = ? WHERE comic_id = ?";
+		"UPDATE comic_info" +
+		" SET comprehensive_evaluation = (SELECT avg(uc.individual_evaluation)" +
+		" FROM user_comic_info uc LEFT OUTER JOIN comic_info ci ON uc.comic_id = ci.comic_id WHERE ci.comic_id = ? GROUP BY ci.comic_id)" +
+		" WHERE comic_id = ?";
 	private static final String SQL_UPDATE_DELETE_FLG =
 		"UPDATE comic_info SET delete_flg = 1 WHERE comic_id = ?";
 
@@ -165,8 +168,7 @@ public class ComicInfoDao {
 			stmt.setString(8, author);			// 9
 			stmt.setString(9, imgPath);			// 6
 			stmt.setString(10, viewPath);		// 7
-			stmt.setString(11, timeStamp);		// 11(insertTimeStamp)
-			stmt.setString(12, timeStamp);		// 11(updateTimeStamp)
+			stmt.setString(11, timeStamp);		// 11
 
 			stmt.executeUpdate();
 		} catch (SQLException e) {
@@ -189,7 +191,7 @@ public class ComicInfoDao {
 		try (PreparedStatement stmt = connection.prepareStatement
 				(SQL_UPDATE_COMIC_INFO)) {
 			stmt.setString(1, title);			// 2
-			stmt.setInt(2, numberOfTurns);		// 3
+			stmt.setInt(2, numberOfTurns);	// 3
 			stmt.setString(3, introduction);	// 11
 			stmt.setString(4, category);		// 4
 			stmt.setInt(5, price);				// 5
@@ -212,13 +214,13 @@ public class ComicInfoDao {
 	 *
 	 * @return
 	 */
-	public void updateEvaluate(Integer comicId, Double evaluate) {
+	public void updateEvaluate(Integer comicId) {
 		// 変数宣言
 		// 初期化
 
 		try (PreparedStatement stmt = connection.prepareStatement
 				(SQL_UPDATE_EVALUATE)) {
-			stmt.setDouble(1, evaluate);		// 2
+			stmt.setDouble(1, comicId);		// 2
 			stmt.setInt(2, comicId);			// 1
 
 			stmt.executeUpdate();

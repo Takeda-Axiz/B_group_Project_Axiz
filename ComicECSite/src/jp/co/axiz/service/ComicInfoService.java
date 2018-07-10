@@ -144,11 +144,9 @@ public class ComicInfoService {
 	//  処理概要
 	public void evaluateUpdate(Integer comicId) {
 		// 変数宣言
-		Double totalEvaluate = null;
-
 		// 初期化
 
-		cID.updateEvaluate(comicId, totalEvaluate);
+		cID.updateEvaluate(comicId);
 	}
 
 	//  処理概要

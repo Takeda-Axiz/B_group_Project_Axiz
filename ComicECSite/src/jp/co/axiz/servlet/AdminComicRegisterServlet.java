@@ -2,6 +2,7 @@ package jp.co.axiz.servlet;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
@@ -32,28 +33,26 @@ public class AdminComicRegisterServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+	//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	//	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//		doGet(request, response);
-
 		//リクエスト、レスポンス時の文字化け防止
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("index.jsp; charset=UTF-8");
 		HttpSession session = request.getSession();
 
+		// 変数宣言
 		//フォームから入力された値を取得
 		String title = request.getParameter("name");
-		String numberOfTurns = request.getParameter("numberOfTurns");
+		String strNumberOfTurns = request.getParameter("number_of_turns");
+		Integer intNumberOfTurns;
 		String category = request.getParameter("category");
-		String price = request.getParameter("price");
+		String strPrice = request.getParameter("price");
+		Integer intPrice;
 		String publisher = request.getParameter("publisher");
 		String releaseDate = request.getParameter("release_date");
 		String front = request.getParameter("front");
@@ -61,33 +60,56 @@ public class AdminComicRegisterServlet extends HttpServlet {
 		String author = request.getParameter("author");
 		String summary = request.getParameter("summary");
 
-		Integer Price = CommonMethod.changeInteger(price);
+		Boolean dateFlg = false;
+		ComicInfoService cIS =new ComicInfoService();
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-		Date date = (Date) sdf.parse(releaseDate);
+		Date date = null;
 
-		if((title==null || numberOfTurns==null || category==null|| price==null || publisher==null|| front==null|| url==null || date==null|| author==null )
-				||("".equals(title))||("".equals(numberOfTurns))||("".equals(category))||("".equals(price))||("".equals(publisher))||("".equals(front)) ||("".equals(url))
-				||("".equals(date))||("".equals(author))) {
+		title = CommonMethod.resetNull(title);
+		strNumberOfTurns = CommonMethod.resetNull(strNumberOfTurns);
+		category = CommonMethod.resetNull(category);
+		strPrice = CommonMethod.resetNull(strPrice);
+		publisher = CommonMethod.resetNull(publisher);
+		releaseDate = CommonMethod.resetNull(releaseDate);
+		front = CommonMethod.resetNull(front);
+		url = CommonMethod.resetNull(url);
+		author = CommonMethod.resetNull(author);
+		summary = CommonMethod.resetNull(summary);
+
+		intPrice = CommonMethod.changeInteger(strPrice);
+		intNumberOfTurns = CommonMethod.changeInteger(strNumberOfTurns);
+
+		try {
+			date = (Date) sdf.parse(releaseDate);
+			dateFlg = true;
+		} catch (ParseException e) {
+			date = null;
+		}
+
+		if((title.isEmpty()) || (strNumberOfTurns.isEmpty()) ||
+				(category.isEmpty()) || (strPrice.isEmpty()) ||
+				(publisher.isEmpty()) || (front.isEmpty()) ||
+				(url.isEmpty()) || (author.isEmpty())) {
 			request.setAttribute("msg", "必須項目が未入力です。");
 			request.getRequestDispatcher("ComicInsert.jsp").forward(request, response);
 			return;
-
 		}else {
 
 			session.setAttribute("newtitle", title);
 			session.setAttribute("newcategory", category);
-			session.setAttribute("newprice", price);
+			session.setAttribute("newprice", intPrice);
 			session.setAttribute("newpublisher", publisher);
 			session.setAttribute("newfront", front);
 			session.setAttribute("newfront", url);
-			session.setAttribute("newrelease_date", releaseDate);
+			if(dateFlg == true) {
+				session.setAttribute("newrelease_date", releaseDate);
+			}
 			session.setAttribute("newauthor", author);
 			session.setAttribute("newsummary", summary);
 
 			//Daoの登録メソッド呼び出し
-			ComicInfoService cIS =new ComicInfoService();
-			cIS.insert(title,numberOfTurns,category,Price,publisher,front,url,date,author,summary);
+			cIS.insert(title,intNumberOfTurns,category,intPrice,publisher,front,url,date,author,summary);
 
 			request.getRequestDispatcher("taskinsertResult.jsp").forward(request, response);
 		}

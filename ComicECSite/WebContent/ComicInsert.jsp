@@ -56,7 +56,7 @@ form {
 					</b>
 				</h3>
 
-				<form action="ComicInsertResult.jsp" method="post">
+				<form action="ComicInsertResult.jsp" method="post" onsubmit="return insert()">
 					<fieldset class="label-60">
 						<div>
 							<label for="inputEmail3" class="col-xs-2 control-label">※タイトル</label><input
@@ -151,6 +151,14 @@ form {
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/owl.carousel.js"></script>
 	<script src="assets/js/script.js"></script>
-
+	<script>
+    function insert(){
+        if(window.confirm("内容を登録しますか？")){
+          return true;
+        } else {
+          return false;
+        }
+      }
+	</script>
 </body>
 </html>

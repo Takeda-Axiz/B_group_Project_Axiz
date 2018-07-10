@@ -34,6 +34,13 @@ form {
 #banner div {
 	margin-top: 20px;
 }
+.form_conf {
+    margin-top: 20px;
+}
+.form_conf form {
+    display: inline-block;
+    margin: 0 10px;
+}
 </style>
 </head>
 <body id="home">
@@ -51,13 +58,13 @@ form {
 	<section id="banner">
 		<section class="container">
 			<section class="row">
-				<p>
+				<div class="col-md-6">
+					<div class="headings" style="padding: 0 0 50% 0;">
+
 				<h3>
 					<b>更新・削除する項目を選択してください<br> <span class="required"></span></b>
 				</h3>
-				</p>
 
-				<form action="ComicInsertResult.html" method="post">
 					<c:if test="${not empty errmsg}">
 						<p class="error">${fn:escapeXml(errmsg)}</p>
 					</c:if>
@@ -74,8 +81,7 @@ form {
 							</div>
 							<div>
 								<label for="inputEmail3" class="col-xs-2 control-label">カテゴリー選択</label>
-								<select class="control-labell" name="Category"
-									value="${comic.categoryName}" style="width: 142px">
+								<select class="control-labell" name="Category" value="${comic.categoryName}" style="width: 142px">
 									<option value="0">少年漫画</option>
 									<option value="1">青年漫画</option>
 									<option value="2">少女漫画</option>
@@ -119,13 +125,19 @@ form {
 							<textarea name="summary" rows="11" cols="80" value="${comic.introduction}"></textarea>
 							<br>
 						</fieldset>
-
-						<input class="btn btn-primary btn-lg" id="update" type="submit"
-							value="更新">
-						<input class="btn btn-primary btn-lg" id="delete" type="submit"
-							value="削除">
 					</c:forEach>
-				</form>
+					<div class="form_conf">
+					<form action="ComicUpdateResult.jsp" method="post" onsubmit="return update()">
+						<input class="btn btn-primary btn-lg" type="submit"
+							value="更新">
+					</form>
+					<form action="ComicDeleteResult.jsp" method="post" onsubmit="return dele()">
+						<input class="btn btn-primary btn-lg" type="submit"
+							value="削除">
+					</form>
+					</div>
+</div>
+				</div>
 			</section>
 			<br> <br>
 			<section class="row">
@@ -141,8 +153,6 @@ form {
 		</section>
 	</section>
 
-	<br>
-	<br>
 
 	<!-- ****************************** Footer ************************** -->
 
@@ -168,17 +178,34 @@ form {
 	<script src="assets/js/script.js"></script>
 
 	<script>
-		$(':submit#update').click(function() {
-			$('form').attr('action', 'ComicUpdateResult.jsp');
-			$('form').attr('method', 'post');
-			$('form').submit();
-		});
+//		$(':submit#update').click(function() {
+//			$('form').attr('action', 'ComicUpdateResult.jsp');
+//			$('form').attr('method', 'post');
+//			$('form').submit();
+//		});
 
-		$(':submit#delete').click(function() {
-			$('form').attr('action', 'AdminComicDelete');
-			$('form').attr('method', 'post');
-			$('form').submit();
-		});
+//		$(':submit#delete').click(function() {
+//			$('form').attr('action', 'ComicDeleteResult.jsp');
+//			$('form').attr('method', 'post');
+//			$('form').submit();
+//		});
+
+    function update(){
+      if(window.confirm("内容を更新しますか？")){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+
+    function dele(){
+        if(window.confirm("内容を削除しますか？")){
+          return true;
+        } else {
+          return false;
+        }
+      }
 	</script>
 
 </body>

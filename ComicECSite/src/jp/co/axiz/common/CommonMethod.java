@@ -5,6 +5,9 @@ import java.time.format.DateTimeFormatter;
 
 public class CommonMethod {
 
+	private CommonMethod() {
+	}
+
 	/**
 	 * 引数がnullかどうかを確認し、
 	 * 引数がnullだった場合は空文字に変換する

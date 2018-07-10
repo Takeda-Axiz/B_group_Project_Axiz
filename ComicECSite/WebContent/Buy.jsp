@@ -48,59 +48,68 @@
 				<div class="field">
 
 					<div class="headline">
-						<h3>
-							<p>購入確認</p>
-						</h3>
+						<h3>購入確認</h3>
 						<p>現在のチャージ残高：${balance }円</p>
 					</div>
 					<form action="buyconfirm.html" method="post">
 						<div class="">
 							<table class="table table-striped">
-								<tr>
-									<th>No</th>
-									<th>タイトル</th>
-									<th>原作者</th>
-									<th>出版社</th>
-									<th>値段</th>
-								</tr>
-
-								<c:forEach var="list" items="${bookShelfList}">
-									<tr class="info">
-
-										<td>${list.comicId}</td>
-										<td><a href="selectResultInfo.jsp">${list.comicTitle}</a></td>
-										<td>${list.auhtorName}</td>
-										<td>${list.publisher}</td>
-										<td>${list.price}</td>
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>タイトル</th>
+										<th>原作者</th>
+										<th>出版社</th>
+										<th>値段</th>
 									</tr>
-								</c:forEach>
+								</thead>
 
+								<tbody>
+									<c:forEach var="list" items="${bookShelfList}">
+										<tr class="info">
+
+											<td>${list.comicId}</td>
+											<td><a href="selectResultInfo.jsp">${list.comicTitle}</a></td>
+											<td>${list.auhtorName}</td>
+											<td>${list.publisher}</td>
+											<td>${list.price}</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+
+								<tfoot>
+									<tr class="info">
+										<th colspan="4">合計</th>
+										<td>16500</td>
+									</tr>
+								</tfoot>
 							</table>
 						</div>
-						<form action="buy.jsp" method="post">
-							<div class="row col-xs-6 col-md-3 pull-right">
-								<button class="btn btn-lg btn-primary btn-block " name="Submit"
-									value="Login" type="Submit">購入確定</button>
-							</div>
-						</form>
-						<br> <br> <br>
+					</form>
+					<form action="buy.jsp" method="post">
 						<div class="row col-xs-6 col-md-3 pull-right">
-							<input type="submit" class="btn btn-lg btn-primary btn-block"
-								name="button" value="カートへ戻る"
-								onclick="location.href='cart.jsp'; return false;">
+							<button class="btn btn-lg btn-primary btn-block " name="Submit"
+								value="Login" type="Submit">購入確定</button>
 						</div>
-				</div>
-				</form>
-				<br>
-				<form action="Index.jsp" method="post" class="col-md-2">
-					<div class="link">
+					</form>
+					<br> <br> <br>
+					<div class="row col-xs-6 col-md-3 pull-right">
 						<input type="submit" class="btn btn-lg btn-primary btn-block"
-							value="トップページ"> <input type="submit"
-							class="btn btn-lg btn-primary btn-block" name="button"
-							value="マイページ"
-							onclick="location.href='Mypage.jsp'; return false;">
+							name="button" value="カートへ戻る"
+							onclick="location.href='cart.jsp'; return false;">
 					</div>
-				</form>
+				</div>
+				<br>
+				<div>
+					<form action="Index.jsp" method="post" class="col-md-2">
+						<div class="link">
+							<input type="submit" class="btn btn-lg btn-primary btn-block"
+								value="トップページ"> <input type="submit"
+								class="btn btn-lg btn-primary btn-block" name="button"
+								value="マイページ"
+								onclick="location.href='Mypage.jsp'; return false;">
+						</div>
+					</form>
 				</div>
 
 				<div>

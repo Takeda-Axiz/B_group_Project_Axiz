@@ -7,20 +7,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import jp.co.axiz.service.CartService;
-
-@WebServlet("/CartServlet")
-public class CartServlet extends HttpServlet {
+@WebServlet("/BuyCartServlet")
+public class BuyCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		CartService cs = new CartService(request, response);
-		cs.addCart();
-		cs.showCart();
+		HttpSession session = request.getSession();
+		//UserInfo user = session.getAttribute("");
 
-		request.getRequestDispatcher("/Cart.jsp").forward(request, response);
 	}
 
 }

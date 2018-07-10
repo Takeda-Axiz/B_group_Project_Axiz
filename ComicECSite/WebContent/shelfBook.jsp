@@ -63,55 +63,56 @@ div.z {
 					<p>見つかりませんでした</p>
 				</c:if>
 
+				<c:set var="bookshelf">
 
-				<c:if test="${not empty comicId}">
-					<h3>${comicTitle}</h3>
-					<div class="b">
-						<img src="${imageData}" width="80%" height="100%">
-					</div>
-					<p>タイトル:${comicTitle}</p>
-					<p>原作者:${authorName}</p>
-					<p>購入日:${purchase}</p>
-					<p>カテゴリー:${category}</p>
-
-					<p>${introduction}</p>
-
-				</c:if>
-
-				<div class="z">
-
-
-					<br>
-					<form role="form" method="post" action="Book001.html">
-						<c:if test="${not empty individual_evaluation }">
-							<p>あなたの評価：${individual }</p>
-						</c:if>
-						<c:if test="${empty individual_evaluation}">
-							<div class="col-xs-2">
-								<select class="form-control" name="Category">
-									<option value="title">評価を選択</option>
-									<option value="valuation1">1</option>
-									<option value="valuation2">2</option>
-									<option value="valuation3">3</option>
-									<option value="valuation4">4</option>
-									<option value="valuation5">5</option>
-								</select>
-							</div>
-						</c:if>
-						<div class="col-xs-1">
-							<button type="submit" class="btn btn-custom"
-								style="font-size: 14px;">
-								<i class="ion-ios-arrow-thin-right"></i>
-							</button>
+					<c:if test="${not empty comicId}">
+						<h3>${comicTitle}</h3>
+						<div class="b">
+							<img src="${imageData}" width="80%" height="100%">
 						</div>
-					</form>
-				</div>
-				<br> <br>
+						<p>タイトル:${comicTitle}</p>
+						<p>原作者:${authorName}</p>
+						<p>購入日:${purchase}</p>
+						<p>カテゴリー:${category}</p>
+
+						<p>${introduction}</p>
+
+					</c:if>
+
+					<div class="z">
+						<br>
+						<form role="form" method="post" action="Book001.html">
+							<c:if test="${not empty individual_evaluation }">
+								<p>あなたの評価：${individual }</p>
+							</c:if>
+							<c:if test="${empty individual_evaluation}">
+								<div class="col-xs-2">
+									<select class="form-control" name="Category">
+										<option value="title">評価を選択</option>
+										<option value="valuation1">1</option>
+										<option value="valuation2">2</option>
+										<option value="valuation3">3</option>
+										<option value="valuation4">4</option>
+										<option value="valuation5">5</option>
+									</select>
+								</div>
+							</c:if>
+							<div class="col-xs-1">
+								<button type="submit" class="btn btn-custom"
+									style="font-size: 14px;">
+									<i class="ion-ios-arrow-thin-right"></i>
+								</button>
+							</div>
+						</form>
+					</div>
+				</c:set>
+				<br>
+				<br>
 				<input type="button" class="btn btn-primary " value="閲覧する"
-					onclick="location.href='ComicRead.html'; return false;"> <br>
+					onclick="location.href='ComicRead.html'; return false;">
+				<br>
 				<br>
 				<a class="btn btn-primary " href="BookSelect.jsp">本棚へ戻る</a>
-				</div>
 			</section>
 			<section class="row">
 				<img src="assets/img/clearline.png" class="img-responsive" alt=""

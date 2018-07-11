@@ -27,7 +27,6 @@
 	href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700|Oxygen:400,300,700'
 	rel='stylesheet'>
 
-
 <style>
 .img_res {
 	display: block;
@@ -164,8 +163,6 @@
 				</div>
 			</form>
 		</div>
-
-
 	</section>
 
 	<!-- ****************************** Gallery Section ************************** -->
@@ -201,7 +198,6 @@
 							<button name="comicId" value="1" style="border: none; background: rgba(0, 0, 0, 0);">
 								<img src="assets/img/screenshot-1.png" class="img_res wow animated zoomIn">
 							</button>
-
 						</div>
 						<div class="item">
 							<button name="comicId" value="2" style="border: none; background: rgba(0, 0, 0, 0);">

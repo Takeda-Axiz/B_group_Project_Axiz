@@ -16,7 +16,7 @@ import jp.co.axiz.service.ComicInfoService;
 /**
  * Servlet implementation class SelectBookShelfServlet
  */
-@WebServlet("/SelectBookShelf")
+@WebServlet("/selectBookShelf")
 public class SelectBookShelfServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

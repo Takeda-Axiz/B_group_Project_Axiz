@@ -10,7 +10,6 @@ public class JoinComicInfo {
 	private String introduction;				// 紹介文
 	private Integer categoryId;					// カテゴリID
 	private Integer basePrice;					// 原価
-	private Integer taxId;						// 消費税ID
 	private Integer publisherId;				// 出版社ID
 	private Double comprehensiveEvaluation;		// 総合評価
 	private Date releaseDate;					// 発売日
@@ -23,8 +22,6 @@ public class JoinComicInfo {
 
 	private String categoryName;				// カテゴリ名
 	private String publisherName;				// 出版社名
-	private Double tax;							// 消費税
-	private Date introductionDate;				// 導入日
 
 	/*---  Field End  ---*/
 
@@ -34,10 +31,9 @@ public class JoinComicInfo {
 	}
 
 	public JoinComicInfo(Integer comicId, String comicTitle, Integer numberOfTurns, String introduction,
-			Integer categoryId, Integer basePrice, Integer taxId, Integer publisherId, Double comprehensiveEvaluation,
+			Integer categoryId, Integer basePrice, Integer publisherId, Double comprehensiveEvaluation,
 			Date releaseDate, String authorName, String imageData, String viewPage, String insertTimestamp,
-			String updateTimestamp, Integer deleteFlag, String categoryName, String publisherName, Double tax,
-			Date introductionDate) {
+			String updateTimestamp, Integer deleteFlag, String categoryName, String publisherName) {
 		super();
 		this.comicId = comicId;
 		this.comicTitle = comicTitle;
@@ -45,7 +41,6 @@ public class JoinComicInfo {
 		this.introduction = introduction;
 		this.categoryId = categoryId;
 		this.basePrice = basePrice;
-		this.taxId = taxId;
 		this.publisherId = publisherId;
 		this.comprehensiveEvaluation = comprehensiveEvaluation;
 		this.releaseDate = releaseDate;
@@ -57,8 +52,6 @@ public class JoinComicInfo {
 		this.deleteFlag = deleteFlag;
 		this.categoryName = categoryName;
 		this.publisherName = publisherName;
-		this.tax = tax;
-		this.introductionDate = introductionDate;
 	}
 
 	/*---  Constructor End  ---*/
@@ -111,14 +104,6 @@ public class JoinComicInfo {
 
 	public void setBasePrice(Integer basePrice) {
 		this.basePrice = basePrice;
-	}
-
-	public Integer getTaxId() {
-		return taxId;
-	}
-
-	public void setTaxId(Integer taxId) {
-		this.taxId = taxId;
 	}
 
 	public Integer getPublisherId() {
@@ -207,22 +192,6 @@ public class JoinComicInfo {
 
 	public void setPublisherName(String publisherName) {
 		this.publisherName = publisherName;
-	}
-
-	public Double getTax() {
-		return tax;
-	}
-
-	public void setTax(Double tax) {
-		this.tax = tax;
-	}
-
-	public Date getIntroductionDate() {
-		return introductionDate;
-	}
-
-	public void setIntroductionDate(Date introductionDate) {
-		this.introductionDate = introductionDate;
 	}
 
 	/*---  Method End  ---*/

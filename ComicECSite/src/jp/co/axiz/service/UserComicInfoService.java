@@ -1,7 +1,7 @@
 package jp.co.axiz.service;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +10,6 @@ import jp.co.axiz.dao.ComicInfoDao;
 import jp.co.axiz.dao.JoinUserComicInfoDao;
 import jp.co.axiz.dao.UserComicInfoDao;
 import jp.co.axiz.entity.JoinUserComicInfo;
-import jp.co.axiz.entity.UserInfo;
 
 public class UserComicInfoService {
 
@@ -18,6 +17,9 @@ public class UserComicInfoService {
 	JoinUserComicInfoDao juci = new JoinUserComicInfoDao();
 	ComicInfoDao ci = new ComicInfoDao();
 	HttpServletRequest request;
+
+	public UserComicInfoService() {
+	}
 
 	public UserComicInfoService(HttpServletRequest request) {
 		this.request = request;
@@ -31,10 +33,10 @@ public class UserComicInfoService {
 		return list;
 	}
 
-	public List<JoinUserComicInfo> sort(UserInfo userInfo) {
-
-		String userId = userInfo.getDeliveryUserId();
-		String sortName = "title";
+	public List<JoinUserComicInfo> sort(String userId, String sortName) {
+		if(sortName == null || sortName.equals("")) {
+			sortName = "title";
+		}
 		List<JoinUserComicInfo> list = juci.bookShelfShow(userId, sortName);
 
 		return list;
@@ -60,17 +62,11 @@ public class UserComicInfoService {
 		juci.updateIndividualEvaluation(individualEvaluation, userId, comicId);
 		//次に総合評価の更新を行う
 		ci.updateEvaluate(comicId);
-
-
 	}
 
-	public void insertComic() {
-		String userId = request.getParameter("");
-		String ComicId = request.getParameter("");
-		Integer comicId = Integer.parseInt(ComicId);
+	public void insertComic(String userId, Integer comicId) {
 		LocalDateTime ldt = LocalDateTime.now();
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-		String purchaseTimestamp = dtf.format(ldt);
+		Timestamp purchaseTimestamp = Timestamp.valueOf(ldt);
 
 		uci.insert(userId, comicId, purchaseTimestamp);
 

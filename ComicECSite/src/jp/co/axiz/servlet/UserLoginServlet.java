@@ -16,7 +16,7 @@ import jp.co.axiz.service.UserInfoService;
 /**
  * Servlet implementation class UserLoginServlet
  */
-@WebServlet("/Login")
+@WebServlet("/UserLogin")
 public class UserLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -60,14 +60,14 @@ public class UserLoginServlet extends HttpServlet {
 			session.setAttribute("userLogin", login);
 
 			// 次画面指定
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.getRequestDispatcher("Index.jsp").forward(request, response);
 			return;
 		}else {
 
 		}
 		request.setAttribute("msg", "ログインできませんでした。");
 
-		request.getRequestDispatcher("login.jsp").forward(request, response);
+		request.getRequestDispatcher("Login.jsp").forward(request, response);
 		return;
 	}
 }

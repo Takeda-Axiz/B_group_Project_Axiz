@@ -32,4 +32,10 @@ public class LoginCookie {;
 		}
 		response.addCookie(cookie);
 	}
+
+	public static void removeCookie(HttpServletResponse response, String name) {
+		Cookie cookie = new Cookie(name, "");
+		cookie.setMaxAge(0);
+		response.addCookie(cookie);
+	}
 }

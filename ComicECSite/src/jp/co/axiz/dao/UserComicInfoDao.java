@@ -3,6 +3,7 @@ package jp.co.axiz.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 import jp.co.axiz.util.DbUtil;
 
@@ -16,11 +17,11 @@ public class UserComicInfoDao {
 		connection = DbUtil.getConnection();
 	}
 
-	public void insert(String userId, Integer comicId, String purchaseTimestamp) {
+	public void insert(String userId, Integer comicId, Timestamp purchaseTimestamp) {
 		try(PreparedStatement stmt = connection.prepareStatement(SQL_INSERT)) {
 			stmt.setString(1, userId);
 			stmt.setInt(2, comicId);
-			stmt.setString(3, purchaseTimestamp);
+			stmt.setTimestamp(3, purchaseTimestamp);
 			stmt.executeUpdate();
 
 		}catch(SQLException e){

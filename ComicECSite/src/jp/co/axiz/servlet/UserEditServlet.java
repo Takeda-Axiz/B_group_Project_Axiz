@@ -13,7 +13,7 @@ import jp.co.axiz.common.CommonMethod;
 /**
  * Servlet implementation class InsertServlet
  */
-@WebServlet("/UserEdit")
+@WebServlet("/userEdit")
 public class UserEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -50,9 +50,12 @@ public class UserEditServlet extends HttpServlet {
 			request.setAttribute("errmsg", "未入力の項目があります");
 			request.getRequestDispatcher("insert.jsp").forward(request, response);
 			return;
+
 		}else {
 //			UserInfoService 　　　 =new UserInfoService(request);
 //			AdminInfo admin = 　　　.　　　(　　　);
 		}
+
+
 	}
 }

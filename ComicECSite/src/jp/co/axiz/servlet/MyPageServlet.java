@@ -16,7 +16,7 @@ import jp.co.axiz.entity.UserInfo;
 /**
  * Servlet implementation class MyPageServlet
  */
-@WebServlet("/MyPage")
+@WebServlet("/MyPageServlet")
 public class MyPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -53,23 +53,29 @@ public class MyPageServlet extends HttpServlet {
 		//IDチェック
 		UserInfoDao userInfoDao = new UserInfoDao();
 		List<UserInfo> userInfo = userInfoDao.findByDeliveryUserId(deliveryUserId);
-		boolean isSuccess = (userInfo != null);
+		boolean isSuccess = userInfo != null;
 
 		//表示メッセージの受け渡し
-		if (isSuccess && !(userInfo.isEmpty())) {
+		if (isSuccess) {
+
 			int point = userInfo.get(0).getPoint();
 			int charge = userInfo.get(0).getBalance();
 
 			//ポイント・チャージ残高情報を取得
 			request.setAttribute("point", point);
 			request.setAttribute("charge", charge);
+
+			//次画面指定
+			request.getRequestDispatcher("MyPage.jsp").forward(request, response);
+			return;
 		}else {
 			//メッセージ設定
 			request.setAttribute("point", "0");
 			request.setAttribute("charge", "0");
+
+			//次画面指定
+			request.getRequestDispatcher("MyPage.jsp").forward(request, response);
 		}
-		//次画面指定
-		request.getRequestDispatcher("myPage.jsp").forward(request, response);
-		return;
 	}
+
 }

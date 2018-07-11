@@ -67,8 +67,7 @@ public class JoinComicInfoDao {
 	private static final String SQL_SELECT_WHERE_COMIC_ID =
 			"SELECT * FROM comic_info ci LEFT OUTER JOIN "
 			+ "category ct ON ci.category_id = ct.category_id LEFT OUTER JOIN "
-			+ "publisher pb ON ci.publisher_id = pb.publisher_id LEFT OUTER JOIN "
-			+ "tax tax ON ci.tax_id = tax.tax_id WHERE comic_id = ? ORDER BY comic_id";
+			+ "publisher pb ON ci.publisher_id = pb.publisher_id WHERE comic_id = ? ORDER BY comic_id";
 
 	/*---  Field End  ---*/
 
@@ -102,7 +101,6 @@ public class JoinComicInfoDao {
 							rs.getString("introduction"),
 							rs.getInt("category_id"),
 							rs.getInt("base_price"),
-							rs.getInt("tax_id"),
 							rs.getInt("publisher_id"),
 							rs.getDouble("comprehensive_evaluation"),
 							rs.getDate("release_date"),
@@ -113,9 +111,7 @@ public class JoinComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag"),
 							rs.getString("category_name"),
-							rs.getString("publisher_name"),
-							rs.getDouble("tax"),
-							rs.getDate("introduction_date")
+							rs.getString("publisher_name")
 						);
 					list.add(comic);
 				}
@@ -147,7 +143,6 @@ public class JoinComicInfoDao {
 							rs.getString("introduction"),
 							rs.getInt("category_id"),
 							rs.getInt("base_price"),
-							rs.getInt("tax_id"),
 							rs.getInt("publisher_id"),
 							rs.getDouble("comprehensive_evaluation"),
 							rs.getDate("release_date"),
@@ -158,9 +153,7 @@ public class JoinComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag"),
 							rs.getString("category_name"),
-							rs.getString("publisher_name"),
-							rs.getDouble("tax"),
-							rs.getDate("introduction_date")
+							rs.getString("publisher_name")
 						);
 					list.add(comic);
 				}
@@ -192,7 +185,6 @@ public class JoinComicInfoDao {
 							rs.getString("introduction"),
 							rs.getInt("category_id"),
 							rs.getInt("base_price"),
-							rs.getInt("tax_id"),
 							rs.getInt("publisher_id"),
 							rs.getDouble("comprehensive_evaluation"),
 							rs.getDate("release_date"),
@@ -203,9 +195,7 @@ public class JoinComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag"),
 							rs.getString("category_name"),
-							rs.getString("publisher_name"),
-							rs.getDouble("tax"),
-							rs.getDate("introduction_date")
+							rs.getString("publisher_name")
 						);
 					list.add(comic);
 				}
@@ -237,7 +227,6 @@ public class JoinComicInfoDao {
 							rs.getString("introduction"),
 							rs.getInt("category_id"),
 							rs.getInt("base_price"),
-							rs.getInt("tax_id"),
 							rs.getInt("publisher_id"),
 							rs.getDouble("comprehensive_evaluation"),
 							rs.getDate("release_date"),
@@ -248,9 +237,7 @@ public class JoinComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag"),
 							rs.getString("category_name"),
-							rs.getString("publisher_name"),
-							rs.getDouble("tax"),
-							rs.getDate("introduction_date")
+							rs.getString("publisher_name")
 						);
 					list.add(comic);
 				}
@@ -282,7 +269,6 @@ public class JoinComicInfoDao {
 							rs.getString("introduction"),
 							rs.getInt("category_id"),
 							rs.getInt("base_price"),
-							rs.getInt("tax_id"),
 							rs.getInt("publisher_id"),
 							rs.getDouble("comprehensive_evaluation"),
 							rs.getDate("release_date"),
@@ -293,9 +279,7 @@ public class JoinComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag"),
 							rs.getString("category_name"),
-							rs.getString("publisher_name"),
-							rs.getDouble("tax"),
-							rs.getDate("introduction_date")
+							rs.getString("publisher_name")
 						);
 					list.add(comic);
 				}
@@ -328,7 +312,6 @@ public class JoinComicInfoDao {
 							rs.getString("introduction"),
 							rs.getInt("category_id"),
 							rs.getInt("base_price"),
-							rs.getInt("tax_id"),
 							rs.getInt("publisher_id"),
 							rs.getDouble("comprehensive_evaluation"),
 							rs.getDate("release_date"),
@@ -339,9 +322,7 @@ public class JoinComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag"),
 							rs.getString("category_name"),
-							rs.getString("publisher_name"),
-							rs.getDouble("tax"),
-							rs.getDate("introduction_date")
+							rs.getString("publisher_name")
 						);
 					list.add(comic);
 				}
@@ -374,7 +355,6 @@ public class JoinComicInfoDao {
 							rs.getString("introduction"),
 							rs.getInt("category_id"),
 							rs.getInt("base_price"),
-							rs.getInt("tax_id"),
 							rs.getInt("publisher_id"),
 							rs.getDouble("comprehensive_evaluation"),
 							rs.getDate("release_date"),
@@ -385,9 +365,7 @@ public class JoinComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag"),
 							rs.getString("category_name"),
-							rs.getString("publisher_name"),
-							rs.getDouble("tax"),
-							rs.getDate("introduction_date")
+							rs.getString("publisher_name")
 						);
 					list.add(comic);
 				}
@@ -420,7 +398,6 @@ public class JoinComicInfoDao {
 							rs.getString("introduction"),
 							rs.getInt("category_id"),
 							rs.getInt("base_price"),
-							rs.getInt("tax_id"),
 							rs.getInt("publisher_id"),
 							rs.getDouble("comprehensive_evaluation"),
 							rs.getDate("release_date"),
@@ -431,9 +408,7 @@ public class JoinComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag"),
 							rs.getString("category_name"),
-							rs.getString("publisher_name"),
-							rs.getDouble("tax"),
-							rs.getDate("introduction_date")
+							rs.getString("publisher_name")
 						);
 					list.add(comic);
 				}
@@ -466,7 +441,6 @@ public class JoinComicInfoDao {
 							rs.getString("introduction"),
 							rs.getInt("category_id"),
 							rs.getInt("base_price"),
-							rs.getInt("tax_id"),
 							rs.getInt("publisher_id"),
 							rs.getDouble("comprehensive_evaluation"),
 							rs.getDate("release_date"),
@@ -477,9 +451,7 @@ public class JoinComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag"),
 							rs.getString("category_name"),
-							rs.getString("publisher_name"),
-							rs.getDouble("tax"),
-							rs.getDate("introduction_date")
+							rs.getString("publisher_name")
 						);
 					list.add(comic);
 				}
@@ -512,7 +484,6 @@ public class JoinComicInfoDao {
 							rs.getString("introduction"),
 							rs.getInt("category_id"),
 							rs.getInt("base_price"),
-							rs.getInt("tax_id"),
 							rs.getInt("publisher_id"),
 							rs.getDouble("comprehensive_evaluation"),
 							rs.getDate("release_date"),
@@ -523,9 +494,7 @@ public class JoinComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag"),
 							rs.getString("category_name"),
-							rs.getString("publisher_name"),
-							rs.getDouble("tax"),
-							rs.getDate("introduction_date")
+							rs.getString("publisher_name")
 						);
 					list.add(comic);
 				}
@@ -537,7 +506,7 @@ public class JoinComicInfoDao {
 	}
 
 	//  処理概要
-	public JoinComicInfo findByComicId(Integer comicId) {
+	public JoinComicInfo findById(Integer comicId) {
 		// 変数宣言
 		List<JoinComicInfo> list = new ArrayList<JoinComicInfo>();
 
@@ -558,7 +527,6 @@ public class JoinComicInfoDao {
 							rs.getString("introduction"),
 							rs.getInt("category_id"),
 							rs.getInt("base_price"),
-							rs.getInt("tax_id"),
 							rs.getInt("publisher_id"),
 							rs.getDouble("comprehensive_evaluation"),
 							rs.getDate("release_date"),
@@ -569,9 +537,7 @@ public class JoinComicInfoDao {
 							rs.getString("update_timestamp"),
 							rs.getInt("delete_flag"),
 							rs.getString("category_name"),
-							rs.getString("publisher_name"),
-							rs.getDouble("tax"),
-							rs.getDate("introduction_date")
+							rs.getString("publisher_name")
 						);
 					list.add(comic);
 				}
@@ -583,6 +549,7 @@ public class JoinComicInfoDao {
 				return list.get(0);
 			}
 		} catch (SQLException e) {
+			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 	}

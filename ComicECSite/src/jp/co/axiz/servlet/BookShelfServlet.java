@@ -26,11 +26,15 @@ public class BookShelfServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 
+		UserInfo user = (UserInfo) session.getAttribute("userLogin");
+		String userId = user.getUserId();
+		String sortName = "";
+
 		UserComicInfoService uci = new UserComicInfoService(request);
-		List<JoinUserComicInfo> list = uci.sort((UserInfo) session.getAttribute("userLogin"));
+		List<JoinUserComicInfo> list = uci.sort(userId, sortName);
 
 		request.setAttribute("userComicList", list);
 
-		request.getRequestDispatcher("bookSelect.jsp").forward(request, response);
+		request.getRequestDispatcher("BookSelect.jsp").forward(request, response);
 	}
 }

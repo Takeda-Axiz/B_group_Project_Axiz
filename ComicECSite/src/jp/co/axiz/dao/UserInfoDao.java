@@ -228,8 +228,8 @@ public class UserInfoDao {
 	public void updateBalance(String deliveryUserId, Integer balance) {
 
 		try(PreparedStatement stmt = connection.prepareStatement(SQL_UPDATE_BALANCE)) {
-			stmt.setString(1, deliveryUserId);
-			stmt.setInt(2, balance);
+			stmt.setInt(1, balance);
+			stmt.setString(2, deliveryUserId);
 
 		}catch(SQLException e) {
 			e.printStackTrace();

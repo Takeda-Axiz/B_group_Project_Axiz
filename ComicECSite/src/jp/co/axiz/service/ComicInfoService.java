@@ -130,7 +130,7 @@ public class ComicInfoService {
 		// 変数宣言
 		// 初期化
 
-		return jCID.findByComicId(comicId);
+		return jCID.findById(comicId);
 	}
 
 	public ComicInfo findComicInfo(Integer comicId){

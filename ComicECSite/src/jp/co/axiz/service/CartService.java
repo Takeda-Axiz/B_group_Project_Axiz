@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import jp.co.axiz.common.CommonMethod;
 import jp.co.axiz.cookie.LoginCookie;
@@ -32,38 +31,38 @@ public class CartService {
 		this.response = response;
 	}
 
-	public void showCart() {
-		HttpSession session = request.getSession();
+	public List<JoinComicInfo> showCart(String products) {
 		String[] Products;
-		String products = LoginCookie.getCookie(request, name);
 		Products = products.split(",", 0);
 		JoinComicInfoDao jcid = new JoinComicInfoDao();
 		List<JoinComicInfo> list = new ArrayList<>();
 
 		for(String produtNumber:Products) {
 			Integer ProdutNumber = CommonMethod.changeInteger(produtNumber);
-			JoinComicInfo record = jcid.findByComicId(ProdutNumber);
+			JoinComicInfo record = jcid.findById(ProdutNumber);
 			list.add(record);
 		}
-		session.setAttribute("userCart", list);
+		return list;
 	}
 
-	public void addCart() {
+	public String addCart() {
 
 		//カートに入れるを押下された時の商品番号を取得する
 		String product = request.getParameter("product");
-
 		//Cookieに入っている、商品一覧がカンマ区切りで入っているStringを取得する
 		String products = LoginCookie.getCookie(request, name);
 		//カンマ区切りで結合、中身がnullだった場合はそのまま入れる
-		if(products.equals(null)) {
-			products = product;
-		}else {
+		try {products.equals(null);
+		int i  = products.indexOf(product);
+		if(i == -1) {
 			products = products + "," + product;
+		}else {}
+
+		}catch(NullPointerException e){
+			products = product;
 		}
-
 		LoginCookie.setCookie(request, response, name, products, maxAge);
-
+		return products;
 	}
 
 	public void removeCart(String comic_id) {

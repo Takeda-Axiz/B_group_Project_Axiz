@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class PointBuyResultServlet
  */
-@WebServlet("/PointResult")
+@WebServlet("/pointResult")
 public class PointBuyConfirmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

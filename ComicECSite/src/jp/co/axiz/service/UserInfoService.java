@@ -93,19 +93,8 @@ public class UserInfoService {
 		uid.updateBalance(deliveryUserId, balance);
 	}
 
-	public void moneyUse() {
-		deliveryUserId = request.getParameter("user_id");
-		useMoney = request.getParameter("useMoney");
-		Integer UseMoney = Integer.parseInt(useMoney);
-
-		//残高を参照
-		List<UserInfo> list = uid.findByDeliveryUserId(deliveryUserId);
-		UserInfo user = list.get(0);
-		Integer balance = user.getBalance();
-		//残高から会計分のお金を引く
-		balance -= UseMoney;
-
-		uid.updateBalance(deliveryUserId, balance);
+	public void moneyUse(String deliveryUserId, Integer afterBalance) {
+		uid.updateBalance(deliveryUserId, afterBalance);
 	}
 
 	public void pointCharge() {

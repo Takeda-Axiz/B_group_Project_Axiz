@@ -98,15 +98,15 @@ public class UserInfoDao {
 
 			while (rs.next()) {
 				UserInfo u = new UserInfo(rs.getString("user_id"),
-						rs.getString("deliv_user_id"),
+						rs.getString("delivery_user_id"),
 						rs.getString("user_name"),
 						rs.getString("password"),
 						rs.getDate("birthday"),
 						rs.getInt("balance"),
 						rs.getInt("point"),
 						rs.getString("insert_timestamp"),
-						rs.getString("update__timestamp"),
-						rs.getInt("deleteflg"));
+						rs.getString("update_timestamp"),
+						rs.getInt("delete_flg"));
 				list.add(u);
 			}
 

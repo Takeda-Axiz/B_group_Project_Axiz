@@ -10,6 +10,7 @@ import jp.co.axiz.dao.ComicInfoDao;
 import jp.co.axiz.dao.JoinUserComicInfoDao;
 import jp.co.axiz.dao.UserComicInfoDao;
 import jp.co.axiz.entity.JoinUserComicInfo;
+import jp.co.axiz.entity.UserInfo;
 
 public class UserComicInfoService {
 
@@ -30,11 +31,11 @@ public class UserComicInfoService {
 		return list;
 	}
 
-	public List<JoinUserComicInfo> sort() {
-		String userId = request.getParameter("");
-		String SortNumber = request.getParameter("");
-		Integer sortNumber = Integer.parseInt(SortNumber);
-		List<JoinUserComicInfo> list = juci.bookShelfShow(userId, sortNumber);
+	public List<JoinUserComicInfo> sort(UserInfo userInfo) {
+
+		String userId = userInfo.getDeliveryUserId();
+		String sortName = "title";
+		List<JoinUserComicInfo> list = juci.bookShelfShow(userId, sortName);
 
 		return list;
 	}

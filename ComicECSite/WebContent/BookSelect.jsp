@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +50,7 @@ div.a {
 		<section class="container">
 			<section class="row" id="logo_menu">
 				<section class="col-md-6">
-					<a class="logo" href="Index.jsp">電子漫画購入サイト</a>
+					<a class="logo" href="index">電子漫画購入サイト</a>
 				</section>
 				<form action="index" class="pull-right">
 					<input class="btn btn-primary btn-sm active" id="logout"
@@ -72,8 +73,8 @@ div.a {
 										<select class="form-control" name="Category">
 											<option value="title">タイトル</option>
 											<option value="author">原作者</option>
-											<option value="release date">購入日</option>
-											<option value="publisher">カテゴリー</option>
+											<option value="release_date">購入日</option>
+											<option value="category">カテゴリー</option>
 										</select>
 									</div>
 
@@ -95,7 +96,7 @@ div.a {
 						</div>
 					</section>
 
-					<form action="selectResultInfo.jsp" method="post">
+					<form action="bookSelect" method="post">
 						<div class="row">
 							<table class="table table-striped">
 								<tr>
@@ -107,16 +108,17 @@ div.a {
 									<th>巻数</th>
 								</tr>
 
-								<c:forEach var="list" items="${userComicList}">
+								<c:forEach var="list" items="${userComicList}" varStatus="status">
 									<tr class="info">
-										<td>${list.userComicId}<input type="hidden" name=""
-											value="${list.userComicId}">
+										<td>
+											${status.count}
+											<input type="hidden" name="comicId" value="${fn:escapeXml(list.comicId)}">
 										</td>
-										<td>${list.comicTitle}</td>
-										<td>${list.auhtorName}</td>
-										<td>${list.purchase}</td>
-										<td>${list.category}</td>
-										<td>${list.numberOfTurns}巻</td>
+										<td><button style="display:inline-block; border: none; background-color: #D6F2F3; color: #00f; text-decoration: underline; cursor: pointer;">${fn:escapeXml(list.comicTitle)}</button></td>
+										<td>${fn:escapeXml(list.authorName)}</td>
+										<td>${fn:escapeXml(list.purchaseTimestamp)}</td>
+										<td>${fn:escapeXml(list.categoryName)}</td>
+										<td>${fn:escapeXml(list.numberOfTurns)}巻</td>
 									</tr>
 								</c:forEach>
 							</table>
@@ -124,10 +126,10 @@ div.a {
 						<div class="row">
 							<div>
 								<input type="button" class="btn btn-primary" value="トップページ"
-									onclick="location.href='Index.jsp'; return false;"><br>
+									onclick="location.href='index'; return false;"><br>
 								<br> <input type="button" class="btn btn-primary"
 									value="マイページ"
-									onclick="location.href='MyPage.jsp'; return false;">
+									onclick="location.href='myPage'; return false;">
 							</div>
 						</div>
 					</form>
@@ -163,6 +165,16 @@ div.a {
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/owl.carousel.js"></script>
 	<script src="assets/js/script.js"></script>
+
+	<script>
+
+	//	$('a#titleLink').click(function() {
+	//		$('form').attr('action', 'bookSelect');
+	//		$('form').attr('method', 'post');
+	//		$('form').submit();
+	//	});
+
+	</script>
 
 </body>
 </html>

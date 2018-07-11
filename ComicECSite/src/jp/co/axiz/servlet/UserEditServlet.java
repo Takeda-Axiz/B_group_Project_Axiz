@@ -13,7 +13,7 @@ import jp.co.axiz.common.CommonMethod;
 /**
  * Servlet implementation class InsertServlet
  */
-@WebServlet("/userEdit")
+@WebServlet("/UserEdit")
 public class UserEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

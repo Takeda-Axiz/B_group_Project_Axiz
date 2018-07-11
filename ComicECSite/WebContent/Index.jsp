@@ -42,7 +42,6 @@
 }
 </style>
 
-
 </head>
 <body id="home">
 
@@ -60,13 +59,13 @@
 				<div class="col-xs-6">
 					<a class="logo hidden-xs" href="Index.jsp">電子漫画購入サイト</a>
 					<!-- ****************************** 携帯端末用タイトル ************************** -->
-					<a class="title hidden-lg col-xs-6.5" href="Index.jsp">電子漫画購入サイト</a>
+					<a class="title hidden-lg col-xs-6.5" href="index.jsp">電子漫画購入サイト</a>
 				</div>
 
 				<section class="subscribe-wrap">
 					<div class="col-xs-3">
 						<div class="row">
-							<form role="form" method="post" action="SearchResult.jsp">
+							<form role="form" method="post" action="searchResult.jsp">
 								<div class="col-xs-12">
 									<select class="form-control hidden-xs" name="Category">
 										<option value="title">タイトル</option>
@@ -93,7 +92,7 @@
 				</section>
 
 				<div class="col-xs-3 ">
-					<form action="Login.jsp" class="pull-right">
+					<form action="login.jsp" class="pull-right">
 						<c:if test="${not empty userLogin}">
 							<input class="btn btn-primary btn-sm active" id="logout"
 								type="button" value="ログアウト">
@@ -104,7 +103,7 @@
 						<c:if test="${empty userLogin}">
 							<input class="btn btn-primary btn-sm active" id="login"
 								type="button" value="ログイン">
-							<input class="btn btn-primary btn-sm active hidden" id="signUp"
+							<input class="btn btn-primary btn-sm active" id="signUp"
 								type="button" value="新規登録">
 						</c:if>
 
@@ -173,7 +172,7 @@
 
 	<section id="banner" class="block">
 		<section class="container">
-			<section class="row hidden-xs" style="height: 30px;">
+			<section class="row hidden-xs" style="height: 50px;">
 				<div class="title-box " style="color: #000; font-size: 10px;">
 					<h1 class="block-title wow animated rollIn">
 						<span class="bb-top-left" style="border-color: #000;"></span> <span
@@ -184,7 +183,7 @@
 				</div>
 			</section>
 			<!-- ****************************** 携帯端末用検索フォーム ************************** -->
-			<section class="row  hidden-lg" style="height: 15px;">
+			<section class="row  hidden-lg" style="height: 35px;">
 				<div class="title-box" style="color: #000; font-size: 6.5px;">
 					<h1 class="block-title wow animated rollIn">
 						<span class="bb-top-left" style="border-color: #000;"></span> <span
@@ -195,139 +194,185 @@
 				</div>
 			</section>
 
-			<div class="col-xs-12">
-				<div id="screenshots" class="owl-carousel owl-theme">
-					<div class="item">
-						<a href="Book0001.jsp"><img src="assets/img/screenshot-1.png"
-							class="img_res wow animated zoomIn"></a>
-					</div>
-					<div class="item">
-						<a href="Book0001.jsp"><img src="assets/img/screenshot-2.png"
-							class="img_res wow animated zoomIn"></a>
-					</div>
-					<div class="item">
-						<a href="Book0001.jsp"><img src="assets/img/screenshot-3.png"
-							class="img_res wow animated zoomIn"></a>
-					</div>
-					<div class="item">
-						<a href="Book0001.jsp"><img src="assets/img/screenshot-4.png"
-							class="img_res wow animated zoomIn"></a>
-					</div>
-					<div class="item">
-						<a href="Book0001.jsp"><img src="assets/img/screenshot-5.png"
-							class="img_res wow animated zoomIn"></a>
-					</div>
-					<div class="item">
-						<a href="Book0001.jsp"><img src="assets/img/screenshot-6.png"
-							class="img_res wow animated zoomIn"></a>
-					</div>
-					<div class="item">
-						<a href="Book0001.jsp"><img src="assets/img/screenshot-7.png"
-							class="img_res wow animated zoomIn"></a>
-					</div>
-					<div class="item">
-						<a href="Book0001.jsp"><img src="assets/img/screenshot-3.png"
-							class="img_res wow animated zoomIn"></a>
-					</div>
-					<div class="item">
-						<a href="Book0001.jsp"><img src="assets/img/screenshot-5.png"
-							class="img_res wow animated zoomIn"></a>
-					</div>
-					<div class="item">
-						<a href="Book0001.jsp"><img src="assets/img/screenshot-1.png"
-							class="img_res wow animated zoomIn"></a>
-					</div>
-				</div>
-				<div class="customNavigation">
-					<a class="btn prev gallery-nav wow animated bounceInLeft"><i
-						class="ion-ios-arrow-left"></i></a> <a
-						class="btn next gallery-nav wow animated bounceInRight"><i
-						class="ion-ios-arrow-right"></i></a>
-				</div>
-			</div>
-		</section>
-	</section>
-
-
-	<!-- ****************************** Gallery Section ************************** -->
-
-	<section id="banner" class="block">
-		<section class="container">
-			<section class="row  hidden-xs" style="height: 30px;">
-				<div class="title-box" style="color: #000; font-size: 10px;">
-					<h1 class="block-title wow animated rollIn">
-						<span class="bb-top-left" style="border-color: #000;"></span> <span
-							class="bb-bottom-left" style="border-color: #000;"></span> 昔懐かし漫画
-						<span class="bb-top-right" style="border-color: #000;"></span> <span
-							class="bb-bottom-right" style="border-color: #000;"></span>
-					</h1>
-				</div>
-			</section>
-			<!-- ****************************** 携帯端末用検索フォーム ************************** -->
-			<section class="row  hidden-lg" style="height: 15px;">
-				<div class="title-box" style="color: #000; font-size: 6.5px;">
-					<h1 class="block-title wow animated rollIn">
-						<span class="bb-top-left" style="border-color: #000;"></span> <span
-							class="bb-bottom-left" style="border-color: #000;"></span> 昔懐かし漫画
-						<span class="bb-top-right" style="border-color: #000;"></span> <span
-							class="bb-bottom-right" style="border-color: #000;"></span>
-					</h1>
-				</div>
-			</section>
-			<section class="row">
+			<form action="SelectComic" method="post">
 				<div class="col-xs-12">
-					<div id="screenshots2" class="owl-carousel owl-theme">
+					<div id="screenshots" class="owl-carousel owl-theme">
 						<div class="item">
-							<a href="Book0001.jsp"><img src="assets/img/screenshot-1.png"
-								class="img_res wow animated zoomIn"></a>
+							<button name="comicId" value="1" style="border: none; background: rgba(0, 0, 0, 0);">
+								<img src="assets/img/screenshot-1.png" class="img_res wow animated zoomIn">
+							</button>
+
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img src="assets/img/screenshot-2.png"
-								class="img_res wow animated zoomIn"></a>
+							<button name="comicId" value="2" style="border: none; background: rgba(0, 0, 0, 0);">
+								<img src="assets/img/screenshot-2.png"
+									class="img_res wow animated zoomIn">
+							</button>
+
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img src="assets/img/screenshot-3.png"
-								class="img_res wow animated zoomIn"></a>
+							<button name="comicId" value="3" style="border: none; background: rgba(0, 0, 0, 0);">
+								<img src="assets/img/screenshot-3.png"
+									class="img_res wow animated zoomIn">
+							</button>
+
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img src="assets/img/screenshot-4.png"
-								class="img_res wow animated zoomIn"></a>
+							<button name="comicId" value="4" style="border: none; background: rgba(0, 0, 0, 0);">
+								<img src="assets/img/screenshot-4.png"
+									class="img_res wow animated zoomIn">
+							</button>
+
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img src="assets/img/screenshot-5.png"
-								class="img_res wow animated zoomIn"></a>
+							<button name="comicId" value="5" style="border: none; background: rgba(0, 0, 0, 0);">
+								<img src="assets/img/screenshot-5.png"
+									class="img_res wow animated zoomIn">
+							</button>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img src="assets/img/screenshot-6.png"
-								class="img_res wow animated zoomIn"></a>
+							<button name="comicId" value="6" style="border: none; background: rgba(0, 0, 0, 0);">
+								<img src="assets/img/screenshot-6.png"
+									class="img_res wow animated zoomIn">
+							</button>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img src="assets/img/screenshot-7.png"
-								class="img_res wow animated zoomIn"></a>
+							<button name="comicId" value="7" style="border: none; background: rgba(0, 0, 0, 0);">
+								<img src="assets/img/screenshot-7.png"
+									class="img_res wow animated zoomIn">
+							</button>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img src="assets/img/screenshot-3.png"
-								class="img_res wow animated zoomIn"></a>
+							<button name="comicId" value="8" style="border: none; background: rgba(0, 0, 0, 0);">
+								<img src="assets/img/screenshot-3.png"
+									class="img_res wow animated zoomIn">
+							</button>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img src="assets/img/screenshot-5.png"
-								class="img_res wow animated zoomIn"></a>
+							<button name="comicId" value="9" style="border: none; background: rgba(0, 0, 0, 0);">
+								<img src="assets/img/screenshot-5.png"
+									class="img_res wow animated zoomIn">
+							</button>
 						</div>
 						<div class="item">
-							<a href="Book0001.jsp"><img src="assets/img/screenshot-1.png"
-								class="img_res wow animated zoomIn"></a>
+							<button name="comicId" value="10" style="border: none; background: rgba(0, 0, 0, 0);">
+								<img src="assets/img/screenshot-1.png"
+									class="img_res wow animated zoomIn">
+							</button>
 						</div>
 					</div>
 					<div class="customNavigation">
-						<a class="btn prev2 gallery-nav wow animated bounceInLeft"><i
+						<a class="btn prev gallery-nav wow animated bounceInLeft"><i
 							class="ion-ios-arrow-left"></i></a> <a
-							class="btn next2 gallery-nav wow animated bounceInRight"><i
+							class="btn next gallery-nav wow animated bounceInRight"><i
 							class="ion-ios-arrow-right"></i></a>
 					</div>
 				</div>
-			</section>
+			</form>
 		</section>
 	</section>
+
+	<!-- ****************************** Gallery Section ************************** -->
+
+	<c:if test="${not empty userLogin}">
+		<section id="banner" class="block">
+			<section class="container">
+				<section class="row  hidden-xs" style="height: 50px;">
+					<div class="title-box" style="color: #000; font-size: 10px;">
+						<h1 class="block-title wow animated rollIn">
+							<span class="bb-top-left" style="border-color: #000;"></span> <span
+								class="bb-bottom-left" style="border-color: #000;"></span>
+							昔懐かし漫画 <span class="bb-top-right" style="border-color: #000;"></span>
+							<span class="bb-bottom-right" style="border-color: #000;"></span>
+						</h1>
+					</div>
+				</section>
+				<!-- ****************************** 携帯端末用検索フォーム ************************** -->
+				<section class="row  hidden-lg" style="height: 25px;">
+					<div class="title-box" style="color: #000; font-size: 6.5px;">
+						<h1 class="block-title wow animated rollIn">
+							<span class="bb-top-left" style="border-color: #000;"></span> <span
+								class="bb-bottom-left" style="border-color: #000;"></span>
+							昔懐かし漫画 <span class="bb-top-right" style="border-color: #000;"></span>
+							<span class="bb-bottom-right" style="border-color: #000;"></span>
+						</h1>
+					</div>
+				</section>
+				<section class="row">
+					<div class="col-xs-12">
+						<div id="screenshots2" class="owl-carousel owl-theme">
+							<div class="item">
+								<button name="comicId" value="1" style="border: none; background: rgba(0, 0, 0, 0);">
+									<img src="assets/img/screenshot-1.png"
+										class="img_res wow animated zoomIn">
+								</button>
+							</div>
+							<div class="item">
+								<button name="comicId" value="2" style="border: none; background: rgba(0, 0, 0, 0);">
+									<img src="assets/img/screenshot-2.png"
+										class="img_res wow animated zoomIn">
+								</button>
+							</div>
+							<div class="item">
+								<button name="comicId" value="3" style="border: none; background: rgba(0, 0, 0, 0);">
+									<img src="assets/img/screenshot-3.png"
+										class="img_res wow animated zoomIn">
+								</button>
+							</div>
+							<div class="item">
+								<button name="comicId" value="4" style="border: none; background: rgba(0, 0, 0, 0);">
+									<img src="assets/img/screenshot-4.png"
+										class="img_res wow animated zoomIn">
+								</button>
+							</div>
+							<div class="item">
+								<button name="comicId" value="5" style="border: none; background: rgba(0, 0, 0, 0);">
+									<img src="assets/img/screenshot-5.png"
+										class="img_res wow animated zoomIn">
+								</button>
+							</div>
+							<div class="item">
+								<button name="comicId" value="6" style="border: none; background: rgba(0, 0, 0, 0);">
+									<img src="assets/img/screenshot-6.png"
+										class="img_res wow animated zoomIn">
+								</button>
+							</div>
+							<div class="item">
+								<button name="comicId" value="7" style="border: none; background: rgba(0, 0, 0, 0);">
+									<img src="assets/img/screenshot-7.png"
+										class="img_res wow animated zoomIn">
+								</button>
+							</div>
+							<div class="item">
+								<button name="comicId" value="8" style="border: none; background: rgba(0, 0, 0, 0);">
+									<img src="assets/img/screenshot-3.png"
+										class="img_res wow animated zoomIn">
+								</button>
+							</div>
+							<div class="item">
+								<button name="comicId" value="9" style="border: none; background: rgba(0, 0, 0, 0);">
+									<img src="assets/img/screenshot-5.png"
+										class="img_res wow animated zoomIn">
+								</button>
+							</div>
+							<div class="item">
+								<button name="comicId" value="10" style="border: none; background: rgba(0, 0, 0, 0);">
+									<img src="assets/img/screenshot-1.png"
+										class="img_res wow animated zoomIn">
+								</button>
+							</div>
+						</div>
+						<div class="customNavigation">
+							<a class="btn prev2 gallery-nav wow animated bounceInLeft"><i
+								class="ion-ios-arrow-left"></i></a> <a
+								class="btn next2 gallery-nav wow animated bounceInRight"><i
+								class="ion-ios-arrow-right"></i></a>
+						</div>
+					</div>
+				</section>
+			</section>
+		</section>
+	</c:if>
 
 	<!-- ****************************** Footer ************************** -->
 
@@ -372,9 +417,15 @@
 		});
 
 		$(':button#signUp').click(function() {
-			$('form').attr('action', 'Agreement.jsp');
+			$('form').attr('action', 'agreement.jsp');
 			$('form').attr('method', 'post');
 			$('form').submit();
+		});
+
+		$(':button#comicBtn').click(function() {
+			$('input').attr('type', 'hidden');
+			$('input').attr('name', '');
+			$('input').attr('value', '1');
 		});
 	</script>
 </body>

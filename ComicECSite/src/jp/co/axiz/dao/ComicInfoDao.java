@@ -136,6 +136,8 @@ public class ComicInfoDao {
 			throw new RuntimeException(e);
 		}
 
+		System.out.println(comic.getComicId());
+
 		return comic;
 	}
 

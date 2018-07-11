@@ -62,17 +62,17 @@ public class JoinUserComicInfoDao {
 		//LIKE検索の注意事項
 		//プレースホルダ(？の事)は前後にシングルクォーテーションをつけるため、「+ "%"」という風に記述する
 
-	public List<JoinUserComicInfo> bookShelfShow(String userId, Integer sortNumber) {
+	public List<JoinUserComicInfo> bookShelfShow(String userId, String sortName) {
 		List<JoinUserComicInfo> list = new ArrayList<>();
 		String SQL= null ;
-		switch(sortNumber) {
-		case 1:
+		switch(sortName) {
+		case "title":
 			SQL = SQL_SELECT_WHERE_USER_ID_ORDER_BY_COMIC_TITLE;
-		case 2:
+		case "category":
 			SQL = SQL_SELECT_WHERE_USER_ID_ORDER_BY_CATEGORY_NAME;
-		case 3:
+		case "author":
 			SQL = SQL_SELECT_WHERE_USER_ID_ORDER_BY_AUTHOR_NAME;
-		case 4:
+		case "release_date":
 			SQL = SQL_SELECT_WHERE_USER_ID_ORDER_BY_PURCHASE_TIMESTAMP;
 		}
 		try(PreparedStatement stmt = connection.prepareStatement(SQL)) {

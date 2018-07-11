@@ -75,10 +75,9 @@
 									</div>
 								</div>
 							</form>
-							<form action="Index.html" class="pull-right">
-								<input class="btn btn-primary btn-sm active" id="setLogin"
-									type="button" value="ログアウト"
-									onclick="location.href='Index02.jsp'; return false;">
+							<form action="logout" class="pull-right">
+								<input class="btn btn-primary btn-sm active" id="logout"
+									type="button" value="ログアウト">
 							</form>
 
 						</div>
@@ -160,7 +159,13 @@
 	<script type="text/javascript">
 
 	$(':button#bookShelf').click(function() {
-		$('form').attr('action', 'BookSelect');
+		$('form').attr('action', 'bookShelf');
+		$('form').attr('method', 'post');
+		$('form').submit();
+	});
+
+	$(':button#logout').click(function() {
+		$('form').attr('action', 'logout');
 		$('form').attr('method', 'post');
 		$('form').submit();
 	});

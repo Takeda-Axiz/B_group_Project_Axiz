@@ -42,7 +42,7 @@ public class CartService {
 
 		for(String produtNumber:Products) {
 			Integer ProdutNumber = CommonMethod.changeInteger(produtNumber);
-			JoinComicInfo record = jcid.findById(ProdutNumber);
+			JoinComicInfo record = jcid.findByComicId(ProdutNumber);
 			list.add(record);
 		}
 		session.setAttribute("userCart", list);

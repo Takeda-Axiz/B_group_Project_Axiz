@@ -5,7 +5,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import jp.co.axiz.dao.UserInfoDao;
 import jp.co.axiz.entity.UserInfo;
@@ -15,7 +14,7 @@ public class UserInfoService {
 	UserInfo user;
 	UserInfoDao uid = new UserInfoDao();
 	HttpServletRequest request;
-	HttpSession session = request.getSession();
+//	HttpSession session = request.getSession();
 	String deliveryUserId;
 	String userName;
 	String birthday;
@@ -28,6 +27,9 @@ public class UserInfoService {
 
 	/*---  Constructor  ---*/
 	//  処理概要
+	public UserInfoService() {
+	}
+
 	public UserInfoService(HttpServletRequest request) {
 		this.request = request;
 
@@ -141,6 +143,10 @@ public class UserInfoService {
 
 		list = uid.findByDeliveryUserId(userId);
 
-		return list.get(0);
+		if(list.isEmpty()) {
+			return null;
+		}else {
+			return list.get(0);
+		}
 	}
 }

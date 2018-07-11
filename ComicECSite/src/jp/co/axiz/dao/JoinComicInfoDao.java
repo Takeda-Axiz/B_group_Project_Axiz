@@ -537,7 +537,7 @@ public class JoinComicInfoDao {
 	}
 
 	//  処理概要
-	public JoinComicInfo findById(Integer comicId) {
+	public JoinComicInfo findByComicId(Integer comicId) {
 		// 変数宣言
 		List<JoinComicInfo> list = new ArrayList<JoinComicInfo>();
 

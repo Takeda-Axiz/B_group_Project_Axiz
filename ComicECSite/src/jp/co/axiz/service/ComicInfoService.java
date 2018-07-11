@@ -126,6 +126,13 @@ public class ComicInfoService {
 		return list;
 	}
 
+	public JoinComicInfo findComicCtPbInfo(Integer comicId) {
+		// 変数宣言
+		// 初期化
+
+		return jCID.findByComicId(comicId);
+	}
+
 	public ComicInfo findComicInfo(Integer comicId){
 		// 変数宣言
 		// 初期化
